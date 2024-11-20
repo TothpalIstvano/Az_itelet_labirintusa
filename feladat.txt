@@ -1,0 +1,11 @@
+elolvassuk az első kártyát -> lapozós
+
+mint a kalandkönyvek
+
+xml formátum ajánlott
+
+felület mindegy (html, js lehet)
+
+élvezetes - pár kép elég
+
+működhessen ha másik szöveg és oldalszámok legyenek (??)
