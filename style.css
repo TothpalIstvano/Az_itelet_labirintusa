@@ -26,7 +26,15 @@ h1, h3 {
     padding: 10px;
     height: auto;
     border: 2px solid black;
+    width: 30%;
+    margin: 5px;
 }
+.row{
+    display: flex;
+
+}
+
+
 
 @media screen and (max-width: 600px) {
     .column {
@@ -36,4 +44,5 @@ h1, h3 {
         width: 100%;
     }
 }
+
 
