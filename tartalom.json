@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "szoveg": "Belöknek a lenti alagútba, és rád zárják az ajtót, kizárva ezzel a nyíláson át beszűrődő természetes világosságot. Innentől kezdve kizárólag a falra rögzített fáklyáktól remélhetsz valamennyi fényt. Ahogy szemed hozzászokik a homályhoz, látod, hogy az alagút észak felé indul. Nagyot sóhajtasz a dolog igazságtalansága felett, majd elindulsz abba az irányba. ",
+        "auto": "Lapozz a 41-re."
+    },
+    {
+        "id": 2,
+        "szoveg": "A vízbe ugrasz, az áramlat azonban nagyon eros. Megpróbálsz a felszínen maradni, de ez nem könnyű.",
+        "auto": "Lapozz a 148-ra."
+    },
+    {
+        "id": 3,
+        "szoveg": "Ahogy óvatosan a drótok között lépkedve eléred a Szobrot, az hirtelen eltünik! A következő pillanatban vészjósló morajlás hangzik fel a fejed fölött, és ahogy arra nézel, látod, hogy hatalmas szikladarabok kezdenek feléd zuhanni. A hatalmas súly porrá örli csontjaidat. Kalandod itt véget ér."
+    },
+    {
+        "id": 4,
+        "szoveg": "A kötél igen rossz állapotban van, és még félúton sem jársz, mikor elszakad... Kalandod itt véget ér."
+    },
+    {
+        "id": 5,
+        "szoveg1": "Az ajtó egy tágas terembe nyílik, melynek északi oldalán egy újabb kijárat van, egy lelógó kötél szomszédságában. Csapdának nem látod jelét, így áthaladsz a szobán és leveszed a kötelet. Lenyomod a kilincset, de így sem sikerül előrébb jutnod &#8211; alighanem zárva van. Ha van nálad egy Aranykulcs, ",
+        "link1": "lapozz a 110-re.",
+        "szoveg2" : "Hogyha nincs, úgy távozol a szobából és folytatod az utadat északi irányba ",
+        "link2": "lapozz a 14-re."
+    }
+
+]
