@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    border-radius: 15px;
+    margin: 4px;
 }
 
 h1, h3 {
@@ -33,8 +35,6 @@ h1, h3 {
     display: flex;
 
 }
-
-
 
 @media screen and (max-width: 600px) {
     .column {
