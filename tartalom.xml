@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <szoveg> Belöknek a lenti alagútba, és rád zárják az ajtót, kizárva ezzel a nyíláson át beszűrődő természetes világosságot. Innentől kezdve kizárólag a falra rögzített fáklyáktól remélhetsz valamennyi fényt. Ahogy szemed hozzászokik a homályhoz, látod, hogy az alagút észak felé indul. Nagyot sóhajtasz a dolog igazságtalansága felett, majd elindulsz abba az irányba. <link>Lapozz a 41-re.</link>
+<kartya>
+    <id>1</id>
+    <szoveg> Belöknek a lenti alagútba, és rád zárják az ajtót, kizárva ezzel a nyíláson át beszűrődő természetes világosságot. Innentől kezdve kizárólag a falra rögzített fáklyáktól remélhetsz valamennyi fényt. Ahogy szemed hozzászokik a homályhoz, látod, hogy az alagút észak felé indul. Nagyot sóhajtasz a dolog igazságtalansága felett, majd elindulsz abba az irányba.
     </szoveg>
-
-    
+    <option>41</option>
+</kartya>
+<kartya>
+    <id>41</id>
+    <szoveg>
+        Az alagút, bár folyamatosan jobbra-balra kanyarog, nagyjából mégis tartja az északi irányt, végül élesen oldalra kanyarodik, és ekkor majdnem belefutsz egy fekete köpenybe öltözött alakba. Tört tart a kezében, az arcán ülő tekintet rettegésről árulkodik! Rájössz, hogy nem te vagy az egyetlen, akit most próbára tesznek, és hogy mindketten ugyanazon Szobor után kutattok. A fickó rád veti magát, nyilvánvaló, hogy mielőbb végezni akar veled. Harcolnod kell!
+    </szoveg>
+    <option>85</option>
+    <ellenfel ugyesseg="7" hp ="6">
+        Tolvaj
+    </ellenfel>
+</kartya>
+<kartya>
+    <szoveg>
+        Az ajtóhoz lépsz és kezelésbe veszed a hatalmas zárat: tekerni kezded a tárcsákat, míg a helyes kombinációt nem sikerül beállítanod rajta. Ahogy az utolsót is a megfelelő helyzetbe fordítod, az ajtó kinyilik és egy szoba tárul fel előtted, melynek falait könyvekkel megrakott polcok szegélyezik Egy könyvtárban találod magad. A középen álló asztalon három nyitott könyvet látsz...
+    </szoveg>
+    <option id="59"> Ha a pirosba akarsz beleolvasni</option>
+    <option id="104">Hogyha a kékre vagy kíváncsi</option>
+    <option id="88">Ha a zöld érdekel</option>
+    <option id="10">Ha nem tudsz olvasni és úgy döntesz, távozol az északi ajtón át</option>
+</kartya>
