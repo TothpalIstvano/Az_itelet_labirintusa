@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="arany">
+        Arany:
+    </div>
     <script>
         async function fetchData() {
             try {
@@ -26,7 +29,6 @@
         fetchData().then(data => {
             myData = data; // Store the fetched data in the variable
             let kovi = (myData.Game.Nodes.Node[0].Choices.Choice._targetNode);
-            console.log(myData.Game.Nodes.Node[kovi])
         });
     </script>
 </body>

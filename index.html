@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <!--Kártyák megjelennek a képernyőn (egyszerre egy) - az egész egy "a"-ba van hogy link legyen (bár közbe lehet hogy kell dobni, de akkor az külön lehet a szöveges résztől) = szörny és szöveg külön
@@ -79,25 +80,28 @@
     <div class="content">
         <div class="row">
             <div class="column">
-                <h1>Kalandlap</h1>
+                <h1 style="margin-bottom:20px ;">Kalandlap</h1>
                 <div>
                     <div class="kartyak">ÜGYESSÉG <p>Kezdeti ügyesség:</p></div>
                     <div class="kartyak">ÉLETERÓ <p>Kezdeti életerő:</p></div>
                     <div class="kartyak">SZERENCSES <p>Kezdeti szerencse:</p></div>
                 </div>
-                <div class="column">
+                <div  class="column">
                     FELSZERELÉSI TÁRGYAK:
+                    <div id="targyak">
+
+                    </div>
                 </div>
                 <div class="column">
-                    <div>ARANY:</div>
-                    <div>ÉKKÖVEK:</div>
-                    <div>ITALOK:</div>
-                    <div>ÉLELMISZER-KÉSZLET:</div>
+                    <div id="arany">ARANY: </div>
+                    <div id="ekkovek">ÉKKÖVEK:</div>
+                    <div id="italok">ITALOK:</div>
+                    <div id="elelmiszerek">ÉLELMISZER-KÉSZLET:</div>
                 </div>
             </div>
-            <div class="column">
+            <div class="column" id="harc">
                 <h3>HARC SZÖRNYEKKEL</h3>
-                <div>
+                <!--<div>
                     <div class="kartyak">ÜGYESSÉG <p>Életerő:</p></div>
                     <div class="kartyak">ÜGYESSÉG <p>Életerő:</p></div>
                     <div class="kartyak">ÜGYESSÉG <p>Életerő:</p></div>
@@ -116,7 +120,7 @@
                     <div class="kartyak">ÜGYESSÉG <p>Életerő:</p></div>
                     <div class="kartyak">ÜGYESSÉG <p>Életerő:</p></div>
                     <div class="kartyak">ÜGYESSÉG <p>Életerő:</p></div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
