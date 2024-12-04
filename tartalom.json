@@ -77,9 +77,115 @@
                     "End": false
                 },
                 {
-
+					"Description": "Az ajtó egy nyugat felé haladó alagútba nyílik. Követed, míg egy elágazáshoz nem érsz.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "172",
+							"__text": "Ha észak felé akarsz fordulni, lapozz a 172-re."
+						},
+						{
+							"_targetNode": "168",
+							"__text": "Ha nem akarsz letérni ebből a járatból. lapozz a 168-ra."
+						}]
+					},
+					"_id": "6",
+					"End": false
+                },
+                {
+					"Description": "Mikor végül eléred a verem alját, semmit nem látsz. A falakat végigtapogatva annyit meg tudsz állapítani, hogy az alagút kelet felé megy tovább.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "165",
+							"__text": " Ha a vaksötét ellenére is bevállalod ezt a járatot, lapozz a 165-re. "
+						},
+						{
+							"_targetNode": "96",
+							"__text": "Ha inkább visszatérnél a fenti folyosóra és északnak folytatnád az utad, lapozz a 96-ra."
+						}]
+					},
+					"_id": "7",
+					"End": false
+                },
+				{
+					"Description": "A dárdák, melyeket egy igen hatásos méreggel kentek be, mélyen a lábadba fúródnak. Dobj egy kockával, hogy megtudd, hány ÉLETERŐ pontot vesztettél.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "65",
+							"__text": " Lapozz a 65-re."
+						}
+					},
+					"_id": "8",
+                    "End": false,
+					"Dice": {
+						"dob": true,
+						"mit": "hp"
+					}
+				},
+				{
+					"Description": "Elsietsz a halott fenevad teteme mellett és gyorsan az északi járathoz lépsz.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "52",
+							"__text": " Lapozz az 52-re."
+						}
+					},
+					"_id": "9",
+                    "End": false
+				},
+				{
+					"Description": "Az ajtó recsegve nyílik ki és fed fel egy helyiséget, mely alig szélesebb a folyosónál. Hosszában két részre van osztva. Az egyik oldalon egy cellát látsz, míg a másik egyenesen egy ajtóhoz tart az északi falon. A fogdában egy rongyos férfi áll, aki meredten néz téged és fenyegető mozdulatokat tesz. irányodba. Gyanítod, hogy szabadságáért cserébe esetleg hasznos információkkal tudna szolgálni számodra.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "149",
+							"__text": "Ha beszélni akarsz vele, lapozz a 149-re."
+						},
+						{
+							"_targetNode": "24",
+							"__text": "Ha jobban éreznéd magad, ha holtan tudhatnád magad mögött, ezért a cella rácsai közt átnyúlva kardélre hánynád, lapozz a 24-re."
+						}]
+					},
+					"_id": "10",
+					"End": false
+                },
+				{
+					"Description": "Elérsz az alagút végére, de semmi feltünöt nem látsz.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "38",
+							"__text": "Ha tovább akarsz keresgélni, lapozz a 38-ra."
+						},
+						{
+							"_targetNode": "31",
+							"__text": "Ha inkább visszatérnél az előző elágazáshoz és ott keletre indulnál, lapozz a 31-re."
+						}]
+					},
+					"_id": "11",
+					"End": false
+                },
+				
+				{
+					"Description": "A válladra csapod a köpenyt, de legnagyobb meglepetésedre semmi nem történik. Mivel egy kicsit azért hűvös van, nem dobod le. Bár nem tudod, de ez a Lebegés Köpenye.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "119",
+							"__text": "Ha fel akarod próbálni a gyűrűt, és még nem tetted meg, lapozz a 119-re.",
+							"_requiresItem": "Gyűrű",
+							"_proba": false
+						},
+						{
+							"_targetNode": "71",
+							"__text": "Amennyiben a folyadék még az üvegben van, és most felhajtanád, lapozz a 71-re.",
+							"_requiresItem": "Folyadék",
+							"_proba": false
+						},
+						{
+							"_targetNode": "80",
+							"__text": "Ha bezárnád a csapóajtót és az ajtón kilépve észak felé távoznál, lapozz a 80-ra."
+						}]
+					},
+					"_id": "12",
+					"End": false
                 }
-
 			]
 		}
 	}
