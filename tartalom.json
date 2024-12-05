@@ -13,6 +13,7 @@
 			"Inventory": {
 				"Weapon": "Kard",
 				"Shield": "Pajzs",
+				"Food": 5,
 				"Potion": {
 					"Type": "Életerő Itala",
 					"Uses": "2"
@@ -185,7 +186,29 @@
 					},
 					"_id": "12",
 					"End": false
-                }
+                },
+				{
+					"Description": "Amint belépsz a szobába, rémülten eszmélsz rá, hogy előbb alaposan szét kellett volna nézned a plafonon ugyanis egy hatalmas Pók kapaszkodik, ami minden szemével téged bámul. Négy ezüstszínű gubó lóg mellette, és összeszorul a szíved, mikor rájössz, hogy két ember, egy Törpe és egy Elf van beléjük csavarva, akik bizonyára leendő ellenfeled legutóbbi áldozatai voltak, és már csak arra várnak, hogy a bestia egy jót lakmározzon belőlük. A Pók némán a padlóra pottyan, csáprágói mohón feléd nyúlnak.",
+					"Enemy": {
+						"Name": "Óriáspók",
+						"Skill": "9",
+						"Stamina": "5"
+					},
+					"Choices": {
+						"Choice": [
+							{
+								"_targetNode": "94",
+								"__text": "Ha végzel ezzel a teremtménnyel, lapozz a 94-re."
+							},
+							{
+								"_targetNode": null,
+								"__text": "Ha nem, hamarosan te is személyre szött selyemkabátot fogsz kapni."
+							}
+						]
+					},
+					"_id": "18"
+				}
+				
 			]
 		}
 	}
