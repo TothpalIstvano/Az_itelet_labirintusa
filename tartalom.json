@@ -13,6 +13,7 @@
 			"Inventory": {
 				"Weapon": "Kard",
 				"Shield": "Pajzs",
+				"Food": 5,
 				"Potion": {
 					"Type": "",
 					"Uses": "2"
@@ -185,6 +186,7 @@
 					"End": false
                 },
 				{
+
 					"Description": "A zárba helyezed a kulcsot, de az sajnos nem illik bele, így nincs más választásod, minthogy megpróbáld betörni.",
 					"Choices": {
 						"Choice": {
@@ -703,7 +705,6 @@
 					"End": false,
 					"requestNumbers": 3
 				}
-
 			]
 		}
 	}
