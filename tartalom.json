@@ -108,8 +108,9 @@
 					"_id": "8",
                     "End": false,
 					"Dice": {
+
 						"pluszminusz": "minusz",
-						"mit": "hp"
+						"mit": "Stamina"
 					}
 				},
 				{

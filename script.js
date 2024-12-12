@@ -16,7 +16,6 @@ async function fetchData() {
 function targyakPoweredByKovacsEdit(item){
     let itemValue = myData.Game.Character.Inventory[item];
     document.getElementById("targyak").innerHTML += itemValue;// Add the items value to the HTML element
-
 }
 
 function marValtozoDologPoweredByKovacsEdit(){
@@ -25,9 +24,32 @@ function marValtozoDologPoweredByKovacsEdit(){
     let italok = myData.Game.Character.Inventory.Italok;
     let elelmiszerek = myData.Game.Character.Inventory.Food;
     document.getElementById("arany").innerHTML += " "+ arany;// Add the gold value to the HTML element
-    document.getElementById("ekkovek").innerHTML += " "+ ekkovek;// Add the ekkovek value to the HTML
-    document.getElementById("italok").innerHTML += " "+italok;// Add the italok value to the HTML
+    if( ekkovek != null)// Checks if there is any ekkő
+        {
+        document.getElementById("ekkovek").innerHTML += " "+ ekkovek;// Add the ekkovek value to the HTML}
+        };
+    if( italok != null)// Checks if there is any potion
+        {
+        document.getElementById("italok").innerHTML += " "+italok;// Add the italok value to the HTML
+        }
     document.getElementById("elelmiszerek").innerHTML += " "+elelmiszerek;// Add the food value to the HTML
+}
+
+function generalas()
+{
+    let skill = Math.floor(Math.random() * 6) + 1 + 6;
+    let stamina = Math.floor(Math.random() * 12) + 1 + 12;
+    let luck = Math.floor(Math.random() * 6) + 1 + 6;
+    document.getElementById("skill").innerHTML += skill;// generate the value of skill and add to the HTML
+    document.getElementById("stamina").innerHTML += stamina;// generate the value of stamina and add to the HTML
+    document.getElementById("luck").innerHTML += luck;// generate the value of luck and add to the HTML
+    const button = document.getElementById('generalas');
+    button.remove();
+}
+
+function kartya(id){
+    
+
 }
 
 // Call the fetchData function and store the result in a variable

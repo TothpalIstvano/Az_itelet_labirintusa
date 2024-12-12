@@ -1,0 +1,39 @@
+description ezt csak be kell baszni nem kell vizsgálni
+
+end true e :
+	ha ige:
+		szöveg aztja max egy game over
+	ha nem:
+		rohadjon meg és folytasas ezt a szutykot
+
+		van e ellenfél:
+			
+			ha igen akkor mennyi:
+				ha 1 nél több  akkor a harcnál az értéket mind kettőre meg kell nézni
+		
+		van e Dice:
+			ha van és szerencse  :
+				szerencse fügvény vagy idk (btw mindig az első choice a jó):
+					ha egyenlő:
+						újra					
+					ha több:
+						bad choice és szimplán tovább
+					ha kevesebb:
+						jó choice és szimplán tovább
+
+			ha van és stamina:
+				és ha pulszminus egyenlő minusz:
+					stamina - rnd
+				és ha pulszminus egyenlő plusz:
+					stamina + rnd
+		
+		van e életerős cucc 
+			ha van stamina + eletero
+
+		van e szerencse min:
+			ha van akkor szerencse min set és az alá nem mehet
+
+		van e item lose:
+			ha van akkor minden item alá gomb és mennyit
+		
+		
