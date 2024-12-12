@@ -118,7 +118,7 @@
                     "End": false,
 					"Dice": {
 						"dob": true,
-						"mit": "hp"
+						"mit": "Stamina"
 					}
 				},
 				{
