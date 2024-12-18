@@ -108,13 +108,8 @@
 					"_id": "8",
                     "End": false,
 					"Dice": {
-<<<<<<< HEAD
-						"dob": true,
-						"mit": "Stamina"
-=======
 						"pluszminusz": "minusz",
-						"mit": "hp"
->>>>>>> main
+						"mit": "Stamina"
 					}
 				},
 				{
