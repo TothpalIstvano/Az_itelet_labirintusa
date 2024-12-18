@@ -47,8 +47,21 @@ function generalas()
     button.remove();
 }
 
+function dobbas() {
+    let x = Math.floor(Math.random() * 6) + 1;
+    return x
+}
+
+function kartyaKereses(id){
+    return myData.Game.Nodes.Node.find(node => node._id == id);
+}
+
 function kartya(id){
-    
+    const node = kartyaKereses(id);
+    const kartya = document.getElementById("kartya");
+    const div = document.createElement("div");
+    div.innerHTML = node.Description;
+    kartya.appendChild(div);
 
 }
 
@@ -57,7 +70,7 @@ let myData;
 fetchData().then(data => {
     myData = data; // Store the fetched data in the variable
     marValtozoDologPoweredByKovacsEdit();
-
-
+    console.log(kartya(56))
+    
 });
 
