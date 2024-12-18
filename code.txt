@@ -10,6 +10,12 @@ end true e :
 			
 			ha igen akkor mennyi:
 				ha 1 nél több  akkor a harcnál az értéket mind kettőre meg kell nézni
+				ciklus még vki nem hal meg:
+					ha játékos támadoereje nagyobba akkor szörny -2
+					különben játékos -szörny sebzése
+					
+					ha játékos életereje 0 game over 
+					ha szörny életereje 0 akkor játékos nyer és tovább
 		
 		van e Dice:
 			ha van és szerencse  :
