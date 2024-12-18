@@ -60,8 +60,24 @@ function kartya(id){
     const node = kartyaKereses(id);
     const kartya = document.getElementById("kartya");
     const div = document.createElement("div");
-    div.innerHTML = node.Description;
+    const gombok = document.getElementById("gombok");
+    const button = document.createElement("button");
+    div.innerHTML = `<h2>${node._id}</h2><p>${node.Description}</p>`;
     kartya.appendChild(div);
+    if(!node.End){
+        if(node.hasOwnProperty("enemies")){
+            node.enemies.enemy.forEach(element => {
+                console.log(element)
+            });
+        }else{
+            
+        }
+
+    }
+    else{
+        button.innerText = "újrakezdés?";
+        gombok.appendChild(button);
+    }
 
 }
 
@@ -70,7 +86,7 @@ let myData;
 fetchData().then(data => {
     myData = data; // Store the fetched data in the variable
     marValtozoDologPoweredByKovacsEdit();
-    console.log(kartya(56))
+    console.log(kartya(18))
     
 });
 
