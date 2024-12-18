@@ -59,18 +59,40 @@ function kartyaKereses(id){
 function kartya(id){
     const node = kartyaKereses(id);
     const kartya = document.getElementById("kartya");
+    const harc = document.getElementById("harc");
     const div = document.createElement("div");
     const gombok = document.getElementById("gombok");
     const button = document.createElement("button");
     div.innerHTML = `<h2>${node._id}</h2><p>${node.Description}</p>`;
     kartya.appendChild(div);
     if(!node.End){
-        if(node.hasOwnProperty("enemies")){
-            node.enemies.enemy.forEach(element => {
-                console.log(element)
-            });
-        }else{
-            
+        const enemies = node.enemies?.enemy;
+        if (enemies) 
+        {
+            let sebzes = 0;
+            if (Array.isArray(enemies))
+            {
+                enemies.forEach(enemy => {
+                    const enemyDiv = document.createElement("div");
+                    enemyDiv.innerHTML = `<h2>${enemy.name}</h2><p>${enemy.description}</p>`;
+                    harc.appendChild(enemyDiv);
+                });
+            }
+            else{
+                const enemyDiv = document.createElement("div");
+                enemyDiv.innerHTML = `<h2>${enemies.name}</h2><p>Ügyessége: ${enemies.skill}</p><p>Élet: ${enemies.stamina}</p><p id="sebzes">Sebzeés:</p>`;
+                harc.appendChild(enemyDiv);
+            }
+            let f = true;
+            let futas = true;
+            while(f && futas){
+                
+            }
+
+        } 
+        else 
+        {
+            console.log("Enemies is undefined");
         }
 
     }
@@ -86,7 +108,7 @@ let myData;
 fetchData().then(data => {
     myData = data; // Store the fetched data in the variable
     marValtozoDologPoweredByKovacsEdit();
-    console.log(kartya(18))
+    console.log(kartya(18));
     
 });
 
