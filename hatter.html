@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Háttértörténet</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700,900,400italic,700italic,900italic|Playfair+Display:400,700,900,400italic,700italic,900italic|Rock+Salt:400);
+
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1d1f20;
+    color: #e5e5e5;
+    font: 16px/1.25 'Crimson Text', sans-serif;
+    margin: 0;
+}
+
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80em;
+}
+
+#container {
+    float: left;
+    padding: 1em;
+    width: 100%;
+}
+
+
+
+/*** OPEN BOOK ***/
+.open-book {
+    background: #fff;
+    box-shadow: rgba(0,0,0,0.5) 0 1em 3em;
+    color: #000;
+    padding: 2em;
+}
+
+.open-book * {
+    position: relative;
+}
+
+/* Highlight */
+.open-book *::-moz-selection {
+    background: rgba(222,255,0,0.75);
+}
+
+.open-book *::selection {
+    background: rgba(222,255,0,0.75);  /*az oldalon a szövegkijelölés színe*/
+}
+
+/* Header/Footer */
+.open-book header {
+    padding-bottom: 1em;
+}
+
+.open-book header *,
+.open-book footer * {
+    font: 700 1em/1.25 'Playfair Display', sans-serif;
+    letter-spacing: 0.125em;
+    margin: 0;
+}
+
+.open-book header * {
+    font-size: 0.75em;
+    text-transform: uppercase;
+}
+
+.open-book footer {
+    padding-top: 1em;
+}
+
+.open-book footer #page-numbers {
+    display: none;
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.open-book footer #page-numbers > li:last-child {
+    text-align: right;
+}
+
+/* Chapter Title */
+.open-book .chapter-title {
+    background: url() bottom center no-repeat;  /*az url nélkül a címbe nincs ilyen kis rombusz*/
+    background-size: 0.5em 0.5em;
+    font: 700 7vw/1.25 'Playfair Display', sans-serif;
+    letter-spacing: 0.125em;
+    margin: 0 0 1em 0;
+    padding: 1em 0;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.open-book .chapter-title:before,
+.open-book .chapter-title:after {
+    border: solid 0 #000;
+    border-width: 0.05em 0;
+    bottom: calc((0.125em / 2) * 3);
+    content: '';
+    height: 0.15em;
+    position: absolute;
+    width: calc(50% - (1em / 2));
+}
+
+.open-book .chapter-title:before {
+    left: 0;
+}
+
+.open-book .chapter-title:after {
+    right: 0;
+}
+
+/* Body Copy */
+.open-book article {
+    line-height: 1.5;
+}
+
+.open-book article *:not(.chapter-title):not(hr):not(dl) {
+    margin: 0 auto;
+    max-width: 28.125em;
+}
+
+.open-book article p {
+    text-indent: 2em;
+}
+
+.open-book .chapter-title + p:first-of-type {
+    text-indent: 0;
+}
+
+.open-book .chapter-title + p:first-of-type:first-letter {  /*nagyobb a S*/
+    float: left;
+    font: 700 3em/0.65 'Playfair Display', sans-serif;
+    padding: 0.15em 0.05em 0 0;
+    text-transform: uppercase;
+}
+
+.open-book article > ul,
+.open-book article > ol {
+    padding-left: 3em;
+}
+
+.open-book article > ul ul {
+    padding-left: 1em;
+}
+
+.open-book a {
+    background: url() bottom repeat-x;
+    background-size: auto 0.25em;
+    color: inherit;
+    text-decoration: none;
+}
+
+.open-book s,
+.open-book strike {
+    background: url() center repeat-x;
+    background-size: auto 0.5em;
+    color: rgba(0,0,0,0.5);
+    text-decoration: none;
+}
+
+.open-book sup {
+    color: #cc0000;
+    font-family: 'Rock Salt', cursive;
+    left: 0;
+    margin-top: -1em!important;
+    max-width: 100%!important;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.open-book mark {
+    background: linear-gradient(to bottom, rgba(222,255,0,1) 0%,rgba(222,255,0,0.5) 60%,rgba(222,255,0,1) 100%);
+}
+
+.open-book mark.pink {
+    background: linear-gradient(to bottom, rgba(255,69,190,1) 0%,rgba(255,107,203,0.5) 60%,rgba(255,107,203,1) 100%);
+}
+
+.open-book mark.blue {
+    background: linear-gradient(to bottom, rgba(73,179,255,1) 0%,rgba(107,193,255,0.5) 60%,rgba(107,193,255,1) 100%);
+}
+
+.open-book mark.green {
+    background: linear-gradient(to bottom, rgba(67,226,15,1) 0%,rgba(39,229,54,0.5) 60%,rgba(39,229,54,1) 100%);
+}
+
+.open-book mark.orange {
+    background: linear-gradient(to bottom, rgba(255,134,9,1) 0%,rgba(255,177,34,0.5) 60%,rgba(255,177,34,1) 100%);
+}
+
+.open-book hr {
+    background-color: #000;
+    border: 0;
+    height: 2px;
+    margin: 1em 0;
+}
+
+.open-book dl {
+    border: solid 0 #ccc;
+    border-width: 0.0625em 0;
+    break-inside: avoid-column;
+    margin: 1em auto;
+    padding: 1em 0;
+}
+
+
+
+/*** MEDIA QUERIES ***/
+@media only screen and ( min-width: 50em ) {
+
+    .open-book {
+        margin: 1em;
+        position: relative;
+    }
+
+    .open-book:before {
+        background-color: #8B4513;
+        border-radius: 0.25em;
+        bottom: -1em;
+        content: '';
+        left: -1em;
+        position: absolute;
+        right: -1em;
+        top: -1em;
+        z-index: -1;
+    }
+
+    .open-book:after {
+        background: linear-gradient(to right, transparent 0%,rgba(0,0,0,0.2) 46%,rgba(0,0,0,0.5) 49%,rgba(0,0,0,0.6) 50%,rgba(0,0,0,0.5) 51%,rgba(0,0,0,0.2) 52%,transparent 100%);
+        bottom: -1em;
+        content: '';
+        left: 50%;
+        position: absolute;
+        top: -1em;
+        transform: translate(-50%,0);
+        width: 4em;
+        z-index: 1;
+    }
+
+    .open-book > * {
+        column-count: 2;
+        column-gap: 6em;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Header/Footer */
+    .open-book header:before,
+    .open-book header:after,
+    .open-book footer:before,
+    .open-book footer:after {
+        background: #fff;
+        border-radius: 25%;
+        content: '';
+        height: 2em;
+        position: absolute;
+        z-index: -1;
+        width: calc(50% + 2em);
+    }
+
+    .open-book header:before,
+    .open-book footer:before,
+    .open-book footer:after {
+        border-top-left-radius: 0;
+    }
+
+    .open-book header:after,
+    .open-book footer:before,
+    .open-book footer:after {
+        border-top-right-radius: 0;
+    }
+
+    .open-book header:before,
+    .open-book header:after,
+    .open-book footer:after {
+        border-bottom-right-radius: 0;
+    }
+
+    .open-book header:before,
+    .open-book header:after,
+    .open-book footer:before {
+        border-bottom-left-radius: 0;
+    }
+
+    .open-book header:before,
+    .open-book header:after {
+        top: -2.65em;
+    }
+
+    .open-book header:before,
+    .open-book footer:before {
+        right: 50%;
+    }
+
+    .open-book header:before {
+        transform: rotate(-2deg);
+    }
+
+    .open-book header:after,
+    .open-book footer:after {
+        left: 50%;
+    }
+
+    .open-book header:after {
+        transform: rotate(2deg);
+    }
+
+    .open-book footer:before,
+    .open-book footer:after {
+        bottom: -2.65em;
+    }
+
+    .open-book footer:before {
+        transform: rotate(2deg);
+    }
+
+    .open-book footer:after {
+        transform: rotate(-2deg);
+    }
+
+    .open-book header > *:last-child,
+    .open-book footer > *:last-child {
+        text-align: right;
+    }
+
+    .open-book footer #page-numbers {
+        display: block;
+    }
+
+    /* Chapter Title */
+    .open-book .chapter-title {
+        font-size: 3em;
+    }
+
+    .open-book .chapter-title:before,
+    .open-book .chapter-title:after {
+        height: 0.125em;
+    }
+
+    /* Body Copy */
+    .open-book article p {
+        text-indent: 3em;
+    }
+
+    .open-book article > ul,
+    .open-book article > ol {
+        padding-left: 4em;
+    }
+
+}
+    </style>
+</head>
+<body>
+
+    <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_typewriter ilyet a címnek-->
+
+    <div id="wrapper">
+        <div id="container">
+    
+            <section class="open-book">
+                <header>
+                    <h1>Bal felső sarok</h1>
+                    <h6>Jobb felső sarok</h6>
+                </header>
+                <article>
+                    <h2 class="chapter-title">Az ítélet labirintusa</h2>
+                    <p>
+                        Sublime Text 2 was opened and a new document was created. "I love this time of year," Erin gleefully thought to herself.
+                    </p>
+                    <p>
+                        The "time of year" that is being referenced relates to Erin's job when the pile of projects temporarily slow down. This doesn't happen to just her. The reduction of work happens to many, but at various times throughout the year, depending on their position. She could submit to boredom and brainlessly surf the Internet, but this particular developer decided to take advantage of the situation.
+                    </p>
+                    <p>
+                        Erin brainstorms on ideas that are both fun and can strengthen her development skills. After all, however she spends her free time at work should be used in a way that becomes helpful for future projects.
+                    </p>
+                    <p>
+                        She already made quite the effort into fine-tuning her skills with Flexbox, creating functional and accessible code for an  For Erin's next personal project, she wanted something different. Something with multiple (yet possibly useful) features.
+                    </p>
+                    <p>
+                        To  she went, but not brainlessly! Erin "Oohed" and "Ahhed" at the recently picked pens. She envied the skills of those using compilers she has yet to dabble in. Then she put together a list of what she would like to achieve.
+                    </p>
+                    <p>
+                        Erin chuckled to herself, "This sounds crazy, but what if I develop a section of text that looks like a book?"
+                    </p>
+                    <p>
+                        She paused, realizing that what she was about to do was a trend years ago. This severely increased the chance of her project being mocked after launch. What was the specific trend Erin remembered? Skeuomorphism.
+                    </p>
+                    <dl>
+                        <dt><strong>skeu&bull;o&bull;morph</strong></dt>
+                        <dd>
+                            <em>noun</em><br>
+                            an object or feature that imitates the design of a similar artifact made from another material.
+                        </dd>
+                    </dl>
+                    <p>
+                        Outside of skeuomorphism, the idea actually was not very silly. Erin always had an appreciation towards print work. The thought of mimicking similar designs onto a web interface has always fascinated her. So, why not start with the classic print design of a novel?
+                    </p>
+                    <p>
+                        She began to jot down a list of elements that are typically in a novel:
+                    </p>
+                    <ul>
+                        <li>Serif typefaces</li>
+                        <li>
+                            Header area with the title of the book on the left, and the author of said book on the right. <em>Erin is aware that content within the header of the same page as a chapter title does not appear, but she made an exception</em>.
+                        </li>
+                        <li>An adorned chapter title</li>
+                        <li>A dropcap for the first letter of the first paragraph of the chapter</li>
+                        <li>Indented paragraphs</li>
+                        <li>Page numbers</li>
+                    </ul>
+                    <p>
+                        She was then picturing herself making marks on a novel like she used to in school. In her true fashion, she got carried away with "What ifs." 
+                    </p>
+                    <ul>
+                        <li>
+                            "What if highlighting the text actually looked <mark>like a highlighter</mark>?"
+                            <ul>
+                                <li>"What if I wanted it to be <mark class="pink">pink</mark>?"</li>
+                                <li>"<mark class="blue">Blue</mark>?"</li>
+                                <li>"<mark class="green">Green</mark>?"</li>
+                                <li>"<mark class="orange">Orange</mark>?"</li>
+                            </ul>
+                        </li>
+                        <li>"What if I found  and wanted to make a correction?"</li>
+                        <li>"What if I was viewing this on mobile&mdash;"</li>
+                    </ul>
+                    <p>
+                        The true obstacle showed its form. Responsiveness. How on Earth will she make this work?
+                    </p>
+                    <p>
+                        Erin pulled out her notepad and started sketching. First she began to illustrate the wireframe of the book in its entirety. Then she recorded some notes on how each element would break down as the screen size got smaller. After several minutes, the blueprint was complete. She came to the conclusion that mobile viewing must stay minimal. The pages go away, which makes the page numbers no longer have a function so they must go away, and if those go away then there is no need for a cover since it is used to help hold and protect pages.
+                    </p>
+                    <p>
+                        She looks back at the blinking cursor of her blank canvas in Sublime Text 2. Doubt begins to linger in the back of her mind with the thought of her new code never being used and her time spent ends up being a waste. Her fingers were typing anyway.
+                    </p>
+                    <p>
+                        Erin smirked, "Well at least I think it's worth a try."
+                    </p>
+                </article>
+                <footer>
+                    <ol id="page-numbers">
+                        <li>1</li>
+                        <li>2</li>
+                    </ol>
+                </footer>
+            </section>
+    
+        </div>
+    </div>
+</body>
+</html>
