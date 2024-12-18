@@ -261,7 +261,9 @@
 						"enemy": {
 							"name": "Óriáspók",
 							"skill": 9,
-							"stamina": 5
+							"stamina": 5,
+							"sebzes": -2,
+							"menekules": false
 						}
 					}
                 },
@@ -574,7 +576,9 @@
 						"enemy": {
 							"name": "Tolvaj",
 							"skill": 7,
-							"stamina": 6
+							"stamina": 6,
+							"sebzes": -2,
+							"menekules": false
 						}
 					}
                 },
@@ -785,7 +789,7 @@
 						},
 						{
 							"_targetNode": "150",
-							"__text": " Ha a második érdekel, lapozz a 150-re."
+							"__text": "Ha a második érdekel, lapozz a 150-re."
 						},
 						{
 							"_targetNode": "197",
@@ -941,7 +945,9 @@
 						"enemy": {
 							"name": "Törpe",
 							"skill": 8,
-							"stamina": 5
+							"stamina": 5,
+							"sebzes": -2,
+							"menekules": false
 						}
 					}
                 },
@@ -1024,7 +1030,7 @@
 					},
 					"_id": "71",
                     "End": false,
-					"tovabbiDamage": 1,
+					"tovabbiTamadoero": 1,
 					"szerencse": 1
 				},
 				{
@@ -1196,7 +1202,7 @@
 					},
 					"_id": "83",
                     "End": false,
-					"itemAdd": "gyémánt",
+					"itemAdd": "Gyémánt",
 					"gold": 27
 				},
 				{
@@ -1298,7 +1304,7 @@
 					},
 					"_id": "89",
                     "End": false,
-					"tovabbiDamage": -2
+					"tovabbiTamadoero": -2
 				},
 				{
 					"Description": "Az ajtón benyitva vaksötét fogad.",
@@ -1334,9 +1340,1400 @@
 							"__text": "Lapozz a 76-ra."
 						}
 					},
-					"_id": "91",
+					"_id": "92",
 					"End": false,
 					"itemAdd": "Szobor"
+				},
+				{
+                    "Description": "Már félúton jársz lefelé, mikor vérfagyasztó üvöltés csapja meg a füledet. Ahogy feltekintesz egy hatalmas madarat pillantasz meg, ami egy, a sziklafalon lévő ágról tekint le rád. Széles szárnyai egyetlen csapásával a levegőbe emelkedik, tesz egy kört a folyó felett, majd megindul feléd. Érzed, ahogy tenyered izzadni kezd a félelemtől. A kötél kicsúszik a kezeid közül, te pedig zuhanni kezdesz a talaj felé. A hatalmas madár diadalmas rikoltással kap el téged a levegőben, majd felrepül a fészkéhez és érzed, hogy esel... esel... egyenesen ocsmány kicsinyei közé, akik már türelmetlenül várják a következő etetést. Egyesével tépik ki végtagjaidat, majd mohon befalják. Kalandod itt véget ér.",
+                    "_id": "93",
+                    "End": true
+                },
+				{
+					"Description": "Betekered ellenfeled saját ezüstszínü hálójába. Ezután megragadod a rubint és az ajtó felé indulsz. Már alig várod, hogy kikerülj ebből a selyemmel bevont kriptából! A Pók hatalmas teteme, melyet ragacsos selyemszálak borítanak, az út kellős közepén hever. Kénytelen vagy átmászni rajta, és az enyves massza érintésétől valósággal rosszul leszel. Mikor végre eléred a kijáratot, meghemperegsz a porban, hogy megszabadulj a ragacsos érzéstől. Koszos vagy és fáradt. Magad mögött hagyod a helyet és északnak indulsz.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "106",
+							"__text": "Lapozz a 106-ra."
+						}
+					},
+					"_id": "94",
+					"End": false
+				},
+				{
+					"Description": "Nyugati irányba mész, le egy lejtős járaton, míg el nem érsz egy újabb elágazást. Úgy gondolod, a déli út visszafelé vezetne, így észak felé indulsz.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "153",
+							"__text": "Lapozz a 153-ra."
+						}
+					},
+					"_id": "95",
+					"End": false
+				},
+				{
+					"Description": "Az alagút kanyarulata mögül túlvilági ragyogás árad. Ahogy a falra vetült játékot nézed, úgy érzed, a fény magától lüktet és változtatja a színét. Nagyon óvatosan fordulsz be a kanyarban, amin túl igen bizarr látvány fogad. Három nagyon alacsony, ezüstszínű, lebegő köpenybe öltözött alak táncol valamilyen rituális táncot a fény forrása körül. Az üreg falát itt mindenhol tükrök borítják, és a változó színek oda-vissza ugrálnak ezek közt, a lüktető ragyogástól erős szédülés tör rád. A forrás egy hatalmas kristály, mely egy magas talapzaton nyugszik, és képtelen vagy megállapítani, pontosan miféle kö is ez. Egyébként sincs idöd sokat spekulálni ezen, mivel az ezernyi tükörképnek köszönhetően az alakok felfigyelnek egy óvatlan mozdulatodra. A lények dühödten felkiáltva vetik rád magukat. Egy ellenfélként küzdj meg vele.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "191",
+							"__text": "Ha győzöl, lapozz a 191-re."
+						},
+						{
+							"_targetNode": "0",
+							"__text": ""
+						}]
+					},
+					"_id": "96",
+					"End": false,
+					"enemies": {
+						"enemy": {
+							"name": "Fényimádók",
+							"skill": 9,
+							"stamina": 11,
+							"sebzes": -2,
+							"menekules": false
+						}
+					}
+                },
+				{
+					"Description": "Kezed egyből a kardod markolatára teszed, hogy elállítsd a csengő hangot. A kutya mocorog egy kicsit, de nem ébred fel. Szíved a torkodban dobog, ahogy haladsz, de végül gond nélkül elérsz a túloldalra, leemeled a kulcsot a szögről, csendesen kinyitod az ajtót és becsapod magad mögött. Miközben odakinn ráfordítod a kulcsot, a túloldalról félelmetes morgást és repedő fa hangja szűrődik át, ahogy az állat újra és újra nekiugrik.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "30",
+							"__text": "Lapozz a 30-ra."
+						}
+					},
+					"_id": "97",
+					"End": false
+				},
+				{
+					"Description": "Az ajtó ugyan zárva van, de a korábban talált kulccsal gond nélkül sikerül kinyitnod. Ahogy belépsz, két dárda repül elő az ajtóban lévő egyik lyukból. Tedd próbára SZERENCSED!",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "44",
+							"__text": "Ha a szerencsés vagy, lapozz a 44-re."
+						},
+						{
+							"_targetNode": "8",
+							"__text": "Ha nincs szerencséd, lapozz a 8-ra."
+						}]
+					},
+					"_id": "98",
+                    "End": false,
+					"Dice": {
+						"dob": true,
+						"mit": "szerencse"
+					}
+				},
+				{
+					"Description": "A fáklyák halovány fényében súlyos vasrácsot látsz a fal jobb oldalán. Zárva van, és bármennyire is erölködsz, semmit nem látsz mögötte.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "159",
+							"__text": "Ha van nálad egy Bronz Kulcs, és azzal próbálod meg kinyitni a zárat, lapozz a 159-re.",
+							"_requiresItem": "Bronzkulcs"
+						},
+						{
+							"_targetNode": "68",
+							"__text": "Ha nincs nálad a Kulcs, vagy nem akarod kinyitni a ketrecszerű kaput, lapozz a 68-ra és folytasd az utad észak felé."
+						}]
+					},
+					"_id": "99",
+					"End": false
+                },
+				{
+					"Description": "A szörnyeteg holtan hever elötted. Nyáladzó pofájának tartalmát gyorsan magába szívja a poros talaj. Karmai színaranyak; egyesével letéped öket a hatalmas mancsról, majd zsebre vágod öket. Ezután leemeled a kulcsot a szegről, kinyitod az ajtót és távozol.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "30",
+							"__text": "Lapozz a 30-ra."
+						}
+					},
+					"_id": "100",
+					"End": false
+				},
+				{
+					"Description": "A sár felszíne domborodni kezd, és tompa pukkanás kíséretében egy óriási gázbuborék emelkedik ki belöle. Ahogy a felszín kisimulna, apró, zöld színü, cikázó fények jelennek meg rajta. A foltocskák kiemelkednek, aljukból csápok nőnek ki, melyek percről percre hosszabbodnak. Végül egy Iszapsárkány óriási feje bukkan elő félig a nyálkás folyadék mélyéből! Most már látod, hogy a zöld fények, amiket korábban láttál, valójában a lény fejéből kinövő csápok, melyek egészen addig szabadon lengeni látszanak, míg hirtelen mindegyik rád nem szegeződik. A hatalmas száj kinyílik, förtelmes szagú gáz tör elő belőle, ezután ellenfeled duzzadni kezd, ahogy levegővel szívja meg magát. Egyre csak nő és nő, míg végül kezded úgy érezni, hogy teljesen betölti a termet. Meg kell küzdened vele. Előhúzod kardodat, mely hirtelen elégtelennek tűnik ellenfeleddel szemben.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "82",
+							"__text": "Ha gyözöl, lapozz a 82-re."
+						},
+						{
+							"_targetNode": "0",
+							"__text": ""
+						}]
+					},
+					"_id": "101",
+					"End": false,
+					"enemies": {
+						"enemy": {
+							"name": "Iszapsárkány",
+							"skill": 10,
+							"stamina": 6,
+							"sebzes": -2,
+							"menekules": false
+						}
+					}
+                },
+				{
+					"Description": "Miután felhajtod az üvegcsében lévő italt, megdöbbenve tapasztalod, mennyivel jobban érzed most magad. Az üvegben a Szerencse Italának egy adagja volt. Növeld meg 1-el Kezdeti SZERENCSÉDET, majd állítsd vissza jelenlegi pontjaidat erre az új értékre. Folytatod a kúszást észak felé.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "169",
+							"__text": "Lapozz a 169-re."
+						}
+					},
+					"_id": "102",
+					"End": false,
+					"szerencseVisszaallitPluszEgy": true
+				},
+				{
+					"Description": "Bár a víz mély és elég gyors folyású, van annyi erő benned, hogy folyásirányba úszva jóval lentebb kievickélj a partra. Miután kifüjtad magad, visszatérsz a hídhoz és folytatod utad az ösvényen.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "76",
+							"__text": "Lapozz a 76-ra."
+						}
+					},
+					"_id": "103",
+					"End": false
+				},
+				{
+					"Description": "A kék könyv térképeket tartalmaz, és bár minden nevet Elfül írtak bele, a képen felismerni véled Analandot. Úgy tűnik, ez a mű tartalmazza azon városok, falvak, és ami még fontosabb, bányák helyzetét, melyekben drágakövet vagy nemesfémet találhatsz. Ha sikerülne magaddal vinned ezt a kötetet a felszínre, futármunkád sokkal jövedelmezöbbé és biztonságosabbá válhatna. Biztonságba helyezed hát kabátod egyik belső zsebébe. Mielőtt elhagynád a termet, még belenézhetsz a  &#8211;",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "59",
+							"__text": "piros - lapozz az 59-re"
+						},
+						{
+							"_targetNode": "88",
+							"__text": "vagy a zöld - lapozz a 88-ra könyvbe."
+						},
+						{
+							"_targetNode": "10",
+							"__text": "Ha inkább egyszerűen távoznál az északi ajtón át, lapozz a 10-re."
+						}]
+					},
+					"_id": "104",
+					"End": false
+                },
+				{
+					"Description": "Döbbenten veszed észre, hogy köpenyed felfúvódik és felemel a lábadról. Lassan lebegsz le a talajra, és könnyedén érsz földet. Alig mered elhinni, mekkora szerencséd van.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "27",
+							"__text": "Lapozz a 27-re."
+						}
+					},
+					"_id": "105",
+					"End": false
+				},
+				{
+					"Description": "A járat továbbra is északnak tart, de hamarosan egy leágazást találsz, mely keletre tér le.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "179",
+							"__text": "Ha erre mennél tovább, lapozz a 179-re."
+						},
+						{
+							"_targetNode": "153",
+							"__text": "Ha egyenesen folytatnád az utad, lapozz a 153-ra."
+						}]
+					},
+					"_id": "106",
+					"End": false
+                },
+				{
+					"Description": "Mivel az ajtó túloldaláról hangokat hallasz átszűrődni, óvatosan nyitsz be. Ahogy bekukucskálsz a túloldalon, két csevegő Orkot veszel észre. Remélve, hogy nem fogod érdekelni őket, megpróbálsz elsétálni mellettük, ám mikor észrevesznek, mindketten kardot húznak elő. Egyesével kell megküzdened velük.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "198",
+							"__text": "Ha legyőzöd ellenfeleidet, lapozz a 198-ra."
+						},
+						{
+							"_targetNode": "0",
+							"__text": ""
+						}]
+					},
+					"_id": "107",
+					"End": false,
+					"kuzdesEgyesevel": true,
+					"enemies": {
+						"enemy": [{
+							"name": "Első Ork",
+							"skill": 5,
+							"stamina": 6,
+							"sebzes": -2,
+							"menekules": false
+						},
+						{
+							"name": "Második Ork",
+							"skill": 6,
+							"stamina": 5,
+							"sebzes": -2,
+							"menekules": false
+						}]
+					}
+                },
+				{
+					"Description": "Északi irányba követed az átjárót. Hamarosan elérsz egy keleti leágazáshoz.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "146",
+							"__text": "Hogyha egyenesen mész tovább, lapozz a 146-ra."
+						},
+						{
+							"_targetNode": "79",
+							"__text": "Ha letérsz jobbra, lapozz a 79-re."
+						}]
+					},
+					"_id": "108",
+					"End": false
+                },
+				{
+					"Description": "Elhátrálsz a férgek elöl, míg kinyújtott kezeiddel meg nem érzed az északi falat. Megfordulsz és próbálsz valamilyen lábtartót keresni a padló szintje fölött. Egy keskeny szegély fut végig nagyjából fél méter magasan. Kapaszkodót keresve végül megmarkolsz egy kiálló ködarabot és fellépsz... Majdnem elveszted a fogódzkodódat, mikor a falszakasz, amin kapaszkodsz, befordul és téged is kimenekít szorult helyzetedből. A szobán kívül találod magad, egy észak felé haladó folyosón. Megkönnyebbülten fellélegzel, lelépsz a falról és elöre indulsz. Egy elágazáshoz érkezel, melyen szintén egyenesen haladsz tovább.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "195",
+							"__text": "Lapozz a 195-re."
+						}
+					},
+					"_id": "109",
+					"End": false
+				},
+				{
+					"Description": "Az Aranykulcs illik a zárba, és egy észak felé haladó folyosót fed fel elötted. A járat élesen jobbra kanyarodik, majd vissza balra. A második sarok után egy tükörrel kerülsz szembe, ami teljesen elállja az utadat. Egy pillanatig saját tükörképed néz veled farkasszemet, a következőben pedig &#8211; legnagyobb megrökönyödésedre &#8211; már ki is lép belőle, előhúzza kardját és rád támad! Mivel ez a valami a tökéletes tükörképed, ugyanolyan ÜGYESSÉGGEL rendelkezik, mint te, ám miután a síkból térbe való kilépés eléggé kimerítette, ÉLETEREJE 2-vel kevesebb lesz a tiédnél. Ez ígérkezik a legnehezebb harcodnak, mivel nem vagy meggyőződve arról, hogy meg tudod-e nyerni. Az biztos, hogy ö végezni tud veled, abban azonban már kevésbé vagy biztos, hogy ellenfeled legyőzése nem fog-e öngyilkosságnak minősülni? Ha megnyered a csatát, lapozz a 128-ra.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "128",
+							"__text": "Ha megnyered a csatát, lapozz a 128-ra."
+						},
+						{
+							"_targetNode": "0",
+							"__text": ""
+						}]
+					},
+					"_id": "110",
+					"End": false,
+					"enemies": {
+						"enemy": {
+							"name": "Tükörkép",
+							"skillEgyenlő": true,
+							"staminaMás": -2,
+							"sebzes": -2,
+							"menekules": false
+						}
+					}
+                },
+				{
+					"Description": "Az alagút elkeskenyedik, és egyre nehezebben tudsz csak előre haladni. A plafon meredeken lefelé indul, így először le kell hajolnod, végül négykézlábra kényszerülsz. Valamennyire látod magad előtt az utat a szük járaton át. Tedd próbára SZERENCSED!",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "20",
+							"__text": "Ha szerencséd van, találsz egy kézre álló kődarabot, amivel sikerül eléggé kiszélesítened az alagutat ahhoz, hogy gond nélkül továbbhaladhass-lapozz a 20-ra."
+						},
+						{
+							"_targetNode": "8",
+							"__text": "Ha nincs szerencséd, lapozz a 116-ra."
+						}]
+					},
+					"_id": "111",
+                    "End": false,
+					"Dice": {
+						"dob": true,
+						"mit": "szerencse"
+					}
+				},
+				{
+					"Description": "Ahogy a folyosón haladsz, furcsa hangot hallasz. Megállsz hallgatózni. Csoszogó léptek zaja üti meg a füledet. Nincs hová bújnod, így valamiféle szörnyeteg felbukkanását várva előhúzod kardodat. Ehelyett egy öregember bukkan fel elötted. Fegyveredre pillant, és esdekelni kezd. &#8211; Kímélj meg! Csak egy vén, egyszerü fickó vagyok. aki elmenekült a cellájából. Hüvelyébe dugod a kardod, a férfi pedig elmondja, hogy már évek óta itt él, mióta fiatal korában beküldték az Ítélet Labirintusába. Az egyik szörny elleni harc során súlyos sebet szerzett, és bár túlélte az összecsapást, elvesztette a fegyvereit és így képtelen volt folytatni az utat. Régóta bujkál már idelenn. most pedig már túl öreg ahhoz, hogy visszatérjen a fenti világba, ahol egyébként is végeznének vele, mivel nem tudja a Szobor bemutatásával bizonyítani ártatlanságát. Így inkább idelenn maradt a végtelen éjszakában, és abból élt, amivel az utazók megszánták. Miközben beszél, úgy dönt, még egy utolsó kísérletet tesz a kijutásra, így megkérdezi tőled, merre találja a bejáratot.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "187",
+							"__text": "Hogyha megmondod neki, lapozz a 187-re."
+						},
+						{
+							"_targetNode": "156",
+							"__text": "Ha rossz utat mondasz neki, lapozz a 156-ra."
+						}]
+					},
+					"_id": "112",
+					"End": false
+                },
+				{
+					"Description": "Ahogy felrázod, a fickó szemei felpattannak, és mikor megpillant téged, rettegés tölti el. &#8211; Ne, ne! Kérem, ne öljön meg! &#8211; könyörög. Ha életben hagy, minden eldugott pénzemet magának adom!",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "17",
+							"__text": "Ha végezni akarsz vele, lapozz a 17-re."
+						},
+						{
+							"_targetNode": "83",
+							"__text": "Ha elfogadod az ajánlatát, lapozz a 83-ra."
+						}]
+					},
+					"_id": "113",
+					"End": false
+                },
+				{
+					"Description": "Kitartóan kutatsz, de semmit nem találsz.. Végül leülsz egy nagy, négyzet alakú köre, hogy megpihenj, azonban amint teljes súlyoddal ránehezedsz, csikorgó hang üti meg a füledet, és a fal egy része kinyílik. Minden korábbi fáradtságodat feledve talpra ugrasz és folytatod az utad.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "177",
+							"__text": "Lapozz a 177-re."
+						}
+					},
+					"_id": "114",
+					"End": false
+				},
+				{
+                    "Description": "Lezuhansz a verembe, és felkészülsz rá, hogy talpad mindjárt a sziklás padlóba ütközik. Az azonban csak nem jön, és beletelik egy kis időbe, hogy rádöbbenj: a lyuknak nincs is alja! A súlytalanság érzése kerít hatalmába, te pedig csak esel... és esel... és esel... Kalandod itt véget ér.",
+                    "_id": "115",
+                    "End": true
+                },
+				{
+                    "Description": "Hátizsákod beszorul az egyre keskenyedo járatban. Képtelen vagy kibújni belőle, és bármennyire is próbálkozol, meglazítani sem vagy képes. Egy pillanatig megpihensz., majd újult elszántsággal teszel még egy utolsó próbát. Mély, remegő hangot hallasz és a levegőt por tölti meg, miközben mögötted a plafon egy része az alagútba zuhan. Immáron teljes sötétségbe vagy zárva. Tudod, hogy nem fogsz megfulladni, mivel hüvös szellő simogatja az arcod az elötted magasodó fal egy keskeny repedésén át. Rájössz, hogy éhés szomjhalál vár rád, így imádkozni kezdesz egy újabb plafonbeomlásért, ami meggyorsíthatná végedet. Kalandod itt véget ér.",
+                    "_id": "116",
+                    "End": true
+                },
+				{
+					"Description": "Sikerül oldalra gurulnod, és így csak kicsit sérülsz meg. Vesztesz 1 ÉLETERŐ pontot. Nem vesztegeted az időt, északnak indulsz.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "126",
+							"__text": "Lapozz a 126-ra."
+						}
+					},
+					"_id": "117",
+					"eletero": -1,
+					"End": false
+				},
+				{
+					"Description": "Egy három ajtós terembe lépsz be. Azon kívül, amin át beléptél, látsz még egyet a szemközti falon és egyet magad mellett, mely valószínűleg arra megy vissza, amerröl jöttél, csak esetleg egy másik szintre.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "145",
+							"__text": "Lapozz a 145-re."
+						}
+					},
+					"_id": "118",
+					"End": false
+				},
+				{
+					"Description": "Ahogy ujjadra húzod a gyürüt, erős, égető érzés tölti el az ujjadat. Vesztesz 1 SZERENCSE és 2 ÉLETERŐ pontot. Megpróbálod lehúzni, de minél jobban rángatod, annál inkább összezsugorodik. Valaha ez volt az Ügyesség Gyürüje, ám egy ösi banya átkot szórt rá, ami nagyjából semlegesítette azon bónuszokat, amiket adott.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "12",
+							"__text": "Ha fel szeretnéd venni a köpenyt, és korábban még nem próbáltad, lapozz a 12-re.",
+							"_requiresItem": "Köpeny",
+							"_proba": false
+						},
+						{
+							"_targetNode": "71",
+							"__text": "Amennyiben még nem ittad meg a folyadékot, és most felhajtanád, lapozz a 71-re.",
+							"_requiresItem": "Folyadék",
+							"_proba": false
+						},
+						{
+							"_targetNode": "80",
+							"__text": "Hogyha bezárnád a csapóajtót és az ajtón kilépve észak felé távoznál, lapozz a 80-ra."
+						}]
+					},
+					"_id": "119",
+                    "End": false,
+					"szerencse": -1,
+					"eletero": -2
+				},
+				{
+					"Description": "Ahogy kinyitod az ajtót, meglepetten pillantod meg a csillogó Aranyszobrot egy emelvény tetején! Éppen úgy néz ki, mint amilyennek leírták. Hogy elérd, át kell jutnod a szobán, melynek padlóját kifeszített drótok futják be össze-vissza, és amik a falban nagyjából mellkas magasságban lévő számszerijakhoz csatlakoznak.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "3",
+							"__text": "Hogyha meg akarsz próbálni bejutni, hogy megszerezd a Szobrot, lapozz a 3-ra."
+						},
+						{
+							"_targetNode": "28",
+							"__text": "Ha úgy döntesz, hogy ez túlságosan kockázatos lenne, becsuknád magad mögött az ajtót és inkább kelet felé indulnál, lapozz a 28-ra."
+						}]
+					},
+					"_id": "120",
+					"End": false
+                },
+				{
+					"Description": "Nincs más választásod, minthogy a válladdal ronts neki az ajtónak. Nem lesz egy egyszerű feladat, mivel a szegecsek igen hosszúak és hegyesek.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "196",
+							"__text": "Lapozz a 196-ra."
+						}
+					},
+					"_id": "121",
+					"End": false
+				},
+				{
+					"Description": "Az alagút egy ideig kelet felé folytatódik. végül északra fordul. Ahogy a kanyar felé közeledsz, a szemben lévő falon egy lüktető fényfoltot veszel észre. Óvatosan nézel be balra.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "144",
+							"__text": "Lapozz a 144-re."
+						}
+					},
+					"_id": "122",
+					"End": false
+				},
+				{
+					"Description": "Nagy nehezen bemászol a lyukba és ereszkedni kezdesz. A levegő hőmérséklete rohamosan növekedni kezd, és rájössz, hogy nagy hibát követtél el. Egyenesen egy földalatti kemence felé tartasz. Lángnyelvek csapnak feléd, ahogy próbálsz visszamászni a lejtőn.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "35",
+							"__text": "Lapozz a 35-re."
+						}
+					},
+					"_id": "123",
+					"End": false
+				},
+				{
+					"Description": "Az ajtó egy teljesen üres szobába nyílik. A padlón egy nagy lyuk tátong. Ahogy a szélére lépsz és letekintesz, látod, hogy nem túl mély. Egy folyosó indul odalenn, mely szintén északi irányba halad tovább.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "129",
+							"__text": "Hogyha elhagyod a helyiséget és folytatod az utadat, lapozz a 129-re."
+						},
+						{
+							"_targetNode": "64",
+							"__text": "Ha leereszkedsz az alsóbb szintre, és ott mész tovább, lapozz a 64-re."
+						}]
+					},
+					"_id": "124",
+					"End": false
+                },
+				{
+					"Description": "Egy hosszú lépcsősor lábához érkezel. A felfelé vezető út korántsem olyan nehéz, mint amitől tartottál. Nyersz 1 SZERENCSE pontot.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "142",
+							"__text": "Lapozz a 142-re."
+						}
+					},
+					"_id": "125",
+					"End": false,
+					"szerencse": 1
+				},
+				{
+					"Description": "Az alagút északi irányba halad, egy idő után azonban kettéágazik. A jobb oldali alagút olyan meredeken ereszkedik lefelé, hogy még durván faragott lépcsőket is látsz benne.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "155",
+							"__text": "Ha erre akarsz továbbmenni, lapozz a 155-re."
+						},
+						{
+							"_targetNode": "118",
+							"__text": "Ha a szintben maradó, egyenesen továbbhaladó folyosón folytatnád az utad, lapozz a 118-ra."
+						}]
+					},
+					"_id": "126",
+					"End": false
+                },
+				{
+					"Description": "A járat fokozatosan kiszélesedik, és hamarosan egy sziklapárkányra érsz, ami keletnyugati irányban fut végig egy magas sziklafal közepén. Tiszta szerencse, hogy nem siettél nagyon, különben most egyenesen a szakadékba zuhantál volna. Hasra fekszel a párkányon és letekintesz a szélén. Messze alattad egy kis hidat látsz, ami sebesen folyó patak felett ível át. Elhátrálsz a széléről. Felnézel, de semmit nem látsz, csak a sötétséget. Nem látod, hogyan tudnál leereszkedni a völgy fenekére, a perem pedig nem messze semmivé keskenyedik mindkét oldalon.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "23",
+							"__text": "Ha nálad van a Lebegés Köpenye lapozz a 23-ra.",
+							"_requiresItem": "Köpeny"
+						},
+						{
+							"_targetNode": "62",
+							"__text": "Ha nincs, lapozz a 62-re."
+						}]
+					},
+					"_id": "127",
+                    "End": false
+				},
+				{
+					"Description": "Még élsz! Bármennyire is fáradt vagy, kardod markolatával darabokra zúzod a tükröt. Ebből már nem fog újabb kihívó előlépni. Egy keskeny szirten találod magad, egy magas sziklafal kellős közepén. A barlangüreg plafonja áthatolhatatlan sötétségbe burkolózik. Előtted egy folyó halad keletről nyugatra, felette pedig egy hid ivel át. Nem találsz lefelé vezető utat, csak egy vasgyürün akad meg a szemed, amit a falba rögzítettek. Hozzákötöd a köteled, majd elkezdesz lefelé mászni. Tedd próbára SZERENCSED!",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "48",
+							"__text": "Ha szerencséd van, lapozz a 48-ra."
+						},
+						{
+							"_targetNode": "93",
+							"__text": "Ha nincs szerencséd, lapozz a 93-ra."
+						}]
+					},
+					"_id": "128",
+                    "End": false,
+					"Dice": {
+						"dob": true,
+						"mit": "szerencse"
+					}
+				},
+				{
+					"Description": "Hamarosan egy újabb elágazáshoz érsz.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "112",
+							"__text": "Ha kelet felé mennél tovább. lapozz a 112-re."
+						},
+						{
+							"_targetNode": "66",
+							"__text": "Hogyha északnak folytatnád az utad, lapozz a 66-ra."
+						}]
+					},
+					"_id": "129",
+                    "End": false
+				},
+				{
+					"Description": "Minden erödet összeszedve próbálod megemelni a fülénél fogva, azonban meg sem moccan. Kénytelen vagy feladni a dolgot és északi irányban folytatni az utad.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "80",
+							"__text": "Lapozz a 80-ra."
+						}
+					},
+					"_id": "130",
+					"End": false
+				},
+				{
+					"Description": "Elmondod a férfinak, hogy nincs nálad a Szobor. Arca kifejezéstelen, amikor megszólal. &#8211; Rendben van. Kövess. Megfordul, és egy csigalépcsőn elindul fölfelé. Nincs választásod, kénytelen vagy követni. A lépcső egy pódiumon ér véget, és boldogsággal tölt el, hogy ismét börödön érezheted a nap sugarait, a szellőt. Mintha egy éve nem jártál volna a felszínen.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "26",
+							"__text": "Lapozz a 26-ra."
+						}
+					},
+					"_id": "131",
+					"End": false
+				},
+				{
+                    "Description": "A víz elsodor a szikla mellett, és bármenynyire is igyekszel, nem tudod elkapni. Próbálsz az áramlattal együtt úszni, abban bízva, hogy végül a partra vet téged, ám miközben a barlangüreg nyugati fala felé közeledtek, kénytelen vagy rájönni, hogy a folyam eltűnik egy keskeny alagútban. Ha a felszínen maradsz, csúnyán be fogod verni a fejed a plafonba, úgyhogy mély levegőt veszel és lebuksz. Az áramlat magával sodor az alagútba, és többé nem bukkansz elő. Kalandod itt véget ér.",
+                    "_id": "132",
+                    "End": true
+                },
+				{
+                    "Description": "Kardoddal széttöröd a zárat és kitárod a cella ajtaját. Szabad vagy. Most pedig gyorsan mondd el, hol va... A férfi véznaságához képest meglepő fürgeséggel rád ugrik és kicsavarja kezedből a kardodat. Ezután a gyomrodba szúrja saját fegyvered. és csuklójának egy csavarásával kibelez. Nem lett volna szabad megbíznod egy bünözőben. Kalandod itt ocsmány véget ér.",
+                    "_id": "133",
+                    "End": true
+                },
+				{
+					"Description": "Valamennyi mágia még van a Gyürüdben, ami figyelmeztet, hogy a szoba átkutatása előtt próbálj meg meggyőződni arról, hogy nincs-e benne csapda. Sikerül kitapogatnod egy alig észrevehető, hajszálvékony rést a köpadlóban, ezért úgy döntesz, nem kockáztatod meg, hogy belépj.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "154",
+							"__text": "Lapozz a 154-re."
+						}
+					},
+					"_id": "134",
+					"End": false
+				},
+				{
+                    "Description": "Felnevetsz a gondolatra, hogy egy ilyen vénséges, törékeny ember árthatna neked, miután annyi veszélyt sikerült túlélned. Dühödt kiáltással felemeled kardodat, hogy egyetlen csapással leszeld az alak fejét a nyakáról. A férfi a lábadra mutat, melyek egyből ólomnehézzé változnak. Képtelen vagy megmozdítani őket. Bár minden izmod megfeszül, combod megkeményedik. hátad merevvé válik, felemelt karjaid megszilárdulnak. Csapás közben megdermedve rémülten nézed, ahogy az idős férfi hozzád lép és csontos ujjával megkocogtatja az arcod. Semmit nem érzel, de hallod a fém és szikla jellemző hangját, mikor gyűrűi az orrodnak ütödnek. Kétségbeesetten próbálva menekülni, még egy utolsó lélegzetet veszel, mielőtt a szíved kövé válik. Kalandod itt véget ér.",
+                    "_id": "135",
+                    "End": true
+                },
+				{
+					"Description": "Visszatérsz a korábbi elágazáshoz. Előtted áll az ajtó, amin át beléptél. Arra nem mehetsz tovább, így északra fordulsz.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "172",
+							"__text": "Lapozz a 172-re."
+						}
+					},
+					"_id": "136",
+					"End": false
+				},
+				{
+					"Description": "Elég hosszú ideje barangolsz már az alagutakban, és kezdesz kétségbe esni, mikor az északi falon egyszer csak egy ajtó bukkan fel.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "120",
+							"__text": "Ha be akarsz nyitni rajta, lapozz a 120-ra."
+						},
+						{
+							"_targetNode": "28",
+							"__text": "Ha kelet felé mennél tovább, lapozz a 28-ra."
+						}]
+					},
+					"_id": "137",
+                    "End": false
+				},
+				{
+					"Description": "Kardodhoz kapsz, de elkéstél. Az állat meghallotta a zajt és felébredt. Rémülten nézed, ahogy először egy, majd két pofa emelkedik fel, hogy a levegőbe szagoljon. Ez nem egy egyszerű kutya, vagy netán farkas. Ez egy rémséges Xlaia, ami legjobb tudomásod szerint körülbelül száz éve halt ki. A falhoz ugrasz, mert tudod, hogy védened kell majd hátadat, és előhúzott karddal készülsz fel a lény támadására. A Xlaia morogva ugrik ki kosarából. Mindkét vicsorgó pofából sárga agyarak lógnak elő, melyeken még ott piroslik legutóbbi ebédjük vére. Hogy még rosszabb legyen a helyzet, a lény szájaiból hosszú, nyálkás szálakban lóg a nyál, ami azt jelenti, hogy ez a fenevad veszett! Bár lenne nálad némi víz, hogy távol tartsd magadtól, ahogy a fenti világban is tennéd. A teremtmény jobbra-balra lengeti fejeit. miközben közeledik feléd. Meg kell küzdened vele!",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "100",
+							"__text": "Ha végzel vele, lapozz a 100-ra."
+						},
+						{
+							"_targetNode": "0",
+							"__text": ""
+						}
+						]
+					},
+					"_id": "138",
+					"End": false,
+					"enemies": {
+						"enemy": {
+							"name": "Xlaia",
+							"skill": 8,
+							"stamina": 7,
+							"sebzes": -2,
+							"menekules": false
+						}
+					}
+                },
+				{
+					"Description": "Miközben felhajtod a színtelen és szagtalan folyadékot, azonnal érzed, hogy felfrissülsz (nyersz 1 ÉLETERŎ pontot).",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "150",
+							"__text": "Hogyha még nem tetted, és most szeretnéd meginni a második üveg tartalmát, lapozz a 150-re."
+						},
+						{
+							"_targetNode": "197",
+							"__text": "Ha a harmadik fiolával próbálkoznál, lapozz a 197-re."
+						},
+						{
+							"_targetNode": "29",
+							"__text": "Ha folytatni akarod az utad kelet felé, lapozz a 29-re."
+						}]
+					},
+					"_id": "139",
+                    "End": false,
+					"eletero": 1
+				},
+				{
+					"Description": "Felkészülsz az ütközetre, miközben a két Denevér zuhanórepülésben közelít feléd. Hogyan is remélheted, hogy kardoddal képes leszel felvenni velük a harcot? Meg kell próbálnod a szoba egy másik részébe csalogatnod öket. Hogyha a pajzsod a levegőbe hajítanád, talán azt hinnék, hogy az egy másik áldozat. Bármit is teszel, egyesével kell megküzdened velük.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "198",
+							"__text": "Ha nyersz, lapozz a 160-ra."
+						},
+						{
+							"_targetNode": "80",
+							"__text": "Ha akarsz, az első kör után a 80-ra lapozva az ajtón át Elmenekülhetsz észak felé."
+						},
+						{
+							"_targetNode": "0",
+							"__text": ""
+						}]
+					},
+					"_id": "140",
+					"End": false,
+					"kuzdesEgyesevel": true,
+					"enemies": {
+						"enemy": [{
+							"name": "Első Denevér",
+							"skill": 5,
+							"stamina": 7,
+							"sebzes": -2,
+							"menekules": true
+						},
+						{
+							"name": "Második Denevér",
+							"skill": 6,
+							"stamina": 6,
+							"sebzes": -2,
+							"menekules": false
+						}]
+					}
+                },
+				{
+					"Description": "A járat hamarosan egy ajtóban ér véget.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "107",
+							"__text": "Ha ki szeretnéd nyitni és belépnél rajta, lapozz a 107-re."
+						},
+						{
+							"_targetNode": "122",
+							"__text": "Ha nem akarod tudni, mi vár rád odabenn és inkább visszamennél az elágazáshoz, hogy kelet felé folytasd az utad, lapozz a 122-re."
+						}]
+					},
+					"_id": "141",
+                    "End": false
+				},
+				{
+					"Description": "A lépcsősor végül egy járatba torkollik, ami kiszélesedik. Lélegzetelállító táj tárul a szemed elé. A folyosó egy széles szirtben ér véget. egy hatalmas barlangüreg falának kellős közepén. Óvatosan a szegély széléhez lépsz és letekintesz. Az egyik oldalon sziklába vájt lépcsősort pillantasz meg, ami egészen a barlang több száz méter mélyen lévő aljáig ereszkedik lefelé. Odalenn egy gyors folyású folyót látsz, amit ha el akarsz érni, kénytelen leszel cikkcakkban lemászni a semmilyen védelmet nem adó lépcsőkön. Az üreg olyan hatalmas, hogy saját légköre van. Most épp felhők gyülekeznek a fejed felett, melyekből időnként villámok csapnak elő. Ez az egyetlen lehetőséged a lejutásra, úgyhogy nagyon óvatosan haladsz. Végül földet érsz..",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "27",
+							"__text": "Lapozz a 27-re."
+						}
+					},
+					"_id": "142",
+					"End": false
+				},
+				{
+					"Description": "A keleti falon egy ajtó bukkan fel. Erős zárt látsz rajta, és túlságosan masszív ahhoz, hogy csak úgy betörhesd.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "70",
+							"__text": "Ha van nálad egy Bronz. Kulcs, lapozz a 70-re.",
+							"_requiresItem": "Bronzkulcs"
+						},
+						{
+							"_targetNode": "106",
+							"__text": "Ha nincs, úgy kénytelen vagy folytatni az utad &#8211; lapozz a 106-ra."
+						}]
+					},
+					"_id": "143",
+                    "End": false
+				},
+				{
+					"Description": "Mikor már félúton jársz a fényfolt felé, a talaj megnyílik alattad, de még az előtt sikerül visszalépned, hogy te is beleesnél &#8211; korábbi óvatosságod meghozta gyümölcsét. Ahogy közelebbről is megvizsgálod, megállapítod, hogy egy kis, kör alakú verem az a padló kellős közepén. Rozoga létra fut lefelé végig az oldalán. de vagy túl sötét van, vagy túl mély lyuk, mert nem látod az alját.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "7",
+							"__text": "Ha szét akarsz nézni benne, lapozz a 7-re."
+						},
+						{
+							"_targetNode": "96",
+							"__text": "Ha inkább átugornád és kiderítenéd, mi a fényfolt forrása, lapozz a 96-ra."
+						}]
+					},
+					"_id": "144",
+                    "End": false
+				},
+				{
+					"Description": "A helyiség közepén egy 30 Aranytallérból épített csillogó kupac áll. Óvatosan, az esetleges csapdákra odafigyelve teszed öket zsebre.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "36",
+							"__text": "Ha további érmék után akarod átkutatni a sarkokat, lapozz a 36-ra."
+						},
+						{
+							"_targetNode": "98",
+							"__text": "Hogyha inkább távoznál az északi ajtón át, lapozz a 98-ra."
+						}]
+					},
+					"_id": "145",
+                    "End": false,
+					"gold": 30
+				},
+				{
+					"Description": "Hamarosan egy ajtóhoz érsz, ami a nyugati falból nyílik. Ahogy végighúzod rajta a kezed, a kilincset keresve, egy keresztet sikerül kitapintanod rajta, amit nem túl mélyen véstek bele.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "51",
+							"__text": "Ha ki akarod nyitni az ajtót, lapozz az 51-re."
+						},
+						{
+							"_targetNode": "80",
+							"__text": "Ha folytatnád az utad észak felé, lapozz a 80-ra."
+						}]
+					},
+					"_id": "146",
+                    "End": false
+				},
+				{
+					"Description": "A járat egy ajtóban végződik.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "22",
+							"__text": "Hogyha ki szeretnéd nyitni, lapozz a 22-re."
+						},
+						{
+							"_targetNode": "108",
+							"__text": "Ha visszatérnél az elágazáshoz, és észak felé folytatnád az utad, lapozz a 108-ra."
+						}]
+					},
+					"_id": "147",
+                    "End": false
+				},
+				{
+					"Description": "Csaknem megfulladsz, de kitartasz. Dobj két kockával.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "103",
+							"__text": "Ha az eredmény kevesebb vagy ugyanannyi, mint UGYESSÉG pontjaid száma, lapozz a 103-ra."
+						},
+						{
+							"_targetNode": "15",
+							"__text": "Ha nagyobb, lapozz a 15-re."
+						}]
+					},
+					"_id": "148",
+                    "End": false,
+					"Dice": {
+						"kocka": 2,
+						"mitNez": "ügyesség"
+					}
+				},
+				{
+					"Description": "Megkérdezed a fogolytól, mondana-e neked valami hasznosat a szabadságáért cserébe. A fickó szemei felcsillannak, és azonnal bólint.-Elmondhatom neked, merre találod a legnagyobb rubint, amit valaha láttál mondja. De elöbb eressz ki innen. &#8211;",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "133",
+							"__text": "Ha teljesíted a kérését, lapozz a 133-ra."
+						},
+						{
+							"_targetNode": "24",
+							"__text": "Hogyha inkább végeznél vele, lapozz a 24-re."
+						},
+						{
+							"_targetNode": "72",
+							"__text": "Ha itt akarod hagyni és az északi ajtón át távoznál, lapozz a 72-re."
+						}]
+					},
+					"_id": "149",
+                    "End": false
+				},
+				{
+					"Description": "Ajkadhoz emeled az üvegcsét és megiszod a tartalmát. Mennyei íze van, így ujjaddal az utolsó cseppet is kitörlöd. Ekkor forogni kezd körülötted a járat, te pedig összeesel. Az üvegben Altató Ital volt. Órákon át heversz a padlón önkívületben, kiszolgáltatva a tolvajoknak és más veszedelmeknek. Mikor felébredsz, még mindig elég fáradtnak érzed magad, bár a fejed teljesen kitisztult. A soron következő csaták során a fáradtság miatt 1-el csökkentened kell majd Támadóerődet.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "139",
+							"__text": "Hogyha még nem tetted és most meg akarod inni az első üvegben lévő folyadékot, lapozz a 139-re."
+						},
+						{
+							"_targetNode": "197",
+							"__text": "Ha a harmadik fiola tartalma érdekelne, lapozz a 197-re."
+						},
+						{
+							"_targetNode": "29",
+							"__text": "Ha folytatod az utad kelet felé, lapozz a 29-re."
+						}]
+					},
+					"_id": "150",
+                    "End": false,
+					"tovabbiTamadoero": -1
+				},
+				{
+                    "Description": "Próbálkozásod, hogy biztonságba juss, teljes mértékben hiábavalónak bizonyult. Egy szikladarabon állsz, melynek tetején harmincméternyit zuhantál lefelé. Miközben azon töprengsz, hogyan juthatnál ki, rájössz, hogy a kút alját, ahol állsz. finom, félig folyékony homok kezdi betölteni. Először lábfejedet temeti be, majd térded, és mire eléri a mellkasodat, karjaidat már nem tudod megemelni. A körülötted feszülő nyomás összezúz, öt perc múlva pedig már teljesen elborít a homok. Kalandod itt véget ér.",
+                    "_id": "151",
+                    "End": true
+                },
+				{
+					"Description": "A járat, melyen most haladsz, elég keskeny, de még át tudod magad préselni a falak között. Balodon egy alagút fut be a folyosóba, te azonban eltökélten mész tovább egyenesen.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "99",
+							"__text": "Lapozz a 99-re."
+						}
+					},
+					"_id": "152",
+					"End": false
+				},
+				{
+					"Description": "A járat szélesedni kezd, repedések és hasadékok jelennek meg a falakon. Zörgö hang szűrődik ki valahonnan, és az egyik lyukból két különös teremtmény ugrik elő. Az egyértelműen látszik, hogy az alvilág lakói, mivel bőrük teljesen fehér, vad szemeik pedig rózsaszínűek. Fejüktől a farkukig hosszú, veszedelmes tüskék borítják hátukat, melyek járás közben jobbra-balra inganak. A lények hátat fordítanak neked, és már kezdesz megörülni, hogy megijedtek tőled és elmenekülnek. Mekkorát tévedtél! Ezek mérges Sündisznók, és épp arra készülnek, hogy halálos tüskéiket beléd löjék. Egymás után küzdj meg velük. Mivel a tüskék nagyon mérgezőek, valahányszor beléd áll valamelyik, a szokásos 2 helyett 3 ÉLETERŐ pontot kell levonnod magadtól.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "42",
+							"__text": "Lapozz a 42-re."
+						},
+						{
+							"_targetNode": "0",
+							"__text": ""
+						}]
+					},
+					"_id": "153",
+					"End": false,
+					"kuzdesEgyesevel": true,
+					"enemies": {
+						"enemy": [{
+							"name": "Első Sündisznó",
+							"skill": 7,
+							"stamina": 5,
+							"sebzes": -3,
+							"menekules": false
+						},
+						{
+							"name": "Második Sündisznó",
+							"skill": 8,
+							"stamina": 5,
+							"sebzes": -3,
+							"menekules": false
+						}]
+					}
+                },
+				{
+					"Description": "Bezárod magad mögött az ajtót és tovább mész kelet felé.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "16",
+							"__text": "Lapozz a 16-ra."
+						}
+					},
+					"_id": "154",
+					"End": false
+				},
+				{
+					"Description": "A lejtő elég meredek, és már régóta mész, mikor a lépcsők megszűnnek, a járat pedig élesen balra kanyarodik. Fárasztó volt idáig az út, ezért lankad a figyelmed, mikor egy mocskos, dagadt Hobgoblin ugrik eléd. Bandzsa szemeivel az egyik bíbor, a másik zöld &#8211; méreget téged. Ruhái ugyanolyan koszosak, mint ő maga, ráadásul eléggé szakadtak is, a kezében lévő kard azonban borotvaéles, és látszik, hogy gondosan karban tartja. Előre nyújtott fegyverrel közeledik feléd.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "50",
+							"__text": "Hogyha győzöl, lapozz az 50-re."
+						},
+						{
+							"_targetNode": "143",
+							"__text": "Ha rosszul alakul a harc, az első Harci Kört követően el tudsz futni ellenfeled mellett, tovább az északra vezető lépcsőkön &#8211; ha így tennél, lapozz a 143-ra."
+						},
+						{
+							"_targetNode": "0",
+							"__text": ""
+						}
+						]
+					},
+					"_id": "155",
+					"End": false,
+					"enemies": {
+						"enemy": {
+							"name": "Hobgoblin",
+							"skill": 7,
+							"stamina": 8,
+							"sebzes": -2,
+							"menekules": true
+						}
+					}
+                },
+				{
+					"Description": "A férfi hűvösen mér végig. &#8211; Hazudsz! mondja. És a hazugok büntetést érdemelnek. Elsétál melletted a folyosón. Nyugtalanul töprengsz azon, vajon hogy is érthette, amit mondott. Hamarosan megtudod. A története ugyan igaz volt, azt azonban nem mondta el, mi volt a foglalkozása a fenti világban, hogy miért került ide: zsebtolvaj volt! 2 adag élelmedet nyúlta le a fickó. Vesztesz 1 SZERENCSE pontot. Ezután folytatod utadat kelet felé.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "57",
+							"__text": "Lapozz a 57-re."
+						}
+					},
+					"_id": "156",
+					"End": false,
+					"szerencse": -1,
+					"food": -2
+				},
+				{
+					"Description": "Az ajtó egy kicsi, szellősen berendezett szobába nyílik. Hangos horkolás hangját hallod, melynek forrása, úgy tűnik, egy szék, mely háttal áll neked: ritka, szürke színü hajtincset vélsz látni felette. Óvatosan megkerülöd az elötted álló asztalt és megvizsgálod az alvó férfit. Egy idős férfi az, aki összefont kézzel alszik a kényelmetlen ülőalkalmatosságon. Az északi falon egy újabb ajtót látsz.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "180",
+							"__text": "Ha ez utóbbin át távoznál, lapozz a 180-ra."
+						},
+						{
+							"_targetNode": "125",
+							"__text": "Hogyha távozol a helyiségből és a folyosón mész tovább, lapozz a 125-re."
+						},
+						{
+							"_targetNode": "166",
+							"__text": "Ha előbb szétnéznél idebenn, lapozz a 166-ra."
+						}]
+					},
+					"_id": "157",
+                    "End": false
+				},
+				{
+					"Description": "Az ajtó becsapódik, te pedig végre felfedezed a füttyszerű sóhajok és susogások forrását. Előtted, a padlón guggolva megpillantod a Galont, a Madárembert. Börszárnyai két oldalt széttárva állnak, kezének éles karmai feléd mutatnak. Azonnal felismered zöldes bőrét, és tudod, hogy izmos karjaival és hatalmas szárnyaival megpróbál majd megfullasztani. Előhúzod kardodat, melynek látványára ellenfeled azonnal örjöngeni kezd, hiszen éhsége kielégíthetetlen. Ez a harc lesz az egyik legnehezebb, amit meg kell itt vívnod.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "61",
+							"__text": "Ha nyersz, lapozz a 61-re."
+						},
+						{
+							"_targetNode": "0",
+							"__text": ""
+						}
+						]
+					},
+					"_id": "155",
+					"End": false,
+					"enemies": {
+						"enemy": {
+							"name": "Galon",
+							"skill": 12,
+							"stamina": 8,
+							"sebzes": -2,
+							"menekules": false
+						}
+					}
+                },
+				{
+					"Description": "Elfordítod a kulcsot a vasrács zárjában. A szárnyak nem nyílnak ki, ahogy arra számitani lehetne, és erősen kell tolnod, hogy megmozdítsd. Végül a nagy nekifeszüléstől felpattan, te pedig a lendülettől hajtva beesel rajta. Legnagyobb rémületedre azonban a helyiségnek, melybe bejutottál, nincsen padlója!",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "43",
+							"__text": "Ha rajtad van a Lebegés Köpenye lapozz a 43-ra.",
+							"_requiresItem": "Köpeny",
+							"_proba": true
+						},
+						{
+							"_targetNode": "12",
+							"__text": "Ha nincs, zuhanni kezdesz lefelé &#8211; lapozz a 115-re."
+						}]
+					},
+					"_id": "159",
+                    "End": false
+				},
+				{
+					"Description": "Lenézel ellenfeleid elernyedt tetemeire. Holtukban még ocsmányabbak, mert a vicsorgás gonosz pofájukra fagyott. A törmelékek között első ránézésre nem sok érdekes dolgot találsz.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "37",
+							"__text": "Ha alaposabban is át akarod vizsgálni, lapozz a 37-re."
+						},
+						{
+							"_targetNode": "80",
+							"__text": "Ha inkább távoznál, és észak felé folytatnád az utad, lapozz a 80-ra."
+						}]
+					},
+					"_id": "160",
+                    "End": false
+				},
+				{
+					"Description": "A járat egy négyzet alakú szobában ér véget, melyet a rothadó hús szaga tölt meg. A padló nagy részét két óriási, bugyborékoló sármedence teszi ki. Egy keskeny kifutó mely nem sokkal szélesebb, mint a lábfejed halad középen, a terem széleit pedig hasonlóan keskeny szegélyek futják körbe. Mindhárom út egy nyilásban fut össze az északi falon.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "181",
+							"__text": "Ha a jobboldalin haladnál végig lapozz a 181-re."
+						},
+						{
+							"_targetNode": "193",
+							"__text": "Ha a baloldalin, lapozz a 193-ra."
+						},
+						{
+							"_targetNode": "171",
+							"__text": "Amennyiben a középső utat választanád, lapozz a 171-re."
+						}]
+					},
+					"_id": "161",
+                    "End": false
+				},
+				{
+					"Description": "Visszanyered egyensúlyod és a rubinért nyúlsz.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "46",
+							"__text": "Lapozz a 46-ra."
+						}
+					},
+					"_id": "162",
+					"End": false
+				},
+				{
+					"Description": "Követed az alagutat, mely szinte azonnal egy újabb szobába torkollik. Ennek a padlója jóval lentebb áll, mint a bejárat, ahol most állsz, padlóját és kör alakú falát pedig elég magasan kölapok borítják. Ezekre különös, egymásba fonódó mintákat festettek, melyek mintha valamilyen mágikus vagy misztikus jelentőséggel rendelkeznének. A helyiség színültig van telve kristálytiszta vízzel, és mivel eléggé mocskos vagy, meg meleged is van, nem tudsz ellenállni a kísértésnek. Levetkőzöl, és miután a biztonság kedvéért a fa ajtófélfába állítod a kardodat, elmerülsz a vízben. Miután percekig boldogan pancsolsz idelenn, és teljesen felfrissülsz, megfordulsz, hogy kimássz. Ekkor veszed észre a víz alatt lévő másik kijáratot. Lemerülsz, hogy alaposabban is szemügyre vedd. A kilincset nem tudod lenyomni, ami azért szerencse, mert ha leeresztenéd a vizet, akkor elég bajos lenne kijutnod a medencéből. Nem találsz itt semmi más érdekeset, így felöltözöl és távozol. Visszatérsz a vermes ajtóhoz.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "185",
+							"__text": "Ha most le akarsz itt ugrani, lapozz a 185-re."
+						},
+						{
+							"_targetNode": "168",
+							"__text": "Ha inkább visszatérnél a korábban látott elágazáshoz és nyugat felé folytatnád az utad, lapozz a 168-ra."
+						}]
+					},
+					"_id": "163",
+                    "End": false
+				},
+				{
+                    "Description": "Ahogy lenyomod a kilincset, az ajtó kicsapódik, mintha valami hatalmas súly nyomná ki a túloldalon. Azonnal rájössz, hogy nagy hibát vétettél, mikor vízsugarak kezdenek el kispriccelni az apró réseken. Kétségbeesetten próbálod újra bezárni a kitörni készülő víztömeget ám hamar rájössz, hogy erre semmi esélyed, így más választásod nem lévén menekülni próbálsz. Az ajtó kicsapódik, a szűk járatban pedig esélyed sincs rá, hogy túléld a dolgot. A víz teljes tömege rád zúdul, te pedig azon nyomban megfulladsz. Kalandod itt véget ér.",
+                    "_id": "164",
+                    "End": true
+                },
+				{
+					"Description": "A sötétben megbotlasz és elterülsz a padlón. Sikerült csúnyán megütnöd magad. Dobj egy kockával, hogy megtudd, hány ÉLETERŐ pontot vesztettél. Előre nyújtott kezeid szinte ugyanebben a pillanatban falba ütközik. Zsákutcába jutottál. Miközben az alagút falát keresed, fémes csörgés üti meg a füled, és lábaddal körbetapogatózva sikerül rálelned egy kis valamire a padlón. Zsebre teszed, majd miután visszamásztál a létrán a fénybe, alaposabban is megvizsgálod. Egy kis Aranykulcs az. Visszateszed a zsebedbe és észak felé indulsz.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "96",
+							"__text": "Lapozz a 96-ra."
+						}
+					},
+					"_id": "165",
+					"End": false,
+					"itemAdd": "Aranykulcs",
+					"Dice": {
+						"pluszminusz": "minusz",
+						"mit": "Stamina"
+					}
+				},
+				{
+					"Description": "Alaposan átkutatod a szobát, a férfi azonban &#8211; talán épp a hangos horkolása miatt nem ébred fel. Elég ártalmatlannak tűnik, de nem egyszer történt már meg korábbi kalandjaid során, hogy életben hagytál egy látszólag veszélytelen ellenfelet, aki aztán egy rejtett tört előkapva hálálta meg a dolgot. Talán az lenne a legjobb, ha egyszerüen végeznél vele.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "17",
+							"__text": "Hogyha ezt teszed, lapozz a 17-re."
+						},
+						{
+							"_targetNode": "113",
+							"__text": "Ha inkább felébreszted, hogy kikérdezd, lapozz a 113-ra."
+						}]
+					},
+					"_id": "166",
+                    "End": false
+				},
+				{
+					"Description": "Rajtad van az Ügyesség Gyürüje?",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "134",
+							"__text": "Ha igen, lapozz a 134-re.",
+							"_requiresItem": "Gyűrű",
+							"_proba": true
+						},
+						{
+							"_targetNode": "58",
+							"__text": "Ha nincs, lapozz az 58-ra."
+						}]
+					},
+					"_id": "167",
+                    "End": false
+				},
+				{
+					"Description": "Egy újabb elágazáshoz érkezel.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "161",
+							"__text": "Ha észak felé mennél, lapozz a 161-re."
+						},
+						{
+							"_targetNode": "73",
+							"__text": "Ha továbbra is nyugati irányba haladnál, lapozz a 73-ra."
+						}]
+					},
+					"_id": "168",
+                    "End": false
+				},
+				{
+					"Description": "A folyosó végén egy kicsiny ajtót találsz. Ahogy figyelsz, különös, csobogó hangot hallasz átszűrődni rajta. Érintésedre különösen hűvösnek tűnik az anyaga.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "164",
+							"__text": "Ha ki akarod nyitni, lapozz a 164-re."
+						},
+						{
+							"_targetNode": "172",
+							"__text": "Ha inkább hagyod, ahol van, lapozz vissza a 172-re és válassz valami mást."
+						}]
+					},
+					"_id": "169",
+                    "End": false
+				},
+				{
+					"Description": "A cövek súlyos sebet ejtett rajtad. Vesztesz 3 ÉLETERŐ pontot. De legalább odaérsz a rubinhoz.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "46",
+							"__text": "Lapozz a 46-ra."
+						}
+					},
+					"_id": "170",
+					"End": false,
+					"eletero": -3
+				},
+				{
+					"Description": "Ahogy a középső pallón sétálsz végig, két oldaladon a sármedencék felszíne bugyborékolni kezd. Óriási gázbuborékok törnek fel belőlük, melyek kidurranva fojtogató. rothadó hússzaggal töltik meg a helyiséget. Tedd próbára SZERENCSED!",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "173",
+							"__text": "Ha szerencséd van, lapozz a 173-ra."
+						},
+						{
+							"_targetNode": "182",
+							"__text": "Ha nincs, lapozz a 182-re."
+						}]
+					},
+					"_id": "171",
+                    "End": false,
+					"Dice": {
+						"dob": true,
+						"mit": "szerencse"
+					}
+				},
+				{
+					"Description": "A folyosó gyorsan szélesedik, végül egy kisebb szoba méreteit ölti magára. Nem messze töled ismét összeszűkül, és újra egyszerű járatként folytatja életét. A padló közepén egy sekély aknát látsz.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "163",
+							"__text": "Ha gyorsan átgázolsz rajta, hogy a túloldalon folytathasd az utad, lapozz a 163-ra."
+						},
+						{
+							"_targetNode": "185",
+							"__text": "Ha bele akarsz ugrani, lapozz a 185-re."
+						},
+						{
+							"_targetNode": "186",
+							"__text": "Ha visszatérnél az előző elágazáshoz, és ott nyugati irányba mennél tovább, lapozz a 168-ra."
+						}]
+					},
+					"_id": "172",
+                    "End": false
+				},
+				{
+					"Description": "Gond nélkül sikerül elérned a túloldalra.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "52",
+							"__text": "Lapozz a 52-re."
+						}
+					},
+					"_id": "173",
+					"End": false
+				},
+				{
+					"Description": "Egy óriási barlangba érkezel, melynek falába egy polcot vájtak. Ebben ül egy tyúktojás méretű rubin. Simára csiszolt lapjai csak úgy csillognak a falon sorakozó faklyák fényében. Elötte félkörbe rendezve, mintegy védvonal gyanánt hosszú, hegyes cövekek sorakoznak több sorban. És mozognak a lyukaikban! Az egyik percben még úgy állnak szét, mint egy kerék küllői, mintha a drágaköböl kisugárzó fényt szimbolizálnák, a következőben pedig már körkörös vonalba fordulnak. Nem lesz egyszerű így eljutni a köhöz, mert egyszerre mindig csak egyet léphetsz előre. A covekek nagyon hegyesek, és könnyen súlyos sérülést okozhatnak.  ",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "189",
+							"__text": "Ha mindezek ellenére megpróbálod megszerezni a rubint, lapozz a 189-re."
+						},
+						{
+							"_targetNode": "184",
+							"__text": "Hogyha úgy érzed, nem éri meg a kockázatot, visszatérhetsz a folyosóra és keletnek fordulhatsz &#8211; lapozz a 184-re."
+						}]
+					},
+					"_id": "174",
+                    "End": false
+				},
+				{
+                    "Description": "Elhátrálsz a közeledő kukacok elől, akik közted és az egyetlen kijárat között terülnek el. Az elől lévők felé csapsz. kardoddal, akik borzalmas cuppanás kíséretében robbannak szét. Helyüket azonban egyből átveszik a mögöttük jövök. Ekkor döbbensz rá, hogy esélytelen vagy ellenük. Végső kétségbeesésedben megpróbálsz átugrani a fogyni nem akaró tömegen, hogy igy érd el az ajtót, ám ahogy lábad földet ér és összelapít néhányat az undorító teremtmények közül, megcsúszol nyálkás maradványaikon és kapálódzó karokkal elterülsz a földön. Minden irányból körbe vagy véve, a legközelebb állók pedig már bele is kezdtek az elfogyasztásodba. Száz apró, erős állkapocs tépi le a húst. izmot és inakat csontjaidról. Bemásznak az orrodba, a szádba, és nemsokára elérik agyad lágy szövetét is. Kimondhatatlan szenvedések közepette veszted el életed. Kalandod itt véget ér.",
+                    "_id": "175",
+                    "End": true
+                },
+				{
+					"Description": "Sikerül szilárd talajra jutnod. Megkönnyebbülten felsóhajtasz.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "32",
+							"__text": "Lapozz a 32-re."
+						}
+					},
+					"_id": "176",
+					"End": false
+				},
+				{
+					"Description": "Bedőltél a cselnek! Ahogy átlépsz a falak között, egy csapdát aktiválsz, mely elsüt egy megtöltött számszerijat. Tedd próbára SZERENCSED!",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "78",
+							"__text": "Ha szerencséd van, lapozz a 78-ra."
+						},
+						{
+							"_targetNode": "21",
+							"__text": "Ha nincs, lapozz a 21-re."
+						}]
+					},
+					"_id": "177",
+                    "End": false,
+					"Dice": {
+						"dob": true,
+						"mit": "szerencse"
+					}
+				},
+				{
+					"Description": "Az alagút egyre alacsonyabbá és szűkebbé válik, így nehéz nem észrevenni az itt heverő kis, kék folyadékot tartalmazó üvegcsét.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "34",
+							"__text": "Lapozz a 34-re."
+						}
+					},
+					"_id": "178",
+					"End": false
+				},
+				{
+					"Description": "Az alagút meredeken megy fölfelé. végül egy elágazásba torkollik. Délre tekintve zsákutcát látsz, úgyhogy ismét észak felé fordulsz.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "127",
+							"__text": "Lapozz a 127-re."
+						}
+					},
+					"_id": "179",
+					"End": false
+				},
+				{
+					"Description": "A járat olyan meredeken emelkedik fölfelé, hogy végül egy kéménnyé változik. Itt már csak úgy tudsz haladni, ha a hátaddal és lábaddal nekifeszülsz két szemben álló falnak, és centinként araszolva mászol felfelé. Mikor végül feljutsz, egy széles szirten találod magad. Nagyon elfáradtál a nehéz mászástól &#8211; vesztesz 1 ÉLETERŐ pontot.",
+					"Choices": {
+						"Choice": {
+							"_targetNode": "56",
+							"__text": "Lapozz a 56-ra."
+						}
+					},
+					"_id": "180",
+					"End": false,
+					"eletero": -1
+				},
+				{
+					"Description": "Ahogy megkerülöd a medencét, látod, amint a sár bugyogni kezd. Hatalmas gázbuborékok emelkednek ki belőle és robbannak fel, rothadó hús szagával töltve be a levegőt. Tedd próbára SZERENCSED!",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "192",
+							"__text": "Ha szerencsés vagy, lapozz a 192-re."
+						},
+						{
+							"_targetNode": "188",
+							"__text": "Ha nincs szerencséd. lapozz a 188-ra."
+						}]
+					},
+					"_id": "181",
+                    "End": false,
+					"Dice": {
+						"dob": true,
+						"mit": "szerencse"
+					}
+				},
+				{
+					"Description": "A sárból két Iszapsárkány feje emelkedik ki. A szemöldökükből kinövő csápok zöld fénnyel izzanak, miközben áldozatuk után kutatnak. Óriási szájuk kinyílik, és bűzös gázfelhő ölel körbe. A szörnyek mély levegőt vesznek, közben pedig eredeti méretük kétszeresére nőnek meg. Elöhúzod kardodat és reméled, elég szerencsés, erős és ügyes vagy, hogy megóvd magad a rád leselkedő veszélytől. Mindkét ellenfeled külön-külön támad rád minden körben, neked azonban el kell döntened, melyikükkel akarsz harcolni. A kiválasztott Iszapsárkánnyal a szokott módon küzdj meg. A másik ellen ugyanúgy dobj támadódobást, azonban ha a te Támadóértéked a magasabb, nem okozol neki sebzést, csupán kivéded az ő támadását. Ha az ő Támadóértéke a nagyobb, a szokásos módon okoz neked sebesülést.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "74",
+							"__text": "Ha mindkét bestiát sikerül legyőznöd, lapozz a 74-re."
+						},
+						{
+							"_targetNode": "0",
+							"__text": ""
+						}]
+					},
+					"_id": "182",
+					"End": false,
+					"kuzdesEgyesevel": false,
+					"enemies": {
+						"enemy": [{
+							"name": "Első Iszapsárkány",
+							"skill": 9,
+							"stamina": 5,
+							"sebzes": -2,
+							"menekules": false
+						},
+						{
+							"name": "Második Iszapsárkány",
+							"skill": 10,
+							"stamina": 6,
+							"sebzes": -2,
+							"menekules": false
+						}]
+					}
+                },
+				{
+					"Description": "Az egyik keringö cölöp váratlanul elfordul, és könnyedén felhasítja a börödet. Tedd próbára SZERENCSED!",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "194",
+							"__text": "Ha szerencsés vagy. lapozz a 194-re."
+						},
+						{
+							"_targetNode": "170",
+							"__text": "Ha nem, lapozz a 170-re."
+						}]
+					},
+					"_id": "183",
+                    "End": false,
+					"Dice": {
+						"dob": true,
+						"mit": "szerencse"
+					}
+				},
+				{
+					"Description": "Keleti irányba haladva elérsz a központi elágazáshoz.",
+					"Choices": {
+						"Choice": [{
+							"_targetNode": "161",
+							"__text": "Ha innen északra folytatnád az utad, lapozz a 161-re."
+						},
+						{
+							"_targetNode": "136",
+							"__text": "Ha tovább mennél kelet felé, lapozz a 136-ra."
+						}]
+					},
+					"_id": "184",
+                    "End": false
 				}
 			]
 		}
