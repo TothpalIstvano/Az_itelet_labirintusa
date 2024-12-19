@@ -292,7 +292,7 @@
 						"Choice": [{
 							"_targetNode": "47",
 							"__text": "Ha ismered a kinyitásához szükséges kombinációt, add össze a számokat, és lapozz az így kapott fejezetpontra.",
-							"requestNumbers": 3
+							"requestNumbers": true
 						},
 						{
 							"_targetNode": "76",
