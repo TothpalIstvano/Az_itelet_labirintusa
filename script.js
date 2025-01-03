@@ -11,18 +11,28 @@ async function fetchData() {
         console.error('There was a problem with the fetch operation:', error);
     }
 }
-
-
+let limitSkill 
+let limitStamina
+let limitLuck
+let Skill 
+let Stamina
+let Luck
+let arany
+let ekkovek
+let italok
+let elelmiszerek
+let generalva = false;
+let tamadoero = 0;
 function targyakPoweredByKovacsEdit(item){
     let itemValue = myData.Game.Character.Inventory[item];
     document.getElementById("targyak").innerHTML += itemValue;// Add the items value to the HTML element
 }
 
 function marValtozoDologPoweredByKovacsEdit(){
-    let arany = myData.Game.Character.Inventory.Gold;
-    let ekkovek = myData.Game.Character.Inventory.Ekkovek;
-    let italok = myData.Game.Character.Inventory.Italok;
-    let elelmiszerek = myData.Game.Character.Inventory.Food;
+    arany = myData.Game.Character.Inventory.Gold;
+    ekkovek = myData.Game.Character.Inventory.Ekkovek;
+    italok = myData.Game.Character.Inventory.Italok;
+    elelmiszerek = myData.Game.Character.Inventory.Food;
     document.getElementById("arany").innerHTML += " "+ arany;// Add the gold value to the HTML element
     if( ekkovek != null)// Checks if there is any ekkő
         {
@@ -37,15 +47,66 @@ function marValtozoDologPoweredByKovacsEdit(){
 
 function generalas()
 {
-    let skill = Math.floor(Math.random() * 6) + 1 + 6;
-    let stamina = Math.floor(Math.random() * 12) + 1 + 12;
-    let luck = Math.floor(Math.random() * 6) + 1 + 6;
-    document.getElementById("skill").innerHTML += skill;// generate the value of skill and add to the HTML
-    document.getElementById("stamina").innerHTML += stamina;// generate the value of stamina and add to the HTML
-    document.getElementById("luck").innerHTML += luck;// generate the value of luck and add to the HTML
+    limitSkill = Math.floor(Math.random() * 6) + 1 + 6;
+    limitStamina = Math.floor(Math.random() * 12) + 1 + 12;
+    limitLuck = Math.floor(Math.random() * 6) + 1 + 6;
+    myData.Game.Character.Stats.Skill = limitSkill;
+    myData.Game.Character.Stats.Stamina = limitStamina;
+    myData.Game.Character.Stats.Luck = limitLuck;
+    document.getElementById("skill").innerHTML += limitSkill;// generate the value of skill and add to the HTML
+    document.getElementById("stamina").innerHTML += limitStamina;// generate the value of stamina and add to the HTML
+    document.getElementById("luck").innerHTML += limitLuck;// generate the value of luck and add to the HTML
     const button = document.getElementById('generalas');
     button.remove();
+    
 }
+
+function harc(id){
+    const node = kartyaKereses(id);
+    const enemies = node.enemies?.enemy;
+    let f = true;
+    let menekules = enemies.menekules;
+    if (menekules) {
+        let szorny = dobbas() + dobbas() + myData.Game.Character.Stats.Skill;
+        document.getElementById("tamadoero").innerHTML += szorny;
+        let te = dobbas() + dobbas() + enemies.skill;
+        if (szorny > te) {
+            myData.Character.Stats.Stamina -= enemies.sebzes;
+        }
+        if(te>szorny){
+            enemies.stamina -= myData.Character.Stats.Stamina;
+        }
+    }
+
+    let nyert = false;
+    const harcgomb = document.getElementById("harcgomb");
+    const button = document.createElement("button");
+    button.innerText = "harc folytatása";
+    button.addEventListener("click", () => {
+        f = true;
+    });
+    while (f) {
+        let szorny = dobbas() + dobbas() + enemies.skill;
+        document.getElementById("tamadoero").innerHTML ="Támadóerő: "+szorny;
+        let te = dobbas() + dobbas() + myData.Game.Character.Stats.Skill + tamadoero;
+        if (szorny > te) {
+            myData.Character.Stats.Stamina -= enemies.sebzes;
+        }
+        if(te>szorny){
+            enemies.stamina -= myData.Character.Stats.Stamina;
+        }
+        if (myData.Character.Stats.Stamina <= 0) {
+            f = false;
+            nyert = true;
+        }
+        if (enemies.stamina <= 0) {
+            f = false;
+        }
+    }
+    harcgomb.appendChild(button);
+
+}
+
 
 function dobbas() {
     let x = Math.floor(Math.random() * 6) + 1;
@@ -59,18 +120,75 @@ function kartyaKereses(id){
 function kartya(id){
     const node = kartyaKereses(id);
     const kartya = document.getElementById("kartya");
+    const harc = document.getElementById("harc");
     const div = document.createElement("div");
-    div.innerHTML = node.Description;
+    const gombok = document.getElementById("gombok");
+    const button = document.createElement("button");
+    div.innerHTML = `<h2>${node._id}</h2><p>${node.Description}</p>`;
     kartya.appendChild(div);
-
+    if(!node.End){
+        const enemies = node.enemies?.enemy;
+        if (enemies) 
+        {
+            if (Array.isArray(enemies))
+            {
+                enemies.forEach(enemy => {
+                    const enemyDiv = document.createElement("div");
+                    enemyDiv.innerHTML = `<h2>${enemy.name}</h2><p>${enemy.description}</p>`;
+                    harc.appendChild(enemyDiv);
+                });
+            }
+            else
+            {
+            const enemyDiv = document.createElement("div");
+            enemyDiv.innerHTML = `<h2>${enemies.name}</h2><p>Ügyessége: ${enemies.skill}</p><p>Élet: ${enemies.stamina}</p><p id="tamadoero">Támadóerő:</p>`;
+            harc.appendChild(enemyDiv);
+            }
+        }
+        if (node.Choices && node.Choices.Choice) {
+            const choices = Array.isArray(node.Choices.Choice) ? node.Choices.Choice : [node.Choices.Choice];
+            choices.forEach(choice => {
+                const choiceButton = document.createElement("button");
+                choiceButton.innerText = choice.__text;
+                choiceButton.addEventListener('click', () => {
+                    gombok.innerHTML = "";
+                    kartya(choice._targetNode);
+                });
+                gombok.appendChild(choiceButton);
+                console.log(choice);
+            });
+        }
+    }
+    else
+    {
+        button.innerText = "újrakezdés?";
+        button.addEventListener('click', () => {
+            fetchData().then(data => {
+                myData = data;
+                marValtozoDologPoweredByKovacsEdit();
+                const generalasButton = document.getElementById('generalas');
+                generalasButton.addEventListener('click', () => {
+                    generalas();
+                });
+                window.kartya(1);
+            })
+        });
+        gombok.appendChild(button);
+        
+    }
 }
+
+
 
 // Call the fetchData function and store the result in a variable
 let myData;
 fetchData().then(data => {
     myData = data; // Store the fetched data in the variable
     marValtozoDologPoweredByKovacsEdit();
-    console.log(kartya(56))
-    
+    const generalasButton = document.getElementById('generalas');
+    generalasButton.addEventListener('click', () => {
+        generalas();
+    });
+    kartya(57);
 });
 

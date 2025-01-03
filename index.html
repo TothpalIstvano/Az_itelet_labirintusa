@@ -80,17 +80,16 @@
                 <h1 style="margin-bottom:20px ;">Kalandlap</h1>
                 <div>
                     <div>
-                    <button type="button" id="generalas" onclick="generalas()">Generálás</button>
+                    <button type="button" id="generalas">Generálás</button>
                     </div>       
                     <div class="kartyak" id="skill">ÜGYESSÉG <p>Kezdeti ügyesség: </p></div>
                     <div class="kartyak" id="stamina">ÉLETERÓ <p>Kezdeti életerő: </p></div>
                     <div class="kartyak" id="luck">SZERENCSES <p>Kezdeti szerencse: </p></div>
+                    
                 </div>
-                <div  class="column">
-                    FELSZERELÉSI TÁRGYAK:
-                    <div id="targyak">
-
-                    </div>
+                <div class="column">
+                    <div>FELSZERELÉSI TÁRGYAK:</div>
+                    <div id="targyak"></div>
                 </div>
                 <div class="column">
                     <div id="arany">ARANY: </div>
@@ -98,6 +97,8 @@
                     <div id="italok">ITALOK:</div>
                     <div id="elelmiszerek">ÉLELMISZER-KÉSZLET:</div>
                 </div>
+                <div class="kartyak" >TÁMADÓERŐ<p id="támadóerő"> </p></div>
+                <div class="kartyak" id="harcgomb"></div>
             </div>
             <div class="column" id="harc">
                 <h3>HARC SZÖRNYEKKEL</h3>
@@ -124,8 +125,16 @@
             </div>
             
         </div>
-        <div id="kartya">
-
+        <div class="row">
+            <div class="column">    
+                <div id="kartya"></div>
+            </div>
+            <div class="column"> 
+                <div id="gombok">
+                    
+                </div>
+            </div>
+            
         </div>
     </div>
 </body>
