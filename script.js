@@ -144,12 +144,37 @@ function kartya(id){
             enemyDiv.innerHTML = `<h2>${enemies.name}</h2><p>Ügyessége: ${enemies.skill}</p><p>Élet: ${enemies.stamina}</p><p id="tamadoero">Támadóerő:</p>`;
             harc.appendChild(enemyDiv);
             }
-        } 
-        else
-        {
-            button.innerText = "újrakezdés?";
-            gombok.appendChild(button);
         }
+        if (node.Choices && node.Choices.Choice) {
+            const choices = Array.isArray(node.Choices.Choice) ? node.Choices.Choice : [node.Choices.Choice];
+            choices.forEach(choice => {
+                const choiceButton = document.createElement("button");
+                choiceButton.innerText = choice.__text;
+                choiceButton.addEventListener('click', () => {
+                    gombok.innerHTML = "";
+                    kartya(choice._targetNode);
+                });
+                gombok.appendChild(choiceButton);
+                console.log(choice);
+            });
+        }
+    }
+    else
+    {
+        button.innerText = "újrakezdés?";
+        button.addEventListener('click', () => {
+            fetchData().then(data => {
+                myData = data;
+                marValtozoDologPoweredByKovacsEdit();
+                const generalasButton = document.getElementById('generalas');
+                generalasButton.addEventListener('click', () => {
+                    generalas();
+                });
+                window.kartya(1);
+            })
+        });
+        gombok.appendChild(button);
+        
     }
 }
 
@@ -164,8 +189,6 @@ fetchData().then(data => {
     generalasButton.addEventListener('click', () => {
         generalas();
     });
-    generalas();
-    kartya(18);
-    harc(18);
+    kartya(57);
 });
 
