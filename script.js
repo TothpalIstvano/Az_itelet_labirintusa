@@ -14,9 +14,6 @@ async function fetchData() {
 let limitSkill 
 let limitStamina
 let limitLuck
-let Skill 
-let Stamina
-let Luck
 let arany
 let ekkovek
 let italok
@@ -53,12 +50,38 @@ function generalas()
     myData.Game.Character.Stats.Skill = limitSkill;
     myData.Game.Character.Stats.Stamina = limitStamina;
     myData.Game.Character.Stats.Luck = limitLuck;
-    document.getElementById("skill").innerHTML += limitSkill;// generate the value of skill and add to the HTML
-    document.getElementById("stamina").innerHTML += limitStamina;// generate the value of stamina and add to the HTML
-    document.getElementById("luck").innerHTML += limitLuck;// generate the value of luck and add to the HTML
+    document.getElementById("skill").innerHTML += myData.Game.Character.Stats.Skill;// generate the value of skill and add to the HTML
+    document.getElementById("stamina").innerHTML += myData.Game.Character.Stats.Stamina;// generate the value of stamina and add to the HTML
+    document.getElementById("luck").innerHTML += myData.Game.Character.Stats.Luck;// generate the value of luck and add to the HTML
     const button = document.getElementById('generalas');
     button.remove();
     
+}
+
+function szerencse() {
+    try {
+        if (myData?.Game?.Character?.Stats) {
+            let dobas = dobbas() + dobbas();
+            if (dobas > myData.Game.Character.Stats.Luck) {
+                myData.Game.Character.Stats.Luck -= 1;
+                document.getElementById("luck").innerHTML = myData.Game.Character.Stats.Luck;
+                return false;
+            }
+            if (dobas < myData.Game.Character.Stats.Luck) {
+                myData.Game.Character.Stats.Luck -= 1;
+                document.getElementById("luck").innerHTML = myData.Game.Character.Stats.Luck;
+                return true;
+            } else {
+                myData.Game.Character.Stats.Luck -= 1;
+                return szerencse();
+            }
+        }
+               
+    } catch (error) {
+        console.error('Character stats are undefined');
+        return false;
+    }
+    // generate the value of luck and add to the HTML
 }
 
 function harc(id){
@@ -104,9 +127,7 @@ function harc(id){
         }
     }
     harcgomb.appendChild(button);
-
 }
-
 
 function dobbas() {
     let x = Math.floor(Math.random() * 6) + 1;
@@ -155,7 +176,6 @@ function kartya(id){
                     kartya(choice._targetNode);
                 });
                 gombok.appendChild(choiceButton);
-                console.log(choice);
             });
         }
     }
@@ -190,5 +210,7 @@ fetchData().then(data => {
         generalas();
     });
     kartya(57);
+    generalas();
+
 });
 

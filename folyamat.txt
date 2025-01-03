@@ -1,4 +1,4 @@
-szerencse:
+szerencse: ✓
     dobás = két kocka
     if (dobás > jelenlegi szerencse):
         false
