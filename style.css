@@ -4,6 +4,13 @@
     margin: 4px;
 }
 
+body {
+    background-image: url(indexhatter.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 h1, h3 {
     text-align: center;
 }
