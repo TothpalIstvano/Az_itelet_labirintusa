@@ -1,0 +1,153 @@
+szerencse:
+    dobás = két kocka
+    if (dobás > jelenlegi szerencse):
+        false
+    if (dobas < jelenlegi szerencse):
+        true
+    else:
+        újra
+    szerencse - 1
+
+meneküléses harc (szörny1):
+    szörny támadóerő = két kocka + ügyessége
+    te támadóerő = két kocka + ügyességed
+    if (szörny > te):
+        te életerő - sebzés
+    else if (te > szörny):
+        szörny életerő - 2
+    else if (te = szörny):
+        continue
+    if (menekülés):
+        te életerő - 2
+        end
+    else: harc
+
+harc (szörny1):
+    while (te életerő > 0 || szörny életerő > 0) {
+    szörny támadóerő = két kocka + ügyessége
+    te támadóerő = két kocka + ügyességed
+    if (szörny > te):
+        te életerő - sebzés
+        if (szerencsehasználat){
+            if (szerencsés = true):
+                te életerő + 1
+            else if (szerencsés = false):
+                te életerő - 1
+        }
+    else if (te > szörny):
+        szörny életerő - 2
+        if (szerencsehasználat) {
+            if (szerencsés = true):
+                szörny életerő - 2
+            else if (szerencsés = false):
+                szörny életerő + 1
+        }
+    else if (te = szörny):
+        continue
+    }
+
+
+end != true:
+    if (eszik):
+        életerő + 4
+        élelem - 1
+
+    if (varázsital >= 1):
+        ügyesség = kezdeti érték
+        életerő = kezdeti érték
+        szerencse = kezdeti érték + 1
+        varázsital - 1
+
+    if (szörny szám > 1):
+        if (kuzdesEgyesevel = false):
+            while (szörny1 életerő > 0  || te életerő > 0) {
+                szörny1:
+                    szörny támadóerő = két kocka + ügyessége
+                    te támadóerő = két kocka + ügyességed
+                    if (szörny > te):
+                        te életerő - sebzés
+                        if (szerencsehasználat){
+                            if (szerencsés = true):
+                                te életerő + 1
+                            else if (szerencsés = false):
+                                te életerő - 1
+                        }
+                    else if (te > szörny):
+                        szörny életerő - 2
+                        if (szerencsehasználat) {
+                            if (szerencsés = true):
+                                szörny életerő - 2
+                            else if (szerencsés = false):
+                                szörny életerő + 1
+                        }
+                    else if (te = szörny):
+                        continue
+                szörny2: 
+                    szörny támadóerő = két kocka + ügyessége
+                    te támadóerő = két kocka + ügyességed
+                    if (szörny > te):
+                        te életerő - sebzés
+                        if (szerencsehasználat){
+                            if (szerencsés = true):
+                                te életerő + 1
+                            else if (szerencsés = false):
+                                te életerő - 1
+                        }
+                    else if (te = szörny):
+                        continue
+            }
+        else if (kuzdesEgyesevel = true):
+            harc(szörny1)
+            harc(szörny2)
+
+    if (szörny szám = 1):
+        harc(szörny)
+
+    if (dice):
+        if (mit = szerencse):
+            szerencse
+        if (mit = Stamina):
+            dobás = egy kocka
+            életerő -= dobás
+        if (mit = ügyesség):
+            dobás = két kocka
+            if (dobás > jelenlegi ügyesség):
+                103-as oldal
+            if (dobas =< jelenlegi ügyesség):
+                15-ös oldal
+        if (mitNez = eredmeny):
+            dobás = egy kocka
+            while (dobás != 5-6 || te életerő <= 0):
+                életerő - 2
+            158-as oldal
+
+    if (van gold):
+        arany += gold
+
+    if (van itemAdd):
+        inventory += item
+
+    if (van eletero):
+        te életerő += eletero
+
+    if (van szerencse):
+        te szerencse += szerencse
+
+    if (van food):
+        élelem += food
+
+    if (van szerencseMin):
+        szerencselimit = szerencseMin
+
+    if (van szerencseVisszaallitPluszEgy):
+        szerencselimit +1
+        szerencse = szerencselimit
+
+    if (van tovabbiTamadoero):
+        te támadóerő += tovabbiTamadoero
+
+    if (van itemLoss):
+        inventory -2 item amit a felhasználó választ
+
+    if (van requestnumbers):
+        requestnumbers = true  (lehet nem lesz jó mert az egyik szám másik bool)
