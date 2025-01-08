@@ -30,16 +30,16 @@ function marValtozoDologPoweredByKovacsEdit(){
     ekkovek = myData.Game.Character.Inventory.Ekkovek;
     italok = myData.Game.Character.Inventory.Italok;
     elelmiszerek = myData.Game.Character.Inventory.Food;
-    document.getElementById("arany").innerHTML += " "+ arany;// Add the gold value to the HTML element
+    document.getElementById("arany").innerHTML = arany;// Add the gold value to the HTML element
     if( ekkovek != null)// Checks if there is any ekkő
-        {
-        document.getElementById("ekkovek").innerHTML += " "+ ekkovek;// Add the ekkovek value to the HTML}
-        };
+    {
+        document.getElementById("ekkovek").innerHTML = ekkovek;// Add the ekkovek value to the HTML}
+    }
     if( italok != null)// Checks if there is any potion
-        {
-        document.getElementById("italok").innerHTML += " "+italok;// Add the italok value to the HTML
-        }
-    document.getElementById("elelmiszerek").innerHTML += " "+elelmiszerek;// Add the food value to the HTML
+    {
+        document.getElementById("italok").innerHTML = italok;// Add the italok value to the HTML
+    }
+    document.getElementById("elelmiszerek").innerHTML = elelmiszerek;// Add the food value to the HTML
 }
 
 function generalas()
@@ -50,9 +50,9 @@ function generalas()
     myData.Game.Character.Stats.Skill = limitSkill;
     myData.Game.Character.Stats.Stamina = limitStamina;
     myData.Game.Character.Stats.Luck = limitLuck;
-    document.getElementById("skill").innerHTML += myData.Game.Character.Stats.Skill;// generate the value of skill and add to the HTML
-    document.getElementById("stamina").innerHTML += myData.Game.Character.Stats.Stamina;// generate the value of stamina and add to the HTML
-    document.getElementById("luck").innerHTML += myData.Game.Character.Stats.Luck;// generate the value of luck and add to the HTML
+    document.getElementById("skill").innerHTML = myData.Game.Character.Stats.Skill;// generate the value of skill and add to the HTML
+    document.getElementById("stamina").innerHTML = myData.Game.Character.Stats.Stamina;// generate the value of stamina and add to the HTML
+    document.getElementById("luck").innerHTML = myData.Game.Character.Stats.Luck;// generate the value of luck and add to the HTML
     const button = document.getElementById('generalas');
     button.remove();
     
@@ -140,12 +140,20 @@ function kartyaKereses(id){
 
 function kartya(id){
     const node = kartyaKereses(id);
-    const kartya1 = document.getElementById("kartya");
+    const kartya1 = document.getElementById("kartyak");
     const harc = document.getElementById("harc");
     const div = document.createElement("div");
     const gombok = document.getElementById("gombok");
     const button = document.createElement("button");
-    div.innerHTML = `<h2>${node._id}</h2><p>${node.Description}</p>`;
+    const h2 = document.createElement("h2");
+    const p = document.createElement("p");
+    h2.innerText = node._id;
+    p.innerText = node.Description;
+    div.appendChild(h2);
+    div.appendChild(p);
+    div.id = "kartya";
+    kartya1.appendChild(div);
+
     kartya1.appendChild(div);
     if(!node.End){
         const enemies = node.enemies?.enemy;
@@ -169,13 +177,18 @@ function kartya(id){
         if (node.Choices && node.Choices.Choice) {
             const choices = Array.isArray(node.Choices.Choice) ? node.Choices.Choice : [node.Choices.Choice];
             choices.forEach(choice => {
+                if(choice.__text != ""){
                 const choiceButton = document.createElement("button");
                 choiceButton.innerText = choice.__text;
                 choiceButton.className = "choiceButton";
                 choiceButton.addEventListener('click', () => {
+                    const choiceButtons = document.querySelectorAll(".choiceButton");
+                    choiceButtons.forEach(button => button.remove());
+                    document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
                     kartya(choice._targetNode);
                 });
                 gombok.appendChild(choiceButton);
+            }
             });
         }
     }
@@ -190,7 +203,8 @@ function kartya(id){
                 generalasButton.addEventListener('click', () => {
                     generalas();
                 });
-                window.kartya(1);
+                kartya(1);
+                button.remove();
             })
         });
         gombok.appendChild(button);
