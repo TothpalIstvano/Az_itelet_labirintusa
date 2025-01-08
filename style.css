@@ -11,7 +11,7 @@ body {
     background-attachment: fixed;
 }
 
-h1, h3 {
+h1 {
     text-align: center;
 }
 
@@ -51,6 +51,40 @@ h1, h3 {
     }
 }
 
+#kartya {
+    font-size: 18px;
+}
+
+#kartyamain {
+    background: rgba(255, 255, 255, 0.160);
+}
+
 .choiceButton {
     display: block;
+    background-color: rgb(142, 209, 170);
+    font-size: 15px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.choiceButton:hover, .choiceButton:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(70, 190, 70);
+    transform: translateY(-0.25em);
+}
+
+.choiceButton:active {
+    transform: translateY(0.25em);
+  }
+
+#main {
+    background: rgba(255, 255, 255, 0.160);
+    font-size: 18px;
+}
+
+#gombokmain {
+    background: rgba(255, 255, 255, 0.160);
+}
+
+#harc {
+    background: rgba(255, 255, 255, 0.160);
 }
