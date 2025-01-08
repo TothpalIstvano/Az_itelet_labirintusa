@@ -26,9 +26,10 @@ function targyakPoweredByKovacsEdit(item){
 }
 
 function marValtozoDologPoweredByKovacsEdit(){
+    const gomb =  document.createElement("button");
     arany = myData.Game.Character.Inventory.Gold;
     ekkovek = myData.Game.Character.Inventory.Ekkovek;
-    italok = myData.Game.Character.Inventory.Italok;
+    italok = myData.Game.Character.Inventory.Potion.Uses;
     elelmiszerek = myData.Game.Character.Inventory.Food;
     document.getElementById("arany").innerHTML = arany;// Add the gold value to the HTML element
     if( ekkovek != null)// Checks if there is any ekkő
@@ -156,24 +157,23 @@ function kartya(id){
 
     kartya1.appendChild(div);
     if(!node.End){
-        const enemies = node.enemies?.enemy;
-        if (enemies) 
-        {
-            if (Array.isArray(enemies))
-            {
-                enemies.forEach(enemy => {
-                    const enemyDiv = document.createElement("div");
-                    enemyDiv.innerHTML = `<h2>${enemy.name}</h2><p>${enemy.description}</p>`;
-                    harc.appendChild(enemyDiv);
-                });
-            }
-            else
-            {
+        
+        if (node.enemies) {
+            const enemies = node.enemies?.enemy;
             const enemyDiv = document.createElement("div");
-            enemyDiv.innerHTML = `<h2>${enemies.name}</h2><p>Ügyessége: ${enemies.skill}</p><p>Élet: ${enemies.stamina}</p><p id="tamadoero">Támadóerő:</p>`;
-            harc.appendChild(enemyDiv);
+
+            if (Array.isArray(enemies)) {
+                enemies.forEach(enemy => {
+                    enemyDiv.id = "enemy";
+                    enemyDiv.innerHTML += `<h2>${enemy?.name}</h2><p>Ügyessége: ${enemy?.skill}</p><p>Élet: ${enemy?.stamina}</p><p id="tamadoero">Támadóerő:</p>`;
+                });
+            } else {
+                enemyDiv.id = "enemy";
+                enemyDiv.innerHTML = `<h2>${enemies.name}</h2><p>Ügyessége: ${enemies.skill}</p><p>Élet: ${enemies.stamina}</p><p id="tamadoero">Támadóerő:</p>`;
             }
+            harc.appendChild(enemyDiv);
         }
+
         if (node.Choices && node.Choices.Choice) {
             const choices = Array.isArray(node.Choices.Choice) ? node.Choices.Choice : [node.Choices.Choice];
             choices.forEach(choice => {
@@ -185,6 +185,7 @@ function kartya(id){
                     const choiceButtons = document.querySelectorAll(".choiceButton");
                     choiceButtons.forEach(button => button.remove());
                     document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                    document.querySelectorAll("#harc #enemy").forEach(element => element.remove());
                     kartya(choice._targetNode);
                 });
                 gombok.appendChild(choiceButton);
@@ -223,6 +224,6 @@ fetchData().then(data => {
     generalasButton.addEventListener('click', () => {
         generalas();
     });
-    kartya(1);
+    kartya(107);
 });
 
