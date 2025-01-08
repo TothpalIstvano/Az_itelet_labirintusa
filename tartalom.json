@@ -23,7 +23,7 @@
 					"Description": "Belöknek a lenti alagútba, és rád zárják az ajtót, kizárva ezzel a nyíláson át beszűrődő természetes világosságot. Innentől kezdve kizárólag a falra rögzített fáklyáktól remélhetsz valamennyi fényt. Ahogy szemed hozzászokik a homályhoz, látod, hogy az alagút észak felé indul. Nagyot sóhajtasz a dolog igazságtalansága felett, majd elindulsz abba az irányba.",
 					"Choices": {
 						"Choice": {
-							"_targetNode": "2",
+							"_targetNode": "41",
 							"__text": "Lapozz a 41-re."
 						}
 					},
@@ -52,16 +52,16 @@
                     "End": true
                 },
                 {
-                    "Description": "Az ajtó egy tágas terembe nyílik, melynek északi oldalán egy újabb kijárat van, egy lelógó kötél szomszédságában. Csapdának nem látod jelét, így áthaladsz a szobán és leveszed a kötelet. Lenyomod a kilincset, de így sem sikerül előrébb jutnod &#8211; alighanem zárva van. Hogyha nincs, úgy távozol a szobából és folytatod az utadat északi irányba lapozz a 14-re.",
+                    "Description": "Az ajtó egy tágas terembe nyílik, melynek északi oldalán egy újabb kijárat van, egy lelógó kötél szomszédságában. Csapdának nem látod jelét, így áthaladsz a szobán és leveszed a kötelet. Lenyomod a kilincset, de így sem sikerül előrébb jutnod &#8211; alighanem zárva van.",
                     "Choices": {
 						"Choice": [{
 							"_targetNode": "110",
-							"__text": "Ha van nálad egy Aranykulcs",
+							"__text": "Ha van nálad egy Aranykulcs, lapozz a 110-re.",
                             "_requiresItem": "Aranykulcs"
 						},
                         {
 							"_targetNode": "14",
-							"__text": "Hogyha nincs, úgy távozol a szobából és folytatod az utadat északi irányba"
+							"__text": "Hogyha nincs, úgy távozol a szobából és folytatod az utadat északi irányba lapozz a 14-re."
 						}]
 					},
                     "_id": "5",
@@ -243,7 +243,7 @@
                     "End": false
 				},
 				{
-					"Description": "Amint belépsz a szobába, rémülten eszmélsz rá, hogy előbb alaposan szét kellett volna nézned a plafonon ugyanis egy hatalmas Pók kapaszkodik, ami minden szemével téged bámul. Négy ezüstszínű gubó lóg mellette, és összeszorul a szíved, mikor rájössz, hogy két ember, egy Törpe és egy Elf van beléjük csavarva, akik bizonyára leendő ellenfeled legutóbbi áldozatai voltak, és már csak arra várnak, hogy a bestia egy jót lakmározzon belőlük. A Pók némán a padlóra pottyan, csáprágói mohón feléd nyúlnak.",
+					"Description": "Amint belépsz a szobába, rémülten eszmélsz rá, hogy előbb alaposan szét kellett volna nézned a plafonon ugyanis egy hatalmas Pók kapaszkodik, ami minden szemével téged bámul. Négy ezüstszínű gubó lóg mellette, és összeszorul a szíved, mikor rájössz, hogy két ember, egy Törpe és egy Elf van beléjük csavarva, akik bizonyára leendő ellenfeled legutóbbi áldozatai voltak, és már csak arra várnak, hogy a bestia egy jót lakmározzon belőlük. A Pók némán a padlóra pottyan, csáprágói mohón feléd nyúlnak. Ha nem sikerül, hamarosan te is személyre szött selyemkabátot fogsz kapni.",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "94",
@@ -251,7 +251,7 @@
 						},
 						{
 							"_targetNode": "0",
-							"__text": "Ha nem, hamarosan te is személyre szött selyemkabátot fogsz kapni."
+							"__text": ""
 						}
 						]
 					},
@@ -738,7 +738,7 @@
 							"__text": "Ha a nyugatin lépnél be, lapozz a 6-ra."
 						},
 						{
-							"_targetNode": "6",
+							"_targetNode": "111",
 							"__text": "Ha a keletivel próbálnál szerencsét, lapozz a 111-re."
 						}]
 					},
@@ -1634,7 +1634,7 @@
 							"__text": "Ha szerencséd van, találsz egy kézre álló kődarabot, amivel sikerül eléggé kiszélesítened az alagutat ahhoz, hogy gond nélkül továbbhaladhass-lapozz a 20-ra."
 						},
 						{
-							"_targetNode": "8",
+							"_targetNode": "116",
 							"__text": "Ha nincs szerencséd, lapozz a 116-ra."
 						}]
 					},
@@ -2007,7 +2007,7 @@
 					"Description": "Felkészülsz az ütközetre, miközben a két Denevér zuhanórepülésben közelít feléd. Hogyan is remélheted, hogy kardoddal képes leszel felvenni velük a harcot? Meg kell próbálnod a szoba egy másik részébe csalogatnod öket. Hogyha a pajzsod a levegőbe hajítanád, talán azt hinnék, hogy az egy másik áldozat. Bármit is teszel, egyesével kell megküzdened velük.",
 					"Choices": {
 						"Choice": [{
-							"_targetNode": "198",
+							"_targetNode": "160",
 							"__text": "Ha nyersz, lapozz a 160-ra."
 						},
 						{
@@ -2355,7 +2355,7 @@
 							"_proba": true
 						},
 						{
-							"_targetNode": "12",
+							"_targetNode": "115",
 							"__text": "Ha nincs, zuhanni kezdesz lefelé &#8211; lapozz a 115-re."
 						}]
 					},
@@ -2548,7 +2548,7 @@
 							"__text": "Ha bele akarsz ugrani, lapozz a 185-re."
 						},
 						{
-							"_targetNode": "186",
+							"_targetNode": "168",
 							"__text": "Ha visszatérnél az előző elágazáshoz, és ott nyugati irányba mennél tovább, lapozz a 168-ra."
 						}]
 					},
@@ -2777,7 +2777,7 @@
 					"Description": "A sár felszíne emelkedni kezd, és tompa pukkanás kíséretében egy óriási gázbuborék emelkedik ki belőle. Ahogy a felszín kisimulna, apró, zöld színü, cikázó fények jelennek meg rajta. A foltocskák kiemelkednek, aljukból csápok nőnek ki, melyek percről percre hosszabbodnak. Végül egy Iszapsárkány óriási feje bukkan elő félig a nyálkás folyadék mélyéből! Most már látod, hogy a zöld fények, amiket korábban láttál, valójában a lény fejéből kinövő csápok, melyek egészen addig szabadon lengeni látszanak, míg hirtelen mindegyik rád nem szegeződik. A hatalmas száj kinyilik, förtelmes szagú gáz tör elő belöle, ezután ellenfeled duzzadni kezd, ahogy levegővel szívja meg magát. Rájössz, hogy meg kell küzdenod vele.",
 					"Choices": {
 						"Choice": [{
-							"_targetNode": "94",
+							"_targetNode": "9",
 							"__text": "Ha győzöl, lapozz a 9-re."
 						},
 						{
