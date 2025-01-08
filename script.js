@@ -171,6 +171,7 @@ function kartya(id){
             choices.forEach(choice => {
                 const choiceButton = document.createElement("button");
                 choiceButton.innerText = choice.__text;
+                choiceButton.className = "choiceButton";
                 choiceButton.addEventListener('click', () => {
                     kartya(choice._targetNode);
                 });
