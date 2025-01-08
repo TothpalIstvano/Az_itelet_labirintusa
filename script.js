@@ -19,6 +19,7 @@ let ekkovek
 let italok
 let elelmiszerek
 let generalva = false;
+let generalvaP = false;
 let tamadoero = 0;
 function targyakPoweredByKovacsEdit(item){
     let itemValue = myData.Game.Character.Inventory[item];
@@ -70,12 +71,40 @@ function etkezes(){
             elelmiszerek -= 1;
             elelmiszer.innerText = elelmiszerek;
             etkezes();
-           
+            
         } 
         
     })
      elelmiszer.appendChild(eves);
+     generalva = true;
 }
+
+function potion(){
+    const italok = document.getElementById('italok');
+    potik = myData.Game.Character.Inventory.Potion.Uses;
+    const ivas = document.createElement('button');
+    ivas.innerHTML = 'ivas';
+    ivas.addEventListener('click', () => {
+        if(potik>0){
+            myData.Game.Character.Inventory.Potion.Uses -= 1;
+            potik -= 1;
+            italok.innerText = potik;
+            
+            potion();
+            
+        } 
+        
+    })
+     italok.appendChild(ivas);
+     generalvaP = true;
+}
+
+
+
+
+
+
+
 
 function szerencse() {
     try {
@@ -158,7 +187,14 @@ function kartyaKereses(id){
 }
 
 function kartya(id){
-    etkezes();
+
+    if(!generalva){
+        etkezes();
+    }
+
+    if(!generalvaP){
+        potion();
+    }
     const node = kartyaKereses(id);
     const kartya1 = document.getElementById("kartyak");
     const harc = document.getElementById("harc");
@@ -242,7 +278,7 @@ fetchData().then(data => {
     generalasButton.addEventListener('click', () => {
         generalas();
     });
-    kartya(107);
+    kartya(1);
     
 });
 
