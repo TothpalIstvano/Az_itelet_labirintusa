@@ -181,7 +181,7 @@ function kartya(id){
     }
     else
     {
-        button.innerText = "újrakezdés?";
+        button.innerText = "Újrakezdés";
         button.addEventListener('click', () => {
             fetchData().then(data => {
                 myData = data;
