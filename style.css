@@ -51,4 +51,6 @@ h1, h3 {
     }
 }
 
-
+.choiceButton {
+    display: block;
+}
