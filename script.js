@@ -59,6 +59,13 @@ function generalas()
     
 }
 
+function etkezes(){
+    const elelmiszerek = document.getElementById('elelmiszerek');
+    const eves = createElement('button');
+    eves.innerHTML = 'Eves';
+    elelmiszerek.appendChild(eves);
+}
+
 function szerencse() {
     try {
         if (myData?.Game?.Character?.Stats) {
