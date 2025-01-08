@@ -59,6 +59,24 @@ function generalas()
     
 }
 
+function etkezes(){
+    const elelmiszer = document.getElementById('elelmiszerek');
+    elelmiszerek = myData.Game.Character.Inventory.Food;
+    const eves = document.createElement('button');
+    eves.innerHTML = 'Eves';
+    eves.addEventListener('click', () => {
+        if(elelmiszerek>0){
+            myData.Game.Character.Inventory.Food -= 1;
+            elelmiszerek -= 1;
+            elelmiszer.innerText = elelmiszerek;
+            etkezes();
+           
+        } 
+        
+    })
+     elelmiszer.appendChild(eves);
+}
+
 function szerencse() {
     try {
         if (myData?.Game?.Character?.Stats) {
@@ -140,6 +158,7 @@ function kartyaKereses(id){
 }
 
 function kartya(id){
+    etkezes();
     const node = kartyaKereses(id);
     const kartya1 = document.getElementById("kartyak");
     const harc = document.getElementById("harc");
@@ -153,8 +172,6 @@ function kartya(id){
     div.appendChild(h2);
     div.appendChild(p);
     div.id = "kartya";
-    kartya1.appendChild(div);
-
     kartya1.appendChild(div);
     if(!node.End){
         
@@ -203,6 +220,7 @@ function kartya(id){
                 const generalasButton = document.getElementById('generalas');
                 generalasButton.addEventListener('click', () => {
                     generalas();
+                    button.remove();
                 });
                 kartya(1);
                 button.remove();
@@ -225,5 +243,7 @@ fetchData().then(data => {
         generalas();
     });
     kartya(107);
+    
 });
+
 
