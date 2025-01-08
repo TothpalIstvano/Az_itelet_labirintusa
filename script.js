@@ -140,13 +140,13 @@ function kartyaKereses(id){
 
 function kartya(id){
     const node = kartyaKereses(id);
-    const kartya = document.getElementById("kartya");
+    const kartya1 = document.getElementById("kartya");
     const harc = document.getElementById("harc");
     const div = document.createElement("div");
     const gombok = document.getElementById("gombok");
     const button = document.createElement("button");
     div.innerHTML = `<h2>${node._id}</h2><p>${node.Description}</p>`;
-    kartya.appendChild(div);
+    kartya1.appendChild(div);
     if(!node.End){
         const enemies = node.enemies?.enemy;
         if (enemies) 
@@ -172,7 +172,6 @@ function kartya(id){
                 const choiceButton = document.createElement("button");
                 choiceButton.innerText = choice.__text;
                 choiceButton.addEventListener('click', () => {
-                    gombok.innerHTML = "";
                     kartya(choice._targetNode);
                 });
                 gombok.appendChild(choiceButton);
@@ -209,8 +208,6 @@ fetchData().then(data => {
     generalasButton.addEventListener('click', () => {
         generalas();
     });
-    kartya(57);
-    generalas();
-
+    kartya(1);
 });
 
