@@ -89,11 +89,17 @@ function potion(){
             myData.Game.Character.Inventory.Potion.Uses -= 1;
             potik -= 1;
             italok.innerText = potik;
+            const buttonSkill = document.createElement('button');
+            const buttonStamina = document.createElement('button');
+            const buttonLuck = document.createElement('button');
+            document.getElementById("skill").appendChild(buttonSkill);
+            document.getElementById("stamina").appendChild(buttonStamina);
+            document.getElementById("luck").appendChild(buttonLuck);
+            ivas.style.visibility = "hidden"
             
-            potion();
             
         } 
-        
+        potion();
     })
      italok.appendChild(ivas);
      generalvaP = true;
