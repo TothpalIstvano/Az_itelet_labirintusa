@@ -52,7 +52,7 @@ h1 {
 }
 
 #kartya {
-    font-size: 18px;
+    font-size: 15px;
 }
 
 #kartyamain {
@@ -67,18 +67,18 @@ h1 {
     margin-bottom: 10px;
 }
 
-.choiceButton:hover, .choiceButton:focus {
+.choiceButton:hover {
     box-shadow: 0 0.5em 0.5em -0.4em rgb(70, 190, 70);
     transform: translateY(-0.25em);
 }
 
 .choiceButton:active {
     transform: translateY(0.25em);
-  }
+}
 
 #main {
     background: rgba(255, 255, 255, 0.160);
-    font-size: 18px;
+    font-size: 15px;
 }
 
 #gombokmain {
@@ -87,4 +87,66 @@ h1 {
 
 #harc {
     background: rgba(255, 255, 255, 0.160);
+}
+
+img{
+    width: auto;
+    height: 350px;
+    margin: auto;
+}
+
+/*kicserélni: https://codepen.io/yuhomyan/pen/OJMejWJ*/
+
+#ivas {
+    background-color: rgb(142, 209, 170);
+    font-size: 15px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#ivas:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(70, 190, 70);
+    transform: translateY(-0.25em);
+}
+
+#eves {
+    background-color: rgb(142, 209, 170);
+    font-size: 15px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#eves:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(70, 190, 70);
+    transform: translateY(-0.25em);
+}
+
+.generalas {
+    display: block;
+    background-color: rgb(142, 209, 170);
+    font-size: 15px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.generalas:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(70, 190, 70);
+    transform: translateY(-0.25em);
+}
+
+.ujrakezdes {
+    display: block;
+    background-color: rgb(142, 209, 170);
+    font-size: 15px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.ujrakezdes:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(70, 190, 70);
+    transform: translateY(-0.25em);
+}
+
+.ujrakezdes:active {
+    transform: translateY(0.25em);
 }
