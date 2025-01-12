@@ -64,7 +64,8 @@ function etkezes(){
     const elelmiszer = document.getElementById('elelmiszerek');
     elelmiszerek = myData.Game.Character.Inventory.Food;
     const eves = document.createElement('button');
-    eves.innerHTML = 'Eves';
+    eves.id = 'eves';
+    eves.innerHTML = 'Evés';
     eves.addEventListener('click', () => {
         if(elelmiszerek>0){
             myData.Game.Character.Inventory.Food -= 1;
@@ -75,15 +76,16 @@ function etkezes(){
         } 
         
     })
-     elelmiszer.appendChild(eves);
-     generalva = true;
+    elelmiszer.appendChild(eves);
+    generalva = true;
 }
 
 function potion(){
     const italok = document.getElementById('italok');
     potik = myData.Game.Character.Inventory.Potion.Uses;
     const ivas = document.createElement('button');
-    ivas.innerHTML = 'ivas';
+    ivas.id = 'ivas';
+    ivas.innerHTML = 'Ivás';
     ivas.addEventListener('click', () => {
         if(potik>0){
             myData.Game.Character.Inventory.Potion.Uses -= 1;
@@ -101,8 +103,8 @@ function potion(){
         } 
         potion();
     })
-     italok.appendChild(ivas);
-     generalvaP = true;
+    italok.appendChild(ivas);
+    generalvaP = true;
 }
 
 
@@ -130,7 +132,7 @@ function szerencse() {
                 return szerencse();
             }
         }
-               
+
     } catch (error) {
         console.error('Character stats are undefined');
         return false;
@@ -154,6 +156,8 @@ function harc(id){
             enemies.stamina -= myData.Character.Stats.Stamina;
         }
     }
+
+    
 
     let nyert = false;
     const harcgomb = document.getElementById("harcgomb");
@@ -221,6 +225,9 @@ function kartya(id){
             const enemies = node.enemies?.enemy;
             const enemyDiv = document.createElement("div");
 
+            /*const gif = document.getElementById("gif");
+            gif.src = "joharcos.gif"; - nem működik még*/
+
             if (Array.isArray(enemies)) {
                 enemies.forEach(enemy => {
                     enemyDiv.id = "enemy";
@@ -234,6 +241,9 @@ function kartya(id){
         }
 
         if (node.Choices && node.Choices.Choice) {
+            const gif = document.getElementById("gif");
+            gif.src = "jofuto.gif";
+
             const choices = Array.isArray(node.Choices.Choice) ? node.Choices.Choice : [node.Choices.Choice];
             choices.forEach(choice => {
                 if(choice.__text != ""){
@@ -255,6 +265,7 @@ function kartya(id){
     else
     {
         button.innerText = "Újrakezdés";
+        button.className = "ujrakezdes";
         button.addEventListener('click', () => {
             fetchData().then(data => {
                 myData = data;
@@ -281,6 +292,8 @@ fetchData().then(data => {
     myData = data; // Store the fetched data in the variable
     marValtozoDologPoweredByKovacsEdit();
     const generalasButton = document.getElementById('generalas');
+    generalasButton.className = "generalas";  //nem mükszik idk
+
     generalasButton.addEventListener('click', () => {
         generalas();
     });
