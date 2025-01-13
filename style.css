@@ -95,43 +95,52 @@ img{
     margin: auto;
 }
 
-/*kicserélni: https://codepen.io/yuhomyan/pen/OJMejWJ*/
+/*kicserélni: https://codepen.io/yuhomyan/pen/OJMejWJ */
 
-#ivas {
+#ivas, #eves, .generalas{
+    color: rgb(26, 26, 26);
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
     background-color: rgb(142, 209, 170);
     font-size: 15px;
     padding: 5px 10px;
     margin-bottom: 10px;
+    z-index: 1;
 }
-
-#ivas:hover {
-    box-shadow: 0 0.5em 0.5em -0.4em rgb(70, 190, 70);
-    transform: translateY(-0.25em);
+#ivas:after, #eves:after, .generalas:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #029816;
+    border-radius: 5px;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    transition: all 0.3s ease;
 }
-
-#eves {
-    background-color: rgb(142, 209, 170);
-    font-size: 15px;
-    padding: 5px 10px;
-    margin-bottom: 10px;
+#ivas:hover, #eves:hover, .generalas:hover{
+    color: #fff;
 }
-
-#eves:hover {
-    box-shadow: 0 0.5em 0.5em -0.4em rgb(70, 190, 70);
-    transform: translateY(-0.25em);
+#ivas:hover:after, #eves:hover:after, .generalas:hover:after {
+    left: 0;
+    width: 100%;
 }
-
-.generalas {
-    display: block;
-    background-color: rgb(142, 209, 170);
-    font-size: 15px;
-    padding: 5px 10px;
-    margin-bottom: 10px;
-}
-
-.generalas:hover {
-    box-shadow: 0 0.5em 0.5em -0.4em rgb(70, 190, 70);
-    transform: translateY(-0.25em);
+#ivas:active, #eves:active, .generalas:active {
+    top: 2px;
 }
 
 .ujrakezdes {
@@ -149,4 +158,115 @@ img{
 
 .ujrakezdes:active {
     transform: translateY(0.25em);
+}
+
+body {
+  display: grid;
+  grid-template-rows: 1fr 10rem auto;
+  grid-template-areas: "main" "." "footer";
+  overflow-x: hidden;
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+}
+body .footer {
+  z-index: 1;
+  --footer-background:#65a765;
+  display: grid;
+  position: relative;
+  grid-area: footer;
+  min-height: 12rem;
+}
+body .footer .bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1rem;
+  background: var(--footer-background);
+  filter: url("#blob");
+}
+body .footer .bubbles .bubble {
+  position: absolute;
+  left: var(--position, 50%);
+  background: var(--footer-background);
+  border-radius: 100%;
+  -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+          animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+  transform: translate(-50%, 100%);
+}
+body .footer .content {
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 4rem;
+  padding: 2rem;
+  background: var(--footer-background);
+}
+body .footer .content a, body .footer .content p {
+  color: #F5F7FA;
+  text-decoration: none;
+}
+body .footer .content b {
+  color: white;
+}
+body .footer .content p {
+  margin: 0;
+  font-size: 0.75rem;
+}
+body .footer .content > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body .footer .content > div > div {
+  margin: 0.25rem 0;
+}
+body .footer .content > div > div > * {
+  margin-right: 0.5rem;
+}
+body .footer .content > div .image {
+  align-self: center;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.25rem 0;
+  background-size: cover;
+  background-position: center;
+}
+
+@-webkit-keyframes bubble-size {
+  0%, 75% {
+    width: var(--size, 4rem);
+    height: var(--size, 4rem);
+  }
+  100% {
+    width: 0rem;
+    height: 0rem;
+  }
+}
+
+@keyframes bubble-size {
+  0%, 75% {
+    width: var(--size, 4rem);
+    height: var(--size, 4rem);
+  }
+  100% {
+    width: 0rem;
+    height: 0rem;
+  }
+}
+@-webkit-keyframes bubble-move {
+  0% {
+    bottom: -4rem;
+  }
+  100% {
+    bottom: var(--distance, 10rem);
+  }
+}
+@keyframes bubble-move {
+  0% {
+    bottom: -4rem;
+  }
+  100% {
+    bottom: var(--distance, 10rem);
+  }
 }
