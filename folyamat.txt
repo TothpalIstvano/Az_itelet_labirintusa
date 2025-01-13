@@ -49,7 +49,7 @@ harc (szörny1):
 
 
 end != true:
-    if (eszik):
+    if (eszik):✓
         életerő + 4
         élelem - 1
 

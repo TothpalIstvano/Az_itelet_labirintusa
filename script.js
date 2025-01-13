@@ -70,9 +70,9 @@ function etkezes(){
         if(elelmiszerek>0){
             myData.Game.Character.Inventory.Food -= 1;
             elelmiszerek -= 1;
+            console.log(elelmiszerek);
             elelmiszer.innerText = elelmiszerek;
             etkezes();
-            
         } 
         
     })
@@ -94,10 +94,12 @@ function potion(){
             const buttonSkill = document.createElement('button');
             const buttonStamina = document.createElement('button');
             const buttonLuck = document.createElement('button');
+            buttonSkill.textContent = '<--';
+            buttonStamina.textContent = '<--';
+            buttonLuck.textContent = '<--';
             document.getElementById("skill").appendChild(buttonSkill);
             document.getElementById("stamina").appendChild(buttonStamina);
             document.getElementById("luck").appendChild(buttonLuck);
-            ivas.style.visibility = "hidden"
             
             
         } 
