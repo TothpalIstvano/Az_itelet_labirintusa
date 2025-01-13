@@ -283,9 +283,11 @@ function kartya(id){
         }
         console.log(node);
 
+
         if (node.Choices && node.Choices.Choice && !node.Dice) {
-            const gif = document.getElementById("gif");
-            gif.src = "jofuto.gif";
+            /*const gif = document.getElementById("gif");
+            gif.src = "jofuto.gif";*/
+
 
             const choices = Array.isArray(node.Choices.Choice) ? node.Choices.Choice : [node.Choices.Choice];
             choices.forEach(choice => {
