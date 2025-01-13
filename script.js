@@ -367,11 +367,77 @@ function kartya(id){
             
                 gombok.appendChild(ugyessegButton);
             }
+            if (node.Dice.mitNez == "eredmeny") {
+                const erredmenyButton = document.createElement("button");
+                let eredmenyEredmeny = dobbas();
+                erredmenyButton.innerText = "Ted próbára a ügyeségedet";
+                erredmenyButton.className = "choiceButton";
+                erredmenyButton.addEventListener('click', () => {
 
+                    console.log(eredmenyEredmeny);
+                    const rbutton = document.createElement("button");
+                    rbutton.innerText = "próbálkozzás";
+                    rbutton.className = "choiceButton";
+                    rbutton.addEventListener('click', () => {
+                    while (eredmenyEredmeny < 5 && myData.Game.Character.Stats.Stamina > 0) {
+                           myData.Game.Character.Stats.Stamina += node.Dice.vesztesEletero;
+                           document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                    };
+                        
+                    });
+                    gombok.appendChild(rbutton); 
+                    if(eredmenyEredmeny < 5 && myData.Game.Character.Stats.Stamina > 0){
+                        const rbutton = document.createElement("button");
+                        rbutton.innerText = node.Choices.Choice.__text;
+                        rbutton.className = "choiceButton";
+                        rbutton.addEventListener('click', () => {
+                            const choiceButtons = document.querySelectorAll(".choiceButton");
+                            choiceButtons.forEach(button => button.remove());
+                            document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                            document.querySelectorAll("#harc #enemy").forEach(element => element.remove());
+                            kartya(node.Choices.Choice._targetNode);
+                    });
+                      gombok.appendChild(rbutton);  
+                    }
+                    erredmenyButton.remove();
+                });
             
+                gombok.appendChild(erredmenyButton);
+            }
         }
 
+        if(node.gold){
+            myData.Game.Character.Inventory.Gold = parseInt(myData.Game.Character.Inventory.Gold) + node.gold;
+            document.getElementById("arany").innerText = myData.Game.Character.Inventory.Gold;
+        }
 
+        if(node.eletero){
+            myData.Game.Character.Stats.Stamina = myData.Game.Character.Stats.Stamina + node.eletero;
+            document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+        }
+
+        if(node.szerencse){
+            myData.Game.Character.Stats.Luck += node.szerencse;
+            document.getElementById("luck").innerText = myData.Game.Character.Stats.Luck;
+        }
+
+        if(node.food){
+            myData.Game.Character.Inventory.Food += node.food;
+            document.getElementById("elelmiszerek").innerText = myData.Game.Character.Inventory.Food;
+        }
+
+        if(node.szerencseMin){
+            limitLuck = node.szerencseMin;
+        }
+
+        if(node.szerencseVisszaallitPluszEgy){
+            limitLuck += 1;
+            myData.Game.Character.Stats.Luck = limitLuck;
+        }
+
+        if(node.tovabbiTamadoero){
+            tamadoero += node.tovabbiTamadoero;
+        }
 
         if (node.Choices && node.Choices.Choice && !node.Dice) {
             /*const gif = document.getElementById("gif");
@@ -431,7 +497,8 @@ fetchData().then(data => {
         generalas();
         
     });
-    kartya(8);
+    generalas();
+    kartya(102);
     
 });
 
