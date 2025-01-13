@@ -62,6 +62,7 @@ function generalas()
 
 function etkezes(){
     const elelmiszer = document.getElementById('elelmiszerek');
+    const eleterő = document.getElementById('stamina');
     elelmiszerek = myData.Game.Character.Inventory.Food;
     const eves = document.createElement('button');
     eves.id = 'eves';
@@ -70,8 +71,10 @@ function etkezes(){
         if(elelmiszerek>0){
             myData.Game.Character.Inventory.Food -= 1;
             elelmiszerek -= 1;
-            console.log(elelmiszerek);
+            myData.Game.Character.Stats.Stamina += 4;
             elelmiszer.innerText = elelmiszerek;
+            eleterő.innerText = myData.Game.Character.Stats.Stamina;
+            
             etkezes();
         } 
         
@@ -97,6 +100,24 @@ function potion(){
             buttonSkill.textContent = '<--';
             buttonStamina.textContent = '<--';
             buttonLuck.textContent = '<--';
+            buttonSkill.addEventListener('click', () => {
+                myData.Game.Character.Stats.Skill = limitSkill;
+                document.getElementById("skill").innerText = myData.Game.Character.Stats.Skill;
+                buttonLuck.remove();
+                buttonStamina.remove();
+            })
+            buttonStamina.addEventListener('click', () => {
+                myData.Game.Character.Stats.Stamina = limitStamina;
+                document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                buttonLuck.remove();
+                buttonSkill.remove();
+            })
+            buttonLuck.addEventListener('click', () => {
+                myData.Game.Character.Stats.Luck = limitLuck + 1;
+                document.getElementById("luck").innerText = myData.Game.Character.Stats.Luck;
+                buttonStamina.remove();
+                buttonSkill.remove();
+            })
             document.getElementById("skill").appendChild(buttonSkill);
             document.getElementById("stamina").appendChild(buttonStamina);
             document.getElementById("luck").appendChild(buttonLuck);
@@ -108,13 +129,6 @@ function potion(){
     italok.appendChild(ivas);
     generalvaP = true;
 }
-
-
-
-
-
-
-
 
 function szerencse() {
     try {
@@ -241,8 +255,35 @@ function kartya(id){
             }
             harc.appendChild(enemyDiv);
         }
+        if (node.Dice) {
+            
+            if (node.Dice.mit == "szerencse") {
+                const szerencseButton = document.createElement("button");
+                let szerencseEredmeny
+                szerencseButton.innerText = "Ted próbára a szerencsédet";
+                szerencseButton.className = "szerencseButton";
+                szerencseButton.addEventListener('click', () => {
+                    szerencseEredmeny = szerencse();
+                    console.log(szerencseEredmeny);
+                    if (szerencseEredmeny) {
+                        const rbutton = document.createElement("button");
+                        rbutton.innerText = "Rendben";
+                        rbutton.addEventListener('click', () => {
+                            const choiceButtons = document.querySelectorAll(".choiceButton");
+                            choiceButtons.forEach(button => button.remove());
+                            document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                            document.querySelectorAll("#harc #enemy").forEach(element => element.remove());
+                            kartya(choice._targetNode);
+                    }); 
+                    }
+                });
+            
+                gombok.appendChild(szerencseButton);
+            }
+        }
+        console.log(node);
 
-        if (node.Choices && node.Choices.Choice) {
+        if (node.Choices && node.Choices.Choice && !node.Dice) {
             const gif = document.getElementById("gif");
             gif.src = "jofuto.gif";
 
@@ -263,6 +304,7 @@ function kartya(id){
             }
             });
         }
+        
     }
     else
     {
@@ -278,11 +320,10 @@ function kartya(id){
                     button.remove();
                 });
                 kartya(1);
-                button.remove();
+                
             })
         });
         gombok.appendChild(button);
-        
     }
 }
 
@@ -295,11 +336,11 @@ fetchData().then(data => {
     marValtozoDologPoweredByKovacsEdit();
     const generalasButton = document.getElementById('generalas');
     generalasButton.className = "generalas";  //nem mükszik idk
-
     generalasButton.addEventListener('click', () => {
         generalas();
+        
     });
-    kartya(1);
+    kartya(86);
     
 });
 

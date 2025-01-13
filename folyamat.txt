@@ -53,7 +53,7 @@ end != true:
         életerő + 4
         élelem - 1
 
-    if (varázsital >= 1):
+    if (varázsital >= 1):✓
         ügyesség = kezdeti érték
         életerő = kezdeti érték
         szerencse = kezdeti érték + 1
