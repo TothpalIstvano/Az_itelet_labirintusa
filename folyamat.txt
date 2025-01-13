@@ -105,12 +105,12 @@ end != true:
         harc(szörny)
 
     if (dice):
-        if (mit = szerencse):
+        if (mit = szerencse):✓
             szerencse
-        if (mit = Stamina):
+        if (mit = Stamina):✓
             dobás = egy kocka
             életerő -= dobás
-        if (mit = ügyesség):
+        if (mit = ügyesség):✓
             dobás = két kocka
             if (dobás > jelenlegi ügyesség):
                 103-as oldal
