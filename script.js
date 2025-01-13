@@ -259,29 +259,118 @@ function kartya(id){
             
             if (node.Dice.mit == "szerencse") {
                 const szerencseButton = document.createElement("button");
-                let szerencseEredmeny
+                let szerencseEredmeny = false;
                 szerencseButton.innerText = "Ted próbára a szerencsédet";
-                szerencseButton.className = "szerencseButton";
+                szerencseButton.className = "choiceButton";
                 szerencseButton.addEventListener('click', () => {
                     szerencseEredmeny = szerencse();
                     console.log(szerencseEredmeny);
                     if (szerencseEredmeny) {
                         const rbutton = document.createElement("button");
-                        rbutton.innerText = "Rendben";
+                        rbutton.innerText = node.Choices.Choice[0].__text;
+                        rbutton.className = "choiceButton";
                         rbutton.addEventListener('click', () => {
                             const choiceButtons = document.querySelectorAll(".choiceButton");
                             choiceButtons.forEach(button => button.remove());
                             document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
                             document.querySelectorAll("#harc #enemy").forEach(element => element.remove());
-                            kartya(choice._targetNode);
-                    }); 
+                            kartya(node.Choices.Choice[0]._targetNode);
+                    });
+                        gombok.appendChild(rbutton); 
                     }
+                    else{
+                        const rbutton = document.createElement("button");
+                        rbutton.innerText = node.Choices.Choice[1].__text;
+                        rbutton.className = "choiceButton";
+                        rbutton.addEventListener('click', () => {
+                            const choiceButtons = document.querySelectorAll(".choiceButton");
+                            choiceButtons.forEach(button => button.remove());
+                            document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                            document.querySelectorAll("#harc #enemy").forEach(element => element.remove());
+                            kartya(node.Choices.Choice[1]._targetNode);    
+                    });
+                        gombok.appendChild(rbutton);  
+                    }
+                    szerencseButton.remove();
                 });
             
                 gombok.appendChild(szerencseButton);
+            }            
+            
+            if (node.Dice.mit == "Stamina") {
+                const staminaButton = document.createElement("button");
+                let staminaEredmeny = dobbas();
+                staminaButton.innerText = "Ted próbára az életedet";
+                staminaButton.className = "choiceButton";
+                staminaButton.addEventListener('click', () => {
+                console.log(staminaEredmeny);
+                    if(node.Dice.pluszminusz == "minusz"){
+                        myData.Game.Character.Stats.Stamina -= staminaEredmeny;
+                        document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;}
+                    else{
+                        myData.Game.Character.Stats.Stamina += staminaEredmeny;
+                        document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                    }
+                    const rbutton = document.createElement("button");
+                    rbutton.innerText = node.Choices.Choice.__text;
+                    rbutton.className = "choiceButton";
+                    rbutton.addEventListener('click', () => {
+                        const choiceButtons = document.querySelectorAll(".choiceButton");
+                        choiceButtons.forEach(button => button.remove());
+                        document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                        document.querySelectorAll("#harc #enemy").forEach(element => element.remove());
+                        kartya(node.Choices.Choice._targetNode);
+                });
+                    gombok.appendChild(rbutton); 
+                    staminaButton.remove();
+                });
+                gombok.appendChild(staminaButton);
             }
+
+            if (node.Dice.mitNez == "ügyesség") {
+                const ugyessegButton = document.createElement("button");
+                let ugyessegEredmeny = dobbas() + dobbas();
+                ugyessegButton.innerText = "Ted próbára a ügyeségedet";
+                ugyessegButton.className = "choiceButton";
+                ugyessegButton.addEventListener('click', () => {
+
+                    console.log(ugyessegEredmeny);
+                    if (ugyessegEredmeny > myData.Game.Character.Stats.Skill) {
+                        const rbutton = document.createElement("button");
+                        rbutton.innerText = node.Choices.Choice[0].__text;
+                        rbutton.className = "choiceButton";
+                        rbutton.addEventListener('click', () => {
+                            const choiceButtons = document.querySelectorAll(".choiceButton");
+                            choiceButtons.forEach(button => button.remove());
+                            document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                            document.querySelectorAll("#harc #enemy").forEach(element => element.remove());
+                            kartya(node.Choices.Choice[0]._targetNode);
+                           
+                    });
+                        gombok.appendChild(rbutton); 
+                    };
+                    if(ugyessegEredmeny <= myData.Game.Character.Stats.Skill){
+                        const rbutton = document.createElement("button");
+                        rbutton.innerText = node.Choices.Choice[1].__text;
+                        rbutton.className = "choiceButton";
+                        rbutton.addEventListener('click', () => {
+                            const choiceButtons = document.querySelectorAll(".choiceButton");
+                            choiceButtons.forEach(button => button.remove());
+                            document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                            document.querySelectorAll("#harc #enemy").forEach(element => element.remove());
+                            kartya(node.Choices.Choice[1]._targetNode);
+                    });
+                      gombok.appendChild(rbutton);  
+                    }
+                    ugyessegButton.remove();
+                });
+            
+                gombok.appendChild(ugyessegButton);
+            }
+
+            
         }
-        console.log(node);
+
 
 
         if (node.Choices && node.Choices.Choice && !node.Dice) {
@@ -342,7 +431,7 @@ fetchData().then(data => {
         generalas();
         
     });
-    kartya(86);
+    kartya(8);
     
 });
 
