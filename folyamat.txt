@@ -122,29 +122,29 @@ end != true:
                 életerő - 2
             158-as oldal
 
-    if (van gold):
+    if (van gold):✓
         arany += gold
 
     if (van itemAdd):
         inventory += item
 
-    if (van eletero):
+    if (van eletero): ✓
         te életerő += eletero
 
-    if (van szerencse):
+    if (van szerencse):✓
         te szerencse += szerencse
 
-    if (van food):
+    if (van food):✓
         élelem += food
 
-    if (van szerencseMin):
+    if (van szerencseMin):✓
         szerencselimit = szerencseMin
 
-    if (van szerencseVisszaallitPluszEgy):
+    if (van szerencseVisszaallitPluszEgy):✓
         szerencselimit +1
         szerencse = szerencselimit
 
-    if (van tovabbiTamadoero):
+    if (van tovabbiTamadoero):✓
         te támadóerő += tovabbiTamadoero
 
     if (van itemLoss):
