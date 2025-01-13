@@ -367,9 +367,11 @@ function kartya(id){
             
                 gombok.appendChild(ugyessegButton);
             }
-            if (node.Dice.mitNez == "eredmeny") {
+            if (node.Dice.mitNez == "eredmény") {
                 const erredmenyButton = document.createElement("button");
+                
                 let eredmenyEredmeny = dobbas();
+                console.log(eredmenyEredmeny)
                 erredmenyButton.innerText = "Ted próbára a ügyeségedet";
                 erredmenyButton.className = "choiceButton";
                 erredmenyButton.addEventListener('click', () => {
@@ -379,14 +381,18 @@ function kartya(id){
                     rbutton.innerText = "próbálkozzás";
                     rbutton.className = "choiceButton";
                     rbutton.addEventListener('click', () => {
-                    while (eredmenyEredmeny < 5 && myData.Game.Character.Stats.Stamina > 0) {
-                           myData.Game.Character.Stats.Stamina += node.Dice.vesztesEletero;
-                           document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                    while (eredmenyEredmeny != 5 || eredmenyEredmeny != 6 && myData.Game.Character.Stats.Stamina >= 0) {
+                           myData.Game.Character.Stats.Stamina += intParse(node.Dice.vesztesEletero);
+                           setTimeout(() => {
+                               document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                           }, 1);
+                           eredmenyEredmeny = dobbas();
+                           console.log(eredmenyEredmeny)
                     };
-                        
+                        gombok.appendChild(rbutton);
                     });
-                    gombok.appendChild(rbutton); 
-                    if(eredmenyEredmeny < 5 && myData.Game.Character.Stats.Stamina > 0){
+                    
+                    if(eredmenyEredmeny > 4 && myData.Game.Character.Stats.Stamina > 0){
                         const rbutton = document.createElement("button");
                         rbutton.innerText = node.Choices.Choice.__text;
                         rbutton.className = "choiceButton";
@@ -498,7 +504,7 @@ fetchData().then(data => {
         
     });
     generalas();
-    kartya(102);
+    kartya(196);
     
 });
 
