@@ -282,10 +282,9 @@ function kartya(id){
                 tobbEnemy = true;
             } else {
                 enemyDiv.id = "enemy";
-                enemyDiv.innerHTML = `<h2>${enemies.name}</h2><p>Ügyessége: ${enemies.skill}</p><spanid="enemyStamina${i}">${enemy.stamina}</span></p><p id="tamadoero">Támadóerő:</p>`;
+                enemyDiv.innerHTML = `<h2>${node.enemies.enemy.name}</h2><p>Ügyessége: ${node.enemies.enemy.skill}</p><p>Élet: <span id="enemyStamina">${node.enemies.enemy.stamina}</span></p><p id="tamadoero">Támadóerő:</p>`;
             }
             harc.appendChild(enemyDiv);
-            console.log(enemies[0].stamina);
             harcButton.addEventListener('click', () => {
             let myAttack = dobbas() + dobbas() + myData.Game.Character.Stats.Skill;
             let kor = 0;
@@ -320,7 +319,7 @@ function kartya(id){
                     }
                    
                     else{
-                        console.log("nyert");
+                        
                     }
                 }
                 else{
@@ -353,7 +352,7 @@ function kartya(id){
                     if(enemies[0].stamina <= 0 && enemies[1].stamina <= 0){
                         console.log("nyert");
                     }
-                }
+                
                 if(enemies[0].menkeules || enemies[1].menekules){
                     myData.Game.Character.Stats.Stamina -= 2;
                     document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
@@ -372,7 +371,7 @@ function kartya(id){
                             const choiceButtons = document.querySelectorAll(".choiceButton");
                             choiceButtons.forEach(button => button.remove());
                             document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
-                            kartya(node.NextCard);
+                            kartya(node.Choices.Choice[1].__text);
                         });
                         gombok.appendChild(rbutton);
                     });
@@ -380,8 +379,67 @@ function kartya(id){
                     
                     harcButton.remove();
                 }
+                }
+            }          
+            else if(!tobbEnemy){
+                let enemyAttack = dobbas() + dobbas() + enemies.skill;
+
+                if (enemyAttack > myAttack && enemies.stamina > 0) {
+                    myData.Game.Character.Stats.Stamina += enemies.sebzes;
+                    document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
+                    document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                }
+                if (myAttack > enemyAttack && enemies.stamina > 0) {
+                    enemies.stamina -= 2;
+                    document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
+                    document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                }
+                if(myAttack == enemyAttack){
+                    harcButton.click();
+                }
+                if(enemies.stamina <= 0){
+                    const menekulesButton = document.createElement("button");
+                    menekulesButton.innerText = "Menekülés";
+                    menekulesButton.className = "choiceButton";
+                    menekulesButton.addEventListener('click', () => {
+                        const rbutton = document.createElement("button");
+                        rbutton.innerText = node.Choices.Choice[0].__text;
+                        rbutton.className = "choiceButton";
+                        rbutton.addEventListener('click', () => {
+                            const choiceButtons = document.querySelectorAll(".choiceButton");
+                            choiceButtons.forEach(button => button.remove());
+                            document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                            kartya(node.Choices.Choice[0]._targetNode);
+                        });
+                        gombok.appendChild(rbutton);
+                    });
+                    harc.appendChild(menekulesButton);
+                    harcButton.remove();
+                }
+                if(enemies.menkeules){
+                    myData.Game.Character.Stats.Stamina -= 2;
+                    document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
+                    document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                    const menekulesButton = document.createElement("button");
+                    menekulesButton.innerText = "Menekülés";
+                    menekulesButton.className = "choiceButton";
+                    menekulesButton.addEventListener('click', () => {
+                        const rbutton = document.createElement("button");
+                        rbutton.innerText = node.Choices.Choice[1].__text;
+                        rbutton.className = "choiceButton";
+                        rbutton.addEventListener('click', () => {
+                            const choiceButtons = document.querySelectorAll(".choiceButton");
+                            choiceButtons.forEach(button => button.remove());
+                            document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                            kartya(node.Choices.Choice[1]._targetNode);
+                        });
+                        gombok.appendChild(rbutton);
+                    });
+                    harc.appendChild(menekulesButton);
+                    harcButton.remove();
+                }
             }
-            else if(myData.Game.Character.Stats.Stamina <= 0){
+            if(myData.Game.Character.Stats.Stamina <= 0){
                 button.innerText = "Újrakezdés";
                 button.className = "ujrakezdes";
                 button.addEventListener('click', () => {
@@ -405,6 +463,7 @@ function kartya(id){
             document.getElementById("harc").appendChild(harcButton)
 
         )};
+        tobbEnemy = false;
         if (node.Dice) {
             
             if (node.Dice.mit == "szerencse") {
@@ -765,7 +824,7 @@ fetchData().then(data => {
         
     });
     generalas();
-    kartya(140);
+    kartya(41);
     
 });
 
