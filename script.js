@@ -35,6 +35,7 @@ let bronzkulcsButton;
 let kopenyButton;
 
 
+let nyert = false;
 
 function targyakPoweredByKovacsEdit(item){
     let itemValue = myData.Game.Character.Inventory[item];
@@ -190,29 +191,6 @@ function szerencse() {
     // generate the value of luck and add to the HTML
 }
 
-/**
- * Simulates a battle scenario where the player attempts to flee from an enemy encounter.
- *
- * @param {string} id - The identifier of the node containing enemy details.
- *
- * The function retrieves the enemy data associated with the given node ID and performs a 
- * comparison of attack strength between the player and a fleeing enemy. If the player's attack 
- * is higher, the enemy's stamina is reduced. If the enemy's attack is higher, the player's 
- * stamina is reduced by the enemy's damage amount plus an additional 2 points. If the attacks 
- * are equal, the function recursively calls itself to simulate continuous combat until one 
- * side's stamina is depleted. The player's stamina is updated in the DOM after each encounter.
- */
-
-function Harc(id){
-    const node = kartyaKereses(id);
-    
-
-
-
-
-
-}
-
 
 function dobbas() {
     let x = Math.floor(Math.random() * 6) + 1;
@@ -299,84 +277,130 @@ function kartya(id){
                 enemies.forEach(enemy => {
                     i++;
                     enemyDiv.id = "enemy";
-                    enemyDiv.innerHTML += `<h2>${enemy?.name}</h2><p>Ügyessége: ${enemy?.skill}</p><p id="enemyStamina${i}">Élet: ${enemy?.stamina}</p><p id="tamadoero">Támadóerő:</p>`;
+                    enemyDiv.innerHTML += `<h2>${enemy?.name}</h2><p>Ügyessége: ${enemy?.skill}</p><p">Élet: <spanid="enemyStamina${i}">${enemy?.stamina}</span></p><p id="tamadoero">Támadóerő:</p>`;
                 });
                 tobbEnemy = true;
             } else {
                 enemyDiv.id = "enemy";
-                enemyDiv.innerHTML = `<h2>${enemies.name}</h2><p>Ügyessége: ${enemies.skill}</p><p id="enemyStamina">Élet: ${enemies.stamina}</p><p id="tamadoero">Támadóerő:</p>`;
+                enemyDiv.innerHTML = `<h2>${enemies.name}</h2><p>Ügyessége: ${enemies.skill}</p><spanid="enemyStamina${i}">${enemy.stamina}</span></p><p id="tamadoero">Támadóerő:</p>`;
             }
             harc.appendChild(enemyDiv);
-
+            console.log(enemies[0].stamina);
             harcButton.addEventListener('click', () => {
             let myAttack = dobbas() + dobbas() + myData.Game.Character.Stats.Skill;
+            let kor = 0;
             if(tobbEnemy){
-                console.log(enemies.Stamina);
-                if(node.KuzdesEgyesevel){
-                    if(!elsoHalott){
-                        let enemyAttack = dobbas() + dobbas() + enemies[0].Skill;
+                if(node.kuzdesEgyesevel){
+                    if(enemies[0].stamina > 0){
+                        console.log(myData.Game.Character.Stats.Stamina, enemies[0].stamina);
+                        let enemyAttack = dobbas() + dobbas() + enemies[0].skill;
                         if (enemyAttack > myAttack) {
                             myData.Game.Character.Stats.Stamina += enemies[0].sebzes;
                             document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                             document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
                         } else if (myAttack > enemyAttack) {
-                            enemies[0].Stamina -= 2;
-                            document.getElementById("enemyStamina1").innerText = myData.Game.Character.Stats.Stamina;
+                            enemies[0].stamina -= 2;
                         }
                         else if(myAttack == enemyAttack){
-                            Harc(id);
+                            harcButton.click();
                         }
-                        if(enemies[0].Stamina <= 0){
-                            elsoHalott = true;
-                        }
-                    }else{
-                        let enemyAttack = dobbas() + dobbas() + enemies[1].Skill;
-                        if (enemyAttack > myAttack) {
+                    }else if(enemies[1].stamina > 0 && enemies[0].stamina <= 0){
+                        console.log(myData.Game.Character.Stats.Stamina, enemies[1].stamina);
+                        let enemyAttack2 = dobbas() + dobbas() + enemies[1].skill;
+                        if (enemyAttack2 > myAttack) {
                             myData.Game.Character.Stats.Stamina += enemies[1].sebzes;
                             document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                             document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-                        } else if (myAttack > enemyAttack) {
-                            enemies[1].Stamina -= 2;
-                            document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-                            document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                        } else if (myAttack > enemyAttack2) {
+                            enemies[1].stamina -= 2;
                         }
-                        else if(myAttack == enemyAttack){
-                            Harc(id);
+                        else if(myAttack == enemyAttack2){
+                            harcButton.click();
                         }
-                        if(enemies[1].Stamina <= 0){
-                            return 0;
-                        }
+                    }
+                   
+                    else{
+                        console.log("nyert");
                     }
                 }
                 else{
-                    let enemyAttack = dobbas() + dobbas() + enemies[0].Skill;
-                    let enemyAttack2 = dobbas() + dobbas() + enemies[1].Skill;
-                    if (enemyAttack > myAttack) {
+                    let enemyAttack = dobbas() + dobbas() + enemies[0].skill;
+                    let enemyAttack2 = dobbas() + dobbas() + enemies[1].skill;
+                    if (enemyAttack > myAttack && enemies[0].stamina > 0) {
                         myData.Game.Character.Stats.Stamina += enemies[0].sebzes;
                         document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                         document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-                    } else if (myAttack > enemyAttack) {
-                        enemies[0].Stamina -= 2;
+                    }
+                    if (myAttack > enemyAttack && enemies[0].stamina > 0) {
+                        enemies[0].stamina -= 2;
                         document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                         document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
                     }
-                    else if(myAttack == enemyAttack){
-                        Harc(id);
-                    }
-                    if (enemyAttack2 > myAttack) {
+                    if (enemyAttack2 > myAttack && enemies[1].stamina > 0) {
                         myData.Game.Character.Stats.Stamina += enemies[1].sebzes;
                         document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                         document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-                    } else if (myAttack > enemyAttack2) {
-                        enemies[1].Stamina -= 2;
+                    }
+                    if (myAttack > enemyAttack2 && enemies[1].stamina > 0) {
+                        console.log(enemies[1].stamina);
+                        enemies[1].stamina -= 2;
                         document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                         document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
                     }
-                    else if(myAttack == enemyAttack){
-                        Harc(id);
+                    if(myAttack == enemyAttack || myAttack == enemyAttack2){
+                        harcButton.click();
+                    }
+                    if(enemies[0].stamina <= 0 && enemies[1].stamina <= 0){
+                        console.log("nyert");
                     }
                 }
+                if(enemies[0].menkeules || enemies[1].menekules){
+                    myData.Game.Character.Stats.Stamina -= 2;
+                    document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
+                    document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                    const menekulesButton = document.createElement("button");
+                    menekulesButton.innerText = "Menekülés";
+                    menekulesButton.className = "choiceButton";
+                    menekulesButton.addEventListener('click', () => {
+                        const choiceButtons = document.querySelectorAll(".choiceButton");
+                        choiceButtons.forEach(button => button.remove());
+                        document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                        const rbutton = document.createElement("button");
+                        rbutton.innerText = node.Choices.Choice[0].__text;
+                        rbutton.className = "choiceButton";
+                        rbutton.addEventListener('click', () => {
+                            const choiceButtons = document.querySelectorAll(".choiceButton");
+                            choiceButtons.forEach(button => button.remove());
+                            document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                            kartya(node.NextCard);
+                        });
+                        gombok.appendChild(rbutton);
+                    });
+                    harc.appendChild(menekulesButton);
+                    
+                    harcButton.remove();
+                }
             }
+            else if(myData.Game.Character.Stats.Stamina <= 0){
+                button.innerText = "Újrakezdés";
+                button.className = "ujrakezdes";
+                button.addEventListener('click', () => {
+                    fetchData().then(data => {
+                        myData = data;
+                        marValtozoDologPoweredByKovacsEdit();
+                        const generalasButton = document.getElementById('generalas');
+                        generalasButton.addEventListener('click', () => {
+                            generalas();
+                            button.remove();
+                        });
+                        kartya(1);
+                        
+                    })
+                });
+                gombok.appendChild(button);
+            }
+            
+            kor ++;
             },
             document.getElementById("harc").appendChild(harcButton)
 
@@ -662,7 +686,7 @@ function kartya(id){
             tamadoero += node.tovabbiTamadoero;
         }
 
-        if (node.Choices && node.Choices.Choice && !node.Dice) {
+        if (node.Choices && node.Choices.Choice && !node.Dice && !node.enemies) {
             /*const gif = document.getElementById("gif");
             gif.src = "jofuto.gif";*/
 
@@ -741,9 +765,7 @@ fetchData().then(data => {
         
     });
     generalas();
-
-    kartya(1);
-
+    kartya(140);
     
 });
 
