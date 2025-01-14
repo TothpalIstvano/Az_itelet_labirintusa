@@ -55,6 +55,10 @@ function generalas()
     document.getElementById("skill").innerHTML = myData.Game.Character.Stats.Skill;// generate the value of skill and add to the HTML
     document.getElementById("stamina").innerHTML = myData.Game.Character.Stats.Stamina;// generate the value of stamina and add to the HTML
     document.getElementById("luck").innerHTML = myData.Game.Character.Stats.Luck;// generate the value of luck and add to the HTML
+
+    document.getElementById("health").max = limitStamina;
+    document.getElementById("health").value = myData.Game.Character.Stats.Stamina;  //működik, jó adatokat ad
+    
     const button = document.getElementById('generalas');
     button.remove();
     
@@ -74,7 +78,9 @@ function etkezes(){
             myData.Game.Character.Stats.Stamina += 4;
             elelmiszer.innerText = elelmiszerek;
             eleterő.innerText = myData.Game.Character.Stats.Stamina;
-            
+
+            document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
+
             etkezes();
         } 
         
@@ -109,6 +115,9 @@ function potion(){
             buttonStamina.addEventListener('click', () => {
                 myData.Game.Character.Stats.Stamina = limitStamina;
                 document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                
+                document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
+                
                 buttonLuck.remove();
                 buttonSkill.remove();
             })
@@ -169,7 +178,7 @@ function harc(id){
             myData.Character.Stats.Stamina -= enemies.sebzes;
         }
         if(te>szorny){
-            enemies.stamina -= myData.Character.Stats.Stamina;
+            enemies.stamina -= myData.Character.Stats.Stamina;  //itt -2 kéne a myData...Stamina helyett
         }
     }
 
@@ -190,7 +199,7 @@ function harc(id){
             myData.Character.Stats.Stamina -= enemies.sebzes;
         }
         if(te>szorny){
-            enemies.stamina -= myData.Character.Stats.Stamina;
+            enemies.stamina -= myData.Character.Stats.Stamina;  //szintén mint fentebb
         }
         if (myData.Character.Stats.Stamina <= 0) {
             f = false;
@@ -306,10 +315,13 @@ function kartya(id){
                 console.log(staminaEredmeny);
                     if(node.Dice.pluszminusz == "minusz"){
                         myData.Game.Character.Stats.Stamina -= staminaEredmeny;
-                        document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;}
+                        document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                        document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
+                    }
                     else{
                         myData.Game.Character.Stats.Stamina += staminaEredmeny;
                         document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                        document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                     }
                     const rbutton = document.createElement("button");
                     rbutton.innerText = node.Choices.Choice.__text;
@@ -345,7 +357,7 @@ function kartya(id){
                             document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
                             document.querySelectorAll("#harc #enemy").forEach(element => element.remove());
                             kartya(node.Choices.Choice[0]._targetNode);
-                           
+                        
                     });
                         gombok.appendChild(rbutton); 
                     };
@@ -360,7 +372,7 @@ function kartya(id){
                             document.querySelectorAll("#harc #enemy").forEach(element => element.remove());
                             kartya(node.Choices.Choice[1]._targetNode);
                     });
-                      gombok.appendChild(rbutton);  
+                    gombok.appendChild(rbutton);  
                     }
                     ugyessegButton.remove();
                 });
@@ -380,8 +392,9 @@ function kartya(id){
                     rbutton.className = "choiceButton";
                     rbutton.addEventListener('click', () => {
                     while (eredmenyEredmeny < 5 && myData.Game.Character.Stats.Stamina > 0) {
-                           myData.Game.Character.Stats.Stamina += node.Dice.vesztesEletero;
-                           document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                            myData.Game.Character.Stats.Stamina += node.Dice.vesztesEletero;
+                            document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                            document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                     };
                         
                     });
@@ -397,7 +410,7 @@ function kartya(id){
                             document.querySelectorAll("#harc #enemy").forEach(element => element.remove());
                             kartya(node.Choices.Choice._targetNode);
                     });
-                      gombok.appendChild(rbutton);  
+                    gombok.appendChild(rbutton);  
                     }
                     erredmenyButton.remove();
                 });
@@ -414,6 +427,7 @@ function kartya(id){
         if(node.eletero){
             myData.Game.Character.Stats.Stamina = myData.Game.Character.Stats.Stamina + node.eletero;
             document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+            document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
         }
 
         if(node.szerencse){
@@ -498,7 +512,7 @@ fetchData().then(data => {
         
     });
     generalas();
-    kartya(102);
+    kartya(41);
     
 });
 
