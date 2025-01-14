@@ -52,7 +52,7 @@
                     "End": true
                 },
                 {
-                    "Description": "Az ajtó egy tágas terembe nyílik, melynek északi oldalán egy újabb kijárat van, egy lelógó kötél szomszédságában. Csapdának nem látod jelét, így áthaladsz a szobán és leveszed a kötelet. Lenyomod a kilincset, de így sem sikerül előrébb jutnod &#8211; alighanem zárva van.",
+                    "Description": "Az ajtó egy tágas terembe nyílik, melynek északi oldalán egy újabb kijárat van, egy lelógó kötél szomszédságában. Csapdának nem látod jelét, így áthaladsz a szobán és leveszed a kötelet. Lenyomod a kilincset, de így sem sikerül előrébb jutnod – alighanem zárva van.",
                     "Choices": {
 						"Choice": [{
 							"_targetNode": "110",
@@ -268,7 +268,7 @@
 					}
                 },
 				{
-					"Description": "Igyekezeted, hogy szilárd talajra juss, hiábavalónak tűnik, ám teszel még egy utolsó, kétségbeesett próbálkozást a kijárat felé veted magad. Tedd próbára SZERENCSED!",
+					"Description": "Igyekezeted, hogy szilárd talajra juss, hiábavalónak tűnik, ám teszel még egy utolsó, kétségbeesett próbálkozást a kijárat felé veted magad. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "176",
@@ -296,7 +296,7 @@
 						},
 						{
 							"_targetNode": "76",
-							"__text": "Ha nem tudod, vissza kell térned a homokos folyópartra és valahol máshol kell próbálkoznod &#8211; lapozz a 76-ra."
+							"__text": "Ha nem tudod, vissza kell térned a homokos folyópartra és valahol máshol kell próbálkoznod – lapozz a 76-ra."
 						}]
 					},
 					"_id": "20",
@@ -356,7 +356,7 @@
                     "End": false
                 },
 				{
-                    "Description": "Vagy száz Elf áll körülötted, megfeszített nyilvesszőkkel, melyek feléd mutatnak. A halott Fönök fia előre lép és az idős férfire néz, aki alig észrevehetően megrázza a fejét. Az Elf komoran elmosolyodik. Bünös! &#8211; jelenti ki. Az utolsó dolog, amit hallasz, az a feléd suhanó nyílvesszők zaja. Kalandod itt véget ér.",
+                    "Description": "Vagy száz Elf áll körülötted, megfeszített nyilvesszőkkel, melyek feléd mutatnak. A halott Fönök fia előre lép és az idős férfire néz, aki alig észrevehetően megrázza a fejét. Az Elf komoran elmosolyodik. Bünös! – jelenti ki. Az utolsó dolog, amit hallasz, az a feléd suhanó nyílvesszők zaja. Kalandod itt véget ér.",
                     "_id": "26",
                     "End": true
                 },
@@ -481,7 +481,7 @@
                     "End": false
                 },
 				{
-					"Description": "A törmelékek közt kutatva belerúgsz valami fémes dologba. Miután eltakarítottad a környékéről a szemetet, egy masszív csapóajtó körvonalai rajzolódnak ki elötted a padlóban. Nem tudod megállapítani, hogy túl rozsdás-e ahhoz, hogy fel lehessen nyitni, te mindenesetre megpróbálod. Tedd próbára SZERENCSED!",
+					"Description": "A törmelékek közt kutatva belerúgsz valami fémes dologba. Miután eltakarítottad a környékéről a szemetet, egy masszív csapóajtó körvonalai rajzolódnak ki elötted a padlóban. Nem tudod megállapítani, hogy túl rozsdás-e ahhoz, hogy fel lehessen nyitni, te mindenesetre megpróbálod. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "199",
@@ -500,7 +500,7 @@
 					}
 				},
 				{
-					"Description": "Átkutatod a zsákutcát, remélve, hogy találsz valamit. Tedd próbára SZERENCSED!",
+					"Description": "Átkutatod a zsákutcát, remélve, hogy találsz valamit. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "114",
@@ -539,7 +539,7 @@
                     "End": false
                 },
 				{
-					"Description": "Miközben a termeszektől nyüzsgő építményen haladsz, az baljósan recseg-ropog a talpad alatt. Minden egyes lépéssel újabb darabjai esnek bele a vizbe. Végül már csak egyetlen kötél marad épen, ami az utolsó deszkadarabot tartja. Tedd próbára SZERENCSED!",
+					"Description": "Miközben a termeszektől nyüzsgő építményen haladsz, az baljósan recseg-ropog a talpad alatt. Minden egyes lépéssel újabb darabjai esnek bele a vizbe. Végül már csak egyetlen kötél marad épen, ami az utolsó deszkadarabot tartja. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "60",
@@ -701,7 +701,7 @@
 					"requestNumbers": 3
 				},
 				{
-                    "Description": "Egy kis helyiségbe nyitsz be, mely első ránézésre nem tartalmaz semmi mást, csak nagy halom törmeléket a padlón. Ahogy beljebb lépsz, kellemetlen szag csapja meg az orrodat, és egy éles, magas és amenynyire meg tudod állapítani &#8211; dühödt visitás kezd egyre erősödni. Végül egy rikoltás kiséretében két hatalmas Denevér ereszti el a plafont a szoba két sarkában, és feléd kezdenek repülni. Ahogy ösztönösen lebuksz, sikerül észrevenned a lények vicsorgó agyarait, melyek készek szétcincálni a torkodat.",
+                    "Description": "Egy kis helyiségbe nyitsz be, mely első ránézésre nem tartalmaz semmi mást, csak nagy halom törmeléket a padlón. Ahogy beljebb lépsz, kellemetlen szag csapja meg az orrodat, és egy éles, magas és amenynyire meg tudod állapítani - dühödt visitás kezd egyre erősödni. Végül egy rikoltás kiséretében két hatalmas Denevér ereszti el a plafont a szoba két sarkában, és feléd kezdenek repülni. Ahogy ösztönösen lebuksz, sikerül észrevenned a lények vicsorgó agyarait, melyek készek szétcincálni a torkodat.",
                     "Choices": {
 						"Choice": [{
 							"_targetNode": "80",
@@ -805,7 +805,7 @@
 					"eletero": -2
 				},
 				{
-					"Description": "Ahogy belépsz a szobába, a padlónak azon része, melyre ráléptél. lezuhan. Tedd próbára SZERENCSED!",
+					"Description": "Ahogy belépsz a szobába, a padlónak azon része, melyre ráléptél. lezuhan. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "176",
@@ -828,7 +828,7 @@
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "104",
-							"__text": "Ha még nem tetted, most belenézhetsz a kék &#8211; lapozz a 104-re"
+							"__text": "Ha még nem tetted, most belenézhetsz a kék – lapozz a 104-re"
 						},
 						{
 							"_targetNode": "88",
@@ -854,7 +854,7 @@
 					"End": false
 				},
 				{
-					"Description": "A hatalmas Galon tetemét melynek madárszerű karmai még mindig megfeszülnek és elernyednek, mintha még holtukban is szét akarnának tépni téged megkerülve kiutat keresel a helyiségből. E közben szépen lassan az oszlás büze tölti be a levegőt. A Madárember teste felé fordulsz, és még éppen megpillantod, amint bőrszárnyai eltünnek egy csapat vonagló lárva alatt. Néhány másodperccel később már csak a lerágott csontok maradnak meg egykori ellenfeledből. Amint elfogy élelmük, a férgek feled indulnak, te pedig ráébredsz, hogy halálos veszélyben vagy. Mivel a fura teremtmények közted és a bejárat között állnak, egy másik kiutat kell találnod. Tedd próbára SZERENCSED!",
+					"Description": "A hatalmas Galon tetemét melynek madárszerű karmai még mindig megfeszülnek és elernyednek, mintha még holtukban is szét akarnának tépni téged megkerülve kiutat keresel a helyiségből. E közben szépen lassan az oszlás büze tölti be a levegőt. A Madárember teste felé fordulsz, és még éppen megpillantod, amint bőrszárnyai eltünnek egy csapat vonagló lárva alatt. Néhány másodperccel később már csak a lerágott csontok maradnak meg egykori ellenfeledből. Amint elfogy élelmük, a férgek feled indulnak, te pedig ráébredsz, hogy halálos veszélyben vagy. Mivel a fura teremtmények közted és a bejárat között állnak, egy másik kiutat kell találnod. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "109",
@@ -897,7 +897,7 @@
 					"itemLoss": 2
 				},
 				{
-					"Description": "Ahogy leugrasz, hátizsákod beleakad valamibe, te pedig egy pillanatra elveszted az egyensúlyod, épp mikor földet érsz. Tedd próbára SZERENCSED!",
+					"Description": "Ahogy leugrasz, hátizsákod beleakad valamibe, te pedig egy pillanatra elveszted az egyensúlyod, épp mikor földet érsz. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "117",
@@ -1159,7 +1159,7 @@
 					"End": false
 				},
 				{
-					"Description": "Olyan csendben lopakodsz előre, amennyire csak tudsz, ám kardod véletlenül nekicsapódik a kőnek, és éles, csengő hangot ad ki. Tedd próbára SZERENCSED!",
+					"Description": "Olyan csendben lopakodsz előre, amennyire csak tudsz, ám kardod véletlenül nekicsapódik a kőnek, és éles, csengő hangot ad ki. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "97",
@@ -1189,7 +1189,7 @@
 					"End": false
 				},
 				{
-					"Description": "Az öreg arcra megkönnyebbülés ül ki. Kinyitja a fal egyik titkos rekeszét és elővesz egy börerszényt. Előrenyújtott kezeidbe önti annak tartalmát &#8211; 27 Aranytallért és egy Gyémántot, amiket azonnal a hátizsákodba pakolsz.",
+					"Description": "Az öreg arcra megkönnyebbülés ül ki. Kinyitja a fal egyik titkos rekeszét és elővesz egy börerszényt. Előrenyújtott kezeidbe önti annak tartalmát – 27 Aranytallért és egy Gyémántot, amiket azonnal a hátizsákodba pakolsz.",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "180",
@@ -1202,7 +1202,7 @@
 					},
 					"_id": "83",
                     "End": false,
-					"itemAdd": "Gyémánt",
+					"ekko": "Gyémánt",
 					"gold": 27
 				},
 				{
@@ -1237,7 +1237,7 @@
 					"gold": 3
 				},
 				{
-					"Description": "Ahogy körbenézel, észreveszel egy kötelet, amit egy nagyméretű sziklához kötöztek. Amennyire elnézed, nincs túl jó állapotban. és azt sem látod. milyen mélyen ér le a szakadékba, de úgy tűnik, ez az egyetlen lehetőséged a lejutásra. Tedd próbára SZERENCSED!",
+					"Description": "Ahogy körbenézel, észreveszel egy kötelet, amit egy nagyméretű sziklához kötöztek. Amennyire elnézed, nincs túl jó állapotban. és azt sem látod. milyen mélyen ér le a szakadékba, de úgy tűnik, ez az egyetlen lehetőséged a lejutásra. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "190",
@@ -1407,7 +1407,7 @@
 					"End": false
 				},
 				{
-					"Description": "Az ajtó ugyan zárva van, de a korábban talált kulccsal gond nélkül sikerül kinyitnod. Ahogy belépsz, két dárda repül elő az ajtóban lévő egyik lyukból. Tedd próbára SZERENCSED!",
+					"Description": "Az ajtó ugyan zárva van, de a korábban talált kulccsal gond nélkül sikerül kinyitnod. Ahogy belépsz, két dárda repül elő az ajtóban lévő egyik lyukból. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "44",
@@ -1500,7 +1500,7 @@
 					"End": false
 				},
 				{
-					"Description": "A kék könyv térképeket tartalmaz, és bár minden nevet Elfül írtak bele, a képen felismerni véled Analandot. Úgy tűnik, ez a mű tartalmazza azon városok, falvak, és ami még fontosabb, bányák helyzetét, melyekben drágakövet vagy nemesfémet találhatsz. Ha sikerülne magaddal vinned ezt a kötetet a felszínre, futármunkád sokkal jövedelmezöbbé és biztonságosabbá válhatna. Biztonságba helyezed hát kabátod egyik belső zsebébe. Mielőtt elhagynád a termet, még belenézhetsz a  &#8211;",
+					"Description": "A kék könyv térképeket tartalmaz, és bár minden nevet Elfül írtak bele, a képen felismerni véled Analandot. Úgy tűnik, ez a mű tartalmazza azon városok, falvak, és ami még fontosabb, bányák helyzetét, melyekben drágakövet vagy nemesfémet találhatsz. Ha sikerülne magaddal vinned ezt a kötetet a felszínre, futármunkád sokkal jövedelmezöbbé és biztonságosabbá válhatna. Biztonságba helyezed hát kabátod egyik belső zsebébe. Mielőtt elhagynád a termet, még belenézhetsz a  –",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "59",
@@ -1603,7 +1603,7 @@
 					"End": false
 				},
 				{
-					"Description": "Az Aranykulcs illik a zárba, és egy észak felé haladó folyosót fed fel elötted. A járat élesen jobbra kanyarodik, majd vissza balra. A második sarok után egy tükörrel kerülsz szembe, ami teljesen elállja az utadat. Egy pillanatig saját tükörképed néz veled farkasszemet, a következőben pedig &#8211; legnagyobb megrökönyödésedre &#8211; már ki is lép belőle, előhúzza kardját és rád támad! Mivel ez a valami a tökéletes tükörképed, ugyanolyan ÜGYESSÉGGEL rendelkezik, mint te, ám miután a síkból térbe való kilépés eléggé kimerítette, ÉLETEREJE 2-vel kevesebb lesz a tiédnél. Ez ígérkezik a legnehezebb harcodnak, mivel nem vagy meggyőződve arról, hogy meg tudod-e nyerni. Az biztos, hogy ö végezni tud veled, abban azonban már kevésbé vagy biztos, hogy ellenfeled legyőzése nem fog-e öngyilkosságnak minősülni? Ha megnyered a csatát, lapozz a 128-ra.",
+					"Description": "Az Aranykulcs illik a zárba, és egy észak felé haladó folyosót fed fel elötted. A járat élesen jobbra kanyarodik, majd vissza balra. A második sarok után egy tükörrel kerülsz szembe, ami teljesen elállja az utadat. Egy pillanatig saját tükörképed néz veled farkasszemet, a következőben pedig – legnagyobb megrökönyödésedre – már ki is lép belőle, előhúzza kardját és rád támad! Mivel ez a valami a tökéletes tükörképed, ugyanolyan ÜGYESSÉGGEL rendelkezik, mint te, ám miután a síkból térbe való kilépés eléggé kimerítette, ÉLETEREJE 2-vel kevesebb lesz a tiédnél. Ez ígérkezik a legnehezebb harcodnak, mivel nem vagy meggyőződve arról, hogy meg tudod-e nyerni. Az biztos, hogy ö végezni tud veled, abban azonban már kevésbé vagy biztos, hogy ellenfeled legyőzése nem fog-e öngyilkosságnak minősülni? Ha megnyered a csatát, lapozz a 128-ra.",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "128",
@@ -1627,7 +1627,7 @@
 					}
                 },
 				{
-					"Description": "Az alagút elkeskenyedik, és egyre nehezebben tudsz csak előre haladni. A plafon meredeken lefelé indul, így először le kell hajolnod, végül négykézlábra kényszerülsz. Valamennyire látod magad előtt az utat a szük járaton át. Tedd próbára SZERENCSED!",
+					"Description": "Az alagút elkeskenyedik, és egyre nehezebben tudsz csak előre haladni. A plafon meredeken lefelé indul, így először le kell hajolnod, végül négykézlábra kényszerülsz. Valamennyire látod magad előtt az utat a szük járaton át. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "20",
@@ -1646,7 +1646,7 @@
 					}
 				},
 				{
-					"Description": "Ahogy a folyosón haladsz, furcsa hangot hallasz. Megállsz hallgatózni. Csoszogó léptek zaja üti meg a füledet. Nincs hová bújnod, így valamiféle szörnyeteg felbukkanását várva előhúzod kardodat. Ehelyett egy öregember bukkan fel elötted. Fegyveredre pillant, és esdekelni kezd. &#8211; Kímélj meg! Csak egy vén, egyszerü fickó vagyok. aki elmenekült a cellájából. Hüvelyébe dugod a kardod, a férfi pedig elmondja, hogy már évek óta itt él, mióta fiatal korában beküldték az Ítélet Labirintusába. Az egyik szörny elleni harc során súlyos sebet szerzett, és bár túlélte az összecsapást, elvesztette a fegyvereit és így képtelen volt folytatni az utat. Régóta bujkál már idelenn. most pedig már túl öreg ahhoz, hogy visszatérjen a fenti világba, ahol egyébként is végeznének vele, mivel nem tudja a Szobor bemutatásával bizonyítani ártatlanságát. Így inkább idelenn maradt a végtelen éjszakában, és abból élt, amivel az utazók megszánták. Miközben beszél, úgy dönt, még egy utolsó kísérletet tesz a kijutásra, így megkérdezi tőled, merre találja a bejáratot.",
+					"Description": "Ahogy a folyosón haladsz, furcsa hangot hallasz. Megállsz hallgatózni. Csoszogó léptek zaja üti meg a füledet. Nincs hová bújnod, így valamiféle szörnyeteg felbukkanását várva előhúzod kardodat. Ehelyett egy öregember bukkan fel elötted. Fegyveredre pillant, és esdekelni kezd. – Kímélj meg! Csak egy vén, egyszerü fickó vagyok. aki elmenekült a cellájából. Hüvelyébe dugod a kardod, a férfi pedig elmondja, hogy már évek óta itt él, mióta fiatal korában beküldték az Ítélet Labirintusába. Az egyik szörny elleni harc során súlyos sebet szerzett, és bár túlélte az összecsapást, elvesztette a fegyvereit és így képtelen volt folytatni az utat. Régóta bujkál már idelenn. most pedig már túl öreg ahhoz, hogy visszatérjen a fenti világba, ahol egyébként is végeznének vele, mivel nem tudja a Szobor bemutatásával bizonyítani ártatlanságát. Így inkább idelenn maradt a végtelen éjszakában, és abból élt, amivel az utazók megszánták. Miközben beszél, úgy dönt, még egy utolsó kísérletet tesz a kijutásra, így megkérdezi tőled, merre találja a bejáratot.",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "187",
@@ -1661,7 +1661,7 @@
 					"End": false
                 },
 				{
-					"Description": "Ahogy felrázod, a fickó szemei felpattannak, és mikor megpillant téged, rettegés tölti el. &#8211; Ne, ne! Kérem, ne öljön meg! &#8211; könyörög. Ha életben hagy, minden eldugott pénzemet magának adom!",
+					"Description": "Ahogy felrázod, a fickó szemei felpattannak, és mikor megpillant téged, rettegés tölti el. – Ne, ne! Kérem, ne öljön meg! – könyörög. Ha életben hagy, minden eldugott pénzemet magának adom!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "17",
@@ -1851,7 +1851,7 @@
                     "End": false
 				},
 				{
-					"Description": "Még élsz! Bármennyire is fáradt vagy, kardod markolatával darabokra zúzod a tükröt. Ebből már nem fog újabb kihívó előlépni. Egy keskeny szirten találod magad, egy magas sziklafal kellős közepén. A barlangüreg plafonja áthatolhatatlan sötétségbe burkolózik. Előtted egy folyó halad keletről nyugatra, felette pedig egy hid ivel át. Nem találsz lefelé vezető utat, csak egy vasgyürün akad meg a szemed, amit a falba rögzítettek. Hozzákötöd a köteled, majd elkezdesz lefelé mászni. Tedd próbára SZERENCSED!",
+					"Description": "Még élsz! Bármennyire is fáradt vagy, kardod markolatával darabokra zúzod a tükröt. Ebből már nem fog újabb kihívó előlépni. Egy keskeny szirten találod magad, egy magas sziklafal kellős közepén. A barlangüreg plafonja áthatolhatatlan sötétségbe burkolózik. Előtted egy folyó halad keletről nyugatra, felette pedig egy hid ivel át. Nem találsz lefelé vezető utat, csak egy vasgyürün akad meg a szemed, amit a falba rögzítettek. Hozzákötöd a köteled, majd elkezdesz lefelé mászni. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "48",
@@ -1896,7 +1896,7 @@
 					"End": false
 				},
 				{
-					"Description": "Elmondod a férfinak, hogy nincs nálad a Szobor. Arca kifejezéstelen, amikor megszólal. &#8211; Rendben van. Kövess. Megfordul, és egy csigalépcsőn elindul fölfelé. Nincs választásod, kénytelen vagy követni. A lépcső egy pódiumon ér véget, és boldogsággal tölt el, hogy ismét börödön érezheted a nap sugarait, a szellőt. Mintha egy éve nem jártál volna a felszínen.",
+					"Description": "Elmondod a férfinak, hogy nincs nálad a Szobor. Arca kifejezéstelen, amikor megszólal. – Rendben van. Kövess. Megfordul, és egy csigalépcsőn elindul fölfelé. Nincs választásod, kénytelen vagy követni. A lépcső egy pódiumon ér véget, és boldogsággal tölt el, hogy ismét börödön érezheted a nap sugarait, a szellőt. Mintha egy éve nem jártál volna a felszínen.",
 					"Choices": {
 						"Choice": {
 							"_targetNode": "26",
@@ -2075,14 +2075,14 @@
 						},
 						{
 							"_targetNode": "106",
-							"__text": "Ha nincs, úgy kénytelen vagy folytatni az utad &#8211; lapozz a 106-ra."
+							"__text": "Ha nincs, úgy kénytelen vagy folytatni az utad – lapozz a 106-ra."
 						}]
 					},
 					"_id": "143",
                     "End": false
 				},
 				{
-					"Description": "Mikor már félúton jársz a fényfolt felé, a talaj megnyílik alattad, de még az előtt sikerül visszalépned, hogy te is beleesnél &#8211; korábbi óvatosságod meghozta gyümölcsét. Ahogy közelebbről is megvizsgálod, megállapítod, hogy egy kis, kör alakú verem az a padló kellős közepén. Rozoga létra fut lefelé végig az oldalán. de vagy túl sötét van, vagy túl mély lyuk, mert nem látod az alját.",
+					"Description": "Mikor már félúton jársz a fényfolt felé, a talaj megnyílik alattad, de még az előtt sikerül visszalépned, hogy te is beleesnél – korábbi óvatosságod meghozta gyümölcsét. Ahogy közelebbről is megvizsgálod, megállapítod, hogy egy kis, kör alakú verem az a padló kellős közepén. Rozoga létra fut lefelé végig az oldalán. de vagy túl sötét van, vagy túl mély lyuk, mert nem látod az alját.",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "7",
@@ -2162,7 +2162,7 @@
 					}
 				},
 				{
-					"Description": "Megkérdezed a fogolytól, mondana-e neked valami hasznosat a szabadságáért cserébe. A fickó szemei felcsillannak, és azonnal bólint.-Elmondhatom neked, merre találod a legnagyobb rubint, amit valaha láttál mondja. De elöbb eressz ki innen. &#8211;",
+					"Description": "Megkérdezed a fogolytól, mondana-e neked valami hasznosat a szabadságáért cserébe. A fickó szemei felcsillannak, és azonnal bólint.-Elmondhatom neked, merre találod a legnagyobb rubint, amit valaha láttál mondja. De elöbb eressz ki innen. –",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "133",
@@ -2260,7 +2260,7 @@
 					"End": false
 				},
 				{
-					"Description": "A lejtő elég meredek, és már régóta mész, mikor a lépcsők megszűnnek, a járat pedig élesen balra kanyarodik. Fárasztó volt idáig az út, ezért lankad a figyelmed, mikor egy mocskos, dagadt Hobgoblin ugrik eléd. Bandzsa szemeivel az egyik bíbor, a másik zöld &#8211; méreget téged. Ruhái ugyanolyan koszosak, mint ő maga, ráadásul eléggé szakadtak is, a kezében lévő kard azonban borotvaéles, és látszik, hogy gondosan karban tartja. Előre nyújtott fegyverrel közeledik feléd.",
+					"Description": "A lejtő elég meredek, és már régóta mész, mikor a lépcsők megszűnnek, a járat pedig élesen balra kanyarodik. Fárasztó volt idáig az út, ezért lankad a figyelmed, mikor egy mocskos, dagadt Hobgoblin ugrik eléd. Bandzsa szemeivel az egyik bíbor, a másik zöld – méreget téged. Ruhái ugyanolyan koszosak, mint ő maga, ráadásul eléggé szakadtak is, a kezében lévő kard azonban borotvaéles, és látszik, hogy gondosan karban tartja. Előre nyújtott fegyverrel közeledik feléd.",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "50",
@@ -2268,7 +2268,7 @@
 						},
 						{
 							"_targetNode": "143",
-							"__text": "Ha rosszul alakul a harc, az első Harci Kört követően el tudsz futni ellenfeled mellett, tovább az északra vezető lépcsőkön &#8211; ha így tennél, lapozz a 143-ra."
+							"__text": "Ha rosszul alakul a harc, az első Harci Kört követően el tudsz futni ellenfeled mellett, tovább az északra vezető lépcsőkön – ha így tennél, lapozz a 143-ra."
 						},
 						{
 							"_targetNode": "0",
@@ -2289,7 +2289,7 @@
 					}
                 },
 				{
-					"Description": "A férfi hűvösen mér végig. &#8211; Hazudsz! mondja. És a hazugok büntetést érdemelnek. Elsétál melletted a folyosón. Nyugtalanul töprengsz azon, vajon hogy is érthette, amit mondott. Hamarosan megtudod. A története ugyan igaz volt, azt azonban nem mondta el, mi volt a foglalkozása a fenti világban, hogy miért került ide: zsebtolvaj volt! 2 adag élelmedet nyúlta le a fickó. Vesztesz 1 SZERENCSE pontot. Ezután folytatod utadat kelet felé.",
+					"Description": "A férfi hűvösen mér végig. – Hazudsz! mondja. És a hazugok büntetést érdemelnek. Elsétál melletted a folyosón. Nyugtalanul töprengsz azon, vajon hogy is érthette, amit mondott. Hamarosan megtudod. A története ugyan igaz volt, azt azonban nem mondta el, mi volt a foglalkozása a fenti világban, hogy miért került ide: zsebtolvaj volt! 2 adag élelmedet nyúlta le a fickó. Vesztesz 1 SZERENCSE pontot. Ezután folytatod utadat kelet felé.",
 					"Choices": {
 						"Choice": {
 							"_targetNode": "57",
@@ -2356,7 +2356,7 @@
 						},
 						{
 							"_targetNode": "115",
-							"__text": "Ha nincs, zuhanni kezdesz lefelé &#8211; lapozz a 115-re."
+							"__text": "Ha nincs, zuhanni kezdesz lefelé – lapozz a 115-re."
 						}]
 					},
 					"_id": "159",
@@ -2444,7 +2444,7 @@
 					}
 				},
 				{
-					"Description": "Alaposan átkutatod a szobát, a férfi azonban &#8211; talán épp a hangos horkolása miatt nem ébred fel. Elég ártalmatlannak tűnik, de nem egyszer történt már meg korábbi kalandjaid során, hogy életben hagytál egy látszólag veszélytelen ellenfelet, aki aztán egy rejtett tört előkapva hálálta meg a dolgot. Talán az lenne a legjobb, ha egyszerüen végeznél vele.",
+					"Description": "Alaposan átkutatod a szobát, a férfi azonban – talán épp a hangos horkolása miatt nem ébred fel. Elég ártalmatlannak tűnik, de nem egyszer történt már meg korábbi kalandjaid során, hogy életben hagytál egy látszólag veszélytelen ellenfelet, aki aztán egy rejtett tört előkapva hálálta meg a dolgot. Talán az lenne a legjobb, ha egyszerüen végeznél vele.",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "17",
@@ -2518,7 +2518,7 @@
 					"eletero": -3
 				},
 				{
-					"Description": "Ahogy a középső pallón sétálsz végig, két oldaladon a sármedencék felszíne bugyborékolni kezd. Óriási gázbuborékok törnek fel belőlük, melyek kidurranva fojtogató. rothadó hússzaggal töltik meg a helyiséget. Tedd próbára SZERENCSED!",
+					"Description": "Ahogy a középső pallón sétálsz végig, két oldaladon a sármedencék felszíne bugyborékolni kezd. Óriási gázbuborékok törnek fel belőlük, melyek kidurranva fojtogató. rothadó hússzaggal töltik meg a helyiséget. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "173",
@@ -2575,7 +2575,7 @@
 						},
 						{
 							"_targetNode": "184",
-							"__text": "Hogyha úgy érzed, nem éri meg a kockázatot, visszatérhetsz a folyosóra és keletnek fordulhatsz &#8211; lapozz a 184-re."
+							"__text": "Hogyha úgy érzed, nem éri meg a kockázatot, visszatérhetsz a folyosóra és keletnek fordulhatsz – lapozz a 184-re."
 						}]
 					},
 					"_id": "174",
@@ -2598,7 +2598,7 @@
 					"End": false
 				},
 				{
-					"Description": "Bedőltél a cselnek! Ahogy átlépsz a falak között, egy csapdát aktiválsz, mely elsüt egy megtöltött számszerijat. Tedd próbára SZERENCSED!",
+					"Description": "Bedőltél a cselnek! Ahogy átlépsz a falak között, egy csapdát aktiválsz, mely elsüt egy megtöltött számszerijat. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "78",
@@ -2639,7 +2639,7 @@
 					"End": false
 				},
 				{
-					"Description": "A járat olyan meredeken emelkedik fölfelé, hogy végül egy kéménnyé változik. Itt már csak úgy tudsz haladni, ha a hátaddal és lábaddal nekifeszülsz két szemben álló falnak, és centinként araszolva mászol felfelé. Mikor végül feljutsz, egy széles szirten találod magad. Nagyon elfáradtál a nehéz mászástól &#8211; vesztesz 1 ÉLETERŐ pontot.",
+					"Description": "A járat olyan meredeken emelkedik fölfelé, hogy végül egy kéménnyé változik. Itt már csak úgy tudsz haladni, ha a hátaddal és lábaddal nekifeszülsz két szemben álló falnak, és centinként araszolva mászol felfelé. Mikor végül feljutsz, egy széles szirten találod magad. Nagyon elfáradtál a nehéz mászástól – vesztesz 1 ÉLETERŐ pontot.",
 					"Choices": {
 						"Choice": {
 							"_targetNode": "56",
@@ -2651,7 +2651,7 @@
 					"eletero": -1
 				},
 				{
-					"Description": "Ahogy megkerülöd a medencét, látod, amint a sár bugyogni kezd. Hatalmas gázbuborékok emelkednek ki belőle és robbannak fel, rothadó hús szagával töltve be a levegőt. Tedd próbára SZERENCSED!",
+					"Description": "Ahogy megkerülöd a medencét, látod, amint a sár bugyogni kezd. Hatalmas gázbuborékok emelkednek ki belőle és robbannak fel, rothadó hús szagával töltve be a levegőt. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "192",
@@ -2702,7 +2702,7 @@
 					}
                 },
 				{
-					"Description": "Az egyik keringö cölöp váratlanul elfordul, és könnyedén felhasítja a börödet. Tedd próbára SZERENCSED!",
+					"Description": "Az egyik keringö cölöp váratlanul elfordul, és könnyedén felhasítja a börödet. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "194",
@@ -2763,7 +2763,7 @@
 					"eletero": -3
 				},
 				{
-					"Description": "Elmondod a fickónak, merről jöttél, aki erre elmosolyodik. Köszönöm &#8211; mondja. Segítettél rajtam, így én is segítek terajtad. Csak annyit mondok, nem mind arany, ami fénylik. Sok alakja van annak, amit keresel: ne hagyd, hogy hamis Szobrok félrevezessenek. Azzal elmegy melletted és eltűnik a távolban. A mondottakon töprengve folytatod az utad kelet felé.",
+					"Description": "Elmondod a fickónak, merről jöttél, aki erre elmosolyodik. Köszönöm – mondja. Segítettél rajtam, így én is segítek terajtad. Csak annyit mondok, nem mind arany, ami fénylik. Sok alakja van annak, amit keresel: ne hagyd, hogy hamis Szobrok félrevezessenek. Azzal elmegy melletted és eltűnik a távolban. A mondottakon töprengve folytatod az utad kelet felé.",
 					"Choices": {
 						"Choice": {
 							"_targetNode": "57",
@@ -2799,7 +2799,7 @@
 					}
                 },
 				{
-					"Description": "Ahogy óvatosan áthaladsz a padlón, arra várva, hogy a cövekek mozgás közben utat engedjenek neked, az egyik hegye belekap kabátodba és kibillent az egyensúlyodból. Tedd próbára SZERENCSED!",
+					"Description": "Ahogy óvatosan áthaladsz a padlón, arra várva, hogy a cövekek mozgás közben utat engedjenek neked, az egyik hegye belekap kabátodba és kibillent az egyensúlyodból. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "162",
@@ -2818,11 +2818,11 @@
 					}
 				},
 				{
-					"Description": "Már majdnem eléred a sziklaszirt alját. amikor a kötél elfogy. Innen le kell ugranod. Nagyjából két méterre van alattad a talaj, de elég sziklás. Tedd próbára SZERENCSED!",
+					"Description": "Már majdnem eléred a sziklaszirt alját. amikor a kötél elfogy. Innen le kell ugranod. Nagyjából két méterre van alattad a talaj, de elég sziklás. Tedd próbára SZERENCSÉD!",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "27",
-							"__text": "Ha szerencsés vagy, biztonságban, sebesülés nélkül landolsz a talajon &#8211; lapozz a 27-re."
+							"__text": "Ha szerencsés vagy, biztonságban, sebesülés nélkül landolsz a talajon – lapozz a 27-re."
 						},
 						{
 							"_targetNode": "54",
@@ -2905,7 +2905,7 @@
 					"End": false
 				},
 				{
-					"Description": "Amennyire csak tudod, puha ruhadarabokkal béleled ki a vállad, behúzod a nyakad és az ajtónak rontasz. Dobj egy kockával. Ha az eredmény 1-4. megsérültél és vesztesz 2 ÉLETERŐ pontot. Ha azonban 5-öt vagy 6-ot dobtál, sikerült betörnöd az ajtót &#8211;  Egészen addig kell próbálkoznod. míg ez nem sikerül.",
+					"Description": "Amennyire csak tudod, puha ruhadarabokkal béleled ki a vállad, behúzod a nyakad és az ajtónak rontasz. Dobj egy kockával. Ha az eredmény 1-4. megsérültél és vesztesz 2 ÉLETERŐ pontot. Ha azonban 5-öt vagy 6-ot dobtál, sikerült betörnöd az ajtót –  Egészen addig kell próbálkoznod. míg ez nem sikerül.",
 					"Choices": {
 						"Choice": {
 							"_targetNode": "158",
@@ -2938,7 +2938,7 @@
 					},
 					"_id": "197",
                     "End": false,
-					"szerencseDobasPluszEgy": 1
+					"SZERENCSÉDobasPluszEgy": 1
 				},
 				{
 					"Description": "A két lénynél összesen 5 Aranytallért találsz, meg egy érdekes növénykét.",
@@ -2957,8 +2957,10 @@
 					"gold": 5
 				},
 				{
-					"Description": "A csapóajtó eléggé megszorult, végül azonban sikerül kinyitnod. Alatta egy kis üreget találsz, abban pedig három tárgyat: egy gyürüt, egy kis fiolányi folyadékot és egy összehajtogatott köpenyt.    Ha mindezeket a hasznos tárgyakat a következő utazónak hagynád hátra, bezárnád a csapóajtót és az ajtón kilépve észak felé távoznál, lapozz a 80-ra.",
-					"itemAdd": ["Gyűrű", "Folyadék", "Köpeny"],
+					"Description": "A csapóajtó eléggé megszorult, végül azonban sikerül kinyitnod. Alatta egy kis üreget találsz, abban pedig három tárgyat: egy gyürüt, egy kis fiolányi folyadékot és egy összehajtogatott köpenyt. Ha mindezeket a hasznos tárgyakat a következő utazónak hagynád hátra, bezárnád a csapóajtót és az ajtón kilépve észak felé távoznál, lapozz a 80-ra.",
+					"itemAdd": "Gyűrű",
+					"itemAdd1": "Folyadék", 
+					"itemAdd2":"Köpeny",
 					"Choices": {
 						"Choice": [{
 							"_targetNode": "119",
@@ -2975,7 +2977,7 @@
 						{
 							"_targetNode": "71",
 							"__text": "Amennyiben felhajtanád a folyadékot, lapozz a 71-re.",
-							"_requiresItem": "Folyadék",
+							"_requiresItem1": "Folyadék",
 							"_proba": false
 						},
 						{
