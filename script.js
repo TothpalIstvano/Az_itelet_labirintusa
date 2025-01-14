@@ -385,6 +385,7 @@ function kartya(id){
                            myData.Game.Character.Stats.Stamina += intParse(node.Dice.vesztesEletero);
                            setTimeout(() => {
                                document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                               document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                            }, 1);
                            eredmenyEredmeny = dobbas();
                            console.log(eredmenyEredmeny)
