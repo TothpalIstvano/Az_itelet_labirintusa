@@ -125,7 +125,7 @@ end != true:
     if (van gold):✓
         arany += gold
 
-    if (van itemAdd):
+    if (van itemAdd):✓
         inventory += item
 
     if (van eletero): ✓
