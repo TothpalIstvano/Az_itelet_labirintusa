@@ -20,7 +20,17 @@ let italok
 let elelmiszerek
 let generalva = false;
 let generalvaP = false;
+let generalvaG = false;
 let tamadoero = 0;
+let targyak = [];
+let gyuruoButton;
+let szoborButton;
+let folyadekButton;
+let aranykulcsButton;
+let bronzkulcsButton;
+let kopenyButton;
+
+
 function targyakPoweredByKovacsEdit(item){
     let itemValue = myData.Game.Character.Inventory[item];
     document.getElementById("targyak").innerHTML += itemValue;// Add the items value to the HTML element
@@ -58,6 +68,12 @@ function generalas()
 
     document.getElementById("health").max = limitStamina;
     document.getElementById("health").value = myData.Game.Character.Stats.Stamina;  //működik, jó adatokat ad
+
+    document.getElementById("luckszerencse").max = limitLuck;
+    document.getElementById("luckszerencse").value = myData.Game.Character.Stats.Luck;
+
+    document.getElementById("skillugyesseg").max = limitSkill;
+    document.getElementById("skillugyesseg").value = myData.Game.Character.Stats.Skill;
     
     const button = document.getElementById('generalas');
     button.remove();
@@ -109,21 +125,21 @@ function potion(){
             buttonSkill.addEventListener('click', () => {
                 myData.Game.Character.Stats.Skill = limitSkill;
                 document.getElementById("skill").innerText = myData.Game.Character.Stats.Skill;
+                document.getElementById("skillugyesseg").value = myData.Game.Character.Stats.Skill;
                 buttonLuck.remove();
                 buttonStamina.remove();
             })
             buttonStamina.addEventListener('click', () => {
                 myData.Game.Character.Stats.Stamina = limitStamina;
                 document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-                
                 document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-                
                 buttonLuck.remove();
                 buttonSkill.remove();
             })
             buttonLuck.addEventListener('click', () => {
                 myData.Game.Character.Stats.Luck = limitLuck + 1;
                 document.getElementById("luck").innerText = myData.Game.Character.Stats.Luck;
+                document.getElementById("luckszerencse").value = myData.Game.Character.Stats.Luck;
                 buttonStamina.remove();
                 buttonSkill.remove();
             })
@@ -146,14 +162,17 @@ function szerencse() {
             if (dobas > myData.Game.Character.Stats.Luck) {
                 myData.Game.Character.Stats.Luck -= 1;
                 document.getElementById("luck").innerHTML = myData.Game.Character.Stats.Luck;
+                document.getElementById("luckszerencse").value = myData.Game.Character.Stats.Luck;
                 return false;
             }
             if (dobas < myData.Game.Character.Stats.Luck) {
                 myData.Game.Character.Stats.Luck -= 1;
                 document.getElementById("luck").innerHTML = myData.Game.Character.Stats.Luck;
+                document.getElementById("luckszerencse").value = myData.Game.Character.Stats.Luck;
                 return true;
             } else {
                 myData.Game.Character.Stats.Luck -= 1;
+                document.getElementById("luckszerencse").value = myData.Game.Character.Stats.Luck;
                 return szerencse();
             }
         }
@@ -221,6 +240,41 @@ function kartyaKereses(id){
     return myData.Game.Nodes.Node.find(node => node._id == id);
 }
 
+function targyakGomb() {
+    const hely = document.getElementById("targyak");
+folyadekButton = document.createElement("button");
+folyadekButton.className = "targyakgomb";
+folyadekButton.disabled = true;
+hely.appendChild(folyadekButton);
+
+                kopenyButton = document.createElement("button");
+                kopenyButton.className = "targyakgomb";
+                kopenyButton.disabled = true;
+                hely.appendChild(kopenyButton);
+
+                gyuruoButton = document.createElement("button");
+                gyuruoButton.className = "targyakgomb";
+                gyuruoButton.disabled = true;
+                hely.appendChild(gyuruoButton);
+
+                bronzkulcsButton = document.createElement("button");
+                bronzkulcsButton.className = "targyakgomb";
+                bronzkulcsButton.disabled = true;
+                hely.appendChild(bronzkulcsButton);
+
+                aranykulcsButton = document.createElement("button");
+                aranykulcsButton.className = "targyakgomb";
+                aranykulcsButton.disabled = true;
+                hely.appendChild(aranykulcsButton);
+
+                szoborButton = document.createElement("button");
+                szoborButton.className = "targyakgomb";
+                szoborButton.disabled = true;
+                hely.appendChild(szoborButton);
+
+                generalvaG = true;
+}
+
 function kartya(id){
 
     if(!generalva){
@@ -230,6 +284,11 @@ function kartya(id){
     if(!generalvaP){
         potion();
     }
+
+    if (!generalvaG) {
+        targyakGomb();
+    }
+
     const node = kartyaKereses(id);
     const kartya1 = document.getElementById("kartyak");
     const harc = document.getElementById("harc");
@@ -424,6 +483,92 @@ function kartya(id){
             document.getElementById("arany").innerText = myData.Game.Character.Inventory.Gold;
         }
 
+        if(node.itemAdd) {
+            
+
+            if (node.itemAdd == "Folyadék") {
+
+                folyadekButton.innerText = node.itemAdd;
+                targyak.push(node.itemAdd);
+            }
+
+            else if (node.itemAdd == "Köpeny") { 
+                
+                kopenyButton.innerText = node.itemAdd;
+                targyak.push(node.itemAdd);
+            }
+
+            else if (node.itemAdd == "Gyűrű") {
+                
+                targyak.push(node.itemAdd);
+                gyuruoButton.innerText = node.itemAdd;
+
+            }
+
+            else if (node.itemAdd == "Bronzkulcs") {
+                
+                targyak.push(node.itemAdd);
+                bronzkulcsButton.innerText = node.itemAdd;
+
+            }
+
+            else if (node.itemAdd == "Aranykulcs") {
+                
+                targyak.push(node.itemAdd);
+                aranykulcsButton.innerText = node.itemAdd;
+
+            }
+
+            else if (node.itemAdd == "Szobor") {
+                
+                targyak.push(node.itemAdd);
+                szoborButton.innerText = node.itemAdd;
+
+            }
+        }
+
+        if(node.itemAdd1) {
+            
+            targyak.push(node.itemAdd1);
+            folyadekButton.innerText = node.itemAdd1;
+
+        }
+
+        if(node.itemAdd2) {
+            
+            kopenyButton.innerText = node.itemAdd2;
+            targyak.push(node.itemAdd2);
+        }
+
+        /*if (node.Choices.Choice[0]._requiresItem || node.Choices.Choice[1]._requiresItem) {
+            if (targyak.includes(node.Choices.Choice[0]._requiresItem) && node.Choices.Choice[0]._requiresItem == "Gyűrű") {
+                gyuruoButton.disabled = false;
+            } else if (targyak.includes(node.Choices.Choice[0]._requiresItem) && node.Choices.Choice[0]._requiresItem == "Köpeny") {
+                kopenyButton.disabled = false;
+            } else if (targyak.includes(node.Choices.Choice[0]._requiresItem) && node.Choices.Choice[0]._requiresItem == "Bronzkulcs") {
+                bronzkulcsButton.disabled = false;
+            } else if (targyak.includes(node.Choices.Choice[0]._requiresItem) && node.Choices.Choice[0]._requiresItem == "Aranykulcs") {
+                aranykulcsButton.disabled = false;
+            } else if (targyak.includes(node.Choices.Choice[0]._requiresItem) && node.Choices.Choice[0]._requiresItem == "Szobor") {
+                szoborButton.disabled = false;
+            }
+        
+            if (targyak.includes(node.Choices.Choice[1]._requiresItem) && node.Choices.Choice[1]._requiresItem == "Folyadék") {
+                folyadekButton.disabled = false;
+            }  if (targyak.includes(node.Choices.Choice[1]._requiresItem) && node.Choices.Choice[1]._requiresItem == "Köpeny") {
+                kopenyButton.disabled = false;
+            }  if (targyak.includes(node.Choices.Choice[1]._requiresItem) && node.Choices.Choice[1]._requiresItem == "Szobor") {
+                szoborButton.disabled = false;
+            }
+    
+        }*/
+
+        /*if (node.Choices.Choice[2]._requiresItem1) {
+            if (targyak.includes(node.Choices.Choice[2]._requiresItem1) && node.Choices.Choice[2]._requiresItem1 == "Folyadék") {
+                folyadekButton.disabled = false;
+            }
+        }*/
+        
         if(node.eletero){
             myData.Game.Character.Stats.Stamina = myData.Game.Character.Stats.Stamina + node.eletero;
             document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
@@ -438,6 +583,10 @@ function kartya(id){
         if(node.food){
             myData.Game.Character.Inventory.Food += node.food;
             document.getElementById("elelmiszerek").innerText = myData.Game.Character.Inventory.Food;
+        }
+
+        if(node.ekko) {
+            document.getElementById("ekkovek").innerText = node.ekko;
         }
 
         if(node.szerencseMin){
@@ -461,6 +610,7 @@ function kartya(id){
             const choices = Array.isArray(node.Choices.Choice) ? node.Choices.Choice : [node.Choices.Choice];
             choices.forEach(choice => {
                 if(choice.__text != ""){
+                    
                 const choiceButton = document.createElement("button");
                 choiceButton.innerText = choice.__text;
                 choiceButton.className = "choiceButton";
@@ -470,6 +620,25 @@ function kartya(id){
                     document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
                     document.querySelectorAll("#harc #enemy").forEach(element => element.remove());
                     kartya(choice._targetNode);
+
+                    if (targyak.includes(choice._requiresItem) && choice._requiresItem == "Gyűrű") {
+                        gyuruoButton.disabled = false;
+                    } else if (targyak.includes(choice._requiresItem) && choice._requiresItem == "Köpeny") {
+                        kopenyButton.disabled = false;
+                    } else if (targyak.includes(choice._requiresItem) && choice._requiresItem == "Bronzkulcs") {
+                        bronzkulcsButton.disabled = false;
+                    } else if (targyak.includes(choice._requiresItem) && choice._requiresItem == "Aranykulcs") {
+                        aranykulcsButton.disabled = false;
+                    } else if (targyak.includes(choice._requiresItem) && choice._requiresItem == "Szobor") {
+                        szoborButton.disabled = false;
+                    }
+                    else if (targyak.includes(choice._requiresItem) && choice._requiresItem == "Folyadék") {
+                        folyadekButton.disabled = false;
+                    }
+
+                    else if (!targyak.includes(choice._requiresItem)) {
+                        choiceButton.disabled = true;
+                    }
                 });
                 gombok.appendChild(choiceButton);
             }
@@ -506,13 +675,13 @@ fetchData().then(data => {
     myData = data; // Store the fetched data in the variable
     marValtozoDologPoweredByKovacsEdit();
     const generalasButton = document.getElementById('generalas');
-    generalasButton.className = "generalas";  //nem mükszik idk
+    generalasButton.className = "generalas"; 
     generalasButton.addEventListener('click', () => {
         generalas();
         
     });
     generalas();
-    kartya(41);
+    kartya(1);
     
 });
 
