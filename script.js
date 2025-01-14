@@ -184,90 +184,12 @@ function szerencse() {
 
 function Harc(id){
     const node = kartyaKereses(id);
-    const Enemies  = node.enemies?.enemy; 
-    let myAttack = dobbas() + dobbas() + myData.Game.Character.Stats.Skill;
-    if(tobbEnemy){
-        if(node.KuzdesEgyesevel){
-            if(!elsoHalott){
-                let enemyAttack = dobbas() + dobbas() + Enemies[0].Skill;
-                if (enemyAttack > myAttack) {
-                    myData.Game.Character.Stats.Stamina += Enemies[0].sebzes;
-                    document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-                    document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-                } else if (myAttack > enemyAttack) {
-                    enemyStamina -= 2;
-                    document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-                    document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-                }
-                else if(myAttack == enemyAttack){
-                    Harc(id);
-                }
-            }else{
-                let enemyAttack = dobbas() + dobbas() + Powers[1].Skill;
-                if (enemyAttack > myAttack) {
-                    myData.Game.Character.Stats.Stamina += Enemies[1].sebzes;
-                    document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-                    document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-                } else if (myAttack > enemyAttack) {
-                    enemyStamina -= 2;
-                    document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-                    document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-                }
-                else if(myAttack == enemyAttack){
-                    Harc(id);
-                }
-            }
-        }
-        else{
-            let enemyAttack = dobbas() + dobbas() + Enemies[0].Skill;
-            let enemyAttack2 = dobbas() + dobbas() + Enemies[1].Skill;
-            if (enemyAttack > myAttack) {
-                myData.Game.Character.Stats.Stamina += Enemies[0].sebzes;
-                document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-                document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-            } else if (myAttack > enemyAttack) {
-                enemyStamina -= 2;
-                document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-                document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-            }
-            else if(myAttack == enemyAttack){
-                Harc(id);
-            }
-            if (enemyAttack2 > myAttack) {
-                myData.Game.Character.Stats.Stamina += Enemies[1].sebzes;
-                document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-                document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-            } else if (myAttack2 > enemyAttack) {
-                enemyStamina -= 2;
-                document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-                document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-            }
-            else if(myAttack == enemyAttack){
-                Harc(id);
-            }
-        }
-
-
-
-    }else{
-
-    }
+    
 
 
 
 
-    if (enemyAttack > myAttack) {
-        myData.Game.Character.Stats.Stamina += fleeingEnemy.sebzes;
-        document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-        document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-    } else if (myAttack > enemyAttack) {
-        enemyStamina -= 2;
-        document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-        document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-    }
-    else if(myAttack == enemyAttack){
-        Harc(id);
-    }
+
 }
 
 
@@ -308,19 +230,96 @@ function kartya(id){
         if (node.enemies) {
             const enemies = node.enemies?.enemy;
             const enemyDiv = document.createElement("div");
+            const harcButton = document.createElement("button");
+            harcButton.innerText = "Harc megkezdés";
+            harcButton.classList.add("choiceButton");
             if (Array.isArray(enemies)) {
+                let i = 0;
                 enemies.forEach(enemy => {
+                    i++;
                     enemyDiv.id = "enemy";
-                    enemyDiv.innerHTML += `<h2>${enemy?.name}</h2><p>Ügyessége: ${enemy?.skill}</p><p>Élet: ${enemy?.stamina}</p><p id="tamadoero">Támadóerő:</p>`;
+                    enemyDiv.innerHTML += `<h2>${enemy?.name}</h2><p>Ügyessége: ${enemy?.skill}</p><p id="enemyStamina${i}">Élet: ${enemy?.stamina}</p><p id="tamadoero">Támadóerő:</p>`;
                 });
                 tobbEnemy = true;
             } else {
                 enemyDiv.id = "enemy";
-                enemyDiv.innerHTML = `<h2>${enemies.name}</h2><p>Ügyessége: ${enemies.skill}</p><p>Élet: ${enemies.stamina}</p><p id="tamadoero">Támadóerő:</p>`;
+                enemyDiv.innerHTML = `<h2>${enemies.name}</h2><p>Ügyessége: ${enemies.skill}</p><p id="enemyStamina">Élet: ${enemies.stamina}</p><p id="tamadoero">Támadóerő:</p>`;
             }
-            Harc(node._id);
             harc.appendChild(enemyDiv);
-        }
+
+            harcButton.addEventListener('click', () => {
+            let myAttack = dobbas() + dobbas() + myData.Game.Character.Stats.Skill;
+            if(tobbEnemy){
+                console.log(enemies.Stamina);
+                if(node.KuzdesEgyesevel){
+                    if(!elsoHalott){
+                        let enemyAttack = dobbas() + dobbas() + enemies[0].Skill;
+                        if (enemyAttack > myAttack) {
+                            myData.Game.Character.Stats.Stamina += enemies[0].sebzes;
+                            document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
+                            document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                        } else if (myAttack > enemyAttack) {
+                            enemies[0].Stamina -= 2;
+                            document.getElementById("enemyStamina1").innerText = myData.Game.Character.Stats.Stamina;
+                        }
+                        else if(myAttack == enemyAttack){
+                            Harc(id);
+                        }
+                        if(enemies[0].Stamina <= 0){
+                            elsoHalott = true;
+                        }
+                    }else{
+                        let enemyAttack = dobbas() + dobbas() + enemies[1].Skill;
+                        if (enemyAttack > myAttack) {
+                            myData.Game.Character.Stats.Stamina += enemies[1].sebzes;
+                            document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
+                            document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                        } else if (myAttack > enemyAttack) {
+                            enemies[1].Stamina -= 2;
+                            document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
+                            document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                        }
+                        else if(myAttack == enemyAttack){
+                            Harc(id);
+                        }
+                        if(enemies[1].Stamina <= 0){
+                            return 0;
+                        }
+                    }
+                }
+                else{
+                    let enemyAttack = dobbas() + dobbas() + enemies[0].Skill;
+                    let enemyAttack2 = dobbas() + dobbas() + enemies[1].Skill;
+                    if (enemyAttack > myAttack) {
+                        myData.Game.Character.Stats.Stamina += enemies[0].sebzes;
+                        document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
+                        document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                    } else if (myAttack > enemyAttack) {
+                        enemies[0].Stamina -= 2;
+                        document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
+                        document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                    }
+                    else if(myAttack == enemyAttack){
+                        Harc(id);
+                    }
+                    if (enemyAttack2 > myAttack) {
+                        myData.Game.Character.Stats.Stamina += enemies[1].sebzes;
+                        document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
+                        document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                    } else if (myAttack > enemyAttack2) {
+                        enemies[1].Stamina -= 2;
+                        document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
+                        document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                    }
+                    else if(myAttack == enemyAttack){
+                        Harc(id);
+                    }
+                }
+            }
+            },
+            document.getElementById("harc").appendChild(harcButton)
+
+        )};
         if (node.Dice) {
             
             if (node.Dice.mit == "szerencse") {
@@ -571,7 +570,7 @@ fetchData().then(data => {
         
     });
     generalas();
-    kartya(196);
+    kartya(140);
     
 });
 
