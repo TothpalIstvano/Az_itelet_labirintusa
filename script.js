@@ -264,6 +264,10 @@ function kartya(id){
     div.appendChild(p);
     div.id = "kartya";
     kartya1.appendChild(div);
+    const korEredmeny = document.createElement('p');
+    const korEredmenyHely = document.getElementById('harcgomb');
+    korEredmenyHely.appendChild(korEredmeny);
+    let kor = 0;
     if(!node.End){
         
         if (node.enemies) {
@@ -289,11 +293,10 @@ function kartya(id){
             harc.appendChild(enemyDiv);
             harcButton.addEventListener('click', () => {
             let myAttack = dobbas() + dobbas() + myData.Game.Character.Stats.Skill;
-            let kor = 0;
-            tamadoero.innerText = myAttack + "\nKör:" + kor;
+            
+            
 
-            const korEredmeny = document.createElement('p');
-            const korEredmenyHely = document.getElementById('harcgomb');
+            
             if(tobbEnemy){
                 if(node.kuzdesEgyesevel){
                     if(enemies[0].stamina > 0){
@@ -304,11 +307,12 @@ function kartya(id){
                             document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                             document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
                             korEredmeny.innerText = "Kor: vesztett";
-                            korEredmenyHely.appendChild(korEredmeny);
+                            
                         } else if (myAttack > enemyAttack) {
                             enemies[0].stamina -= 2;
+                            document.getElementById("enemyStamina0").innerText = enemies[0].stamina;
                             korEredmeny.innerText = "Kor: nyert";
-                            korEredmenyHely.appendChild(korEredmeny);
+                            
                         }
                         else if(myAttack == enemyAttack){
                             harcButton.click();
@@ -321,11 +325,10 @@ function kartya(id){
                             document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                             document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
                             korEredmeny.innerText = "Kor: vesztett";
-                            korEredmenyHely.appendChild(korEredmeny);
                         } else if (myAttack > enemyAttack2) {
                             enemies[1].stamina -= 2;
                             korEredmeny.innerText = "Kor: nyert";
-                            korEredmenyHely.appendChild(korEredmeny);
+                            
                         }
                         else if(myAttack == enemyAttack2){
                             harcButton.click();
@@ -381,7 +384,24 @@ function kartya(id){
                         harcButton.click();
                     }
                     if(enemies[0].stamina <= 0 && enemies[1].stamina <= 0){
-                        console.log("nyert");
+                        const nyertButton = document.createElement("button");
+                        nyertButton.innerText = "nyertél";
+                        nyertButton.className = "choiceButton";
+                        nyertButton.addEventListener('click', () => {
+                            const rbutton = document.createElement("button");
+                            rbutton.innerText = node.Choices.Choice[0].__text;
+                            rbutton.className = "choiceButton";
+                            rbutton.addEventListener('click', () => {
+                                const choiceButtons = document.querySelectorAll(".choiceButton");
+                                choiceButtons.forEach(button => button.remove());
+                                document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                                kartya(node.Choices.Choice[0]._targetNode);
+                            });
+                            gombok.appendChild(rbutton);
+                            nyertButton.remove();
+                        });
+                        harc.appendChild(nyertButton);
+                        harcButton.remove();
                     }
                 
                 if(enemies[0].menkeules || enemies[1].menekules){
@@ -420,14 +440,14 @@ function kartya(id){
                     document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                     document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
                     korEredmeny.innerText = "Kor: vesztett";
-                    korEredmenyHely.appendChild(korEredmeny);
+                    
                 }
                 if (myAttack > enemyAttack && enemies.stamina > 0) {
                     enemies.stamina -= 2;
                     document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                     document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
                     korEredmeny.innerText = "Kor: nyert";
-                    korEredmenyHely.appendChild(korEredmeny);
+                    
                     
                 }
                 if(myAttack == enemyAttack){
@@ -495,8 +515,8 @@ function kartya(id){
                 gombok.appendChild(button);
             }
             
-            kor ++;
-
+            kor++;
+            tamadoero.innerText = myAttack + "\nKör:" + kor;
             },
             document.getElementById("harc").appendChild(harcButton)
 
