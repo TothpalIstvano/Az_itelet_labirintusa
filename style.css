@@ -17,7 +17,7 @@ h1 {
 
 .column {
     float: left;
-    width: 50%;
+    width: 100%;  /*50% helyett*/
     padding: 10px;
     height: auto;
     border: 1px solid black;

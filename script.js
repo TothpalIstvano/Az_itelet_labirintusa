@@ -287,10 +287,11 @@ function kartya(id){
                 tobbEnemy = false;
             }
             harc.appendChild(enemyDiv);
+            let kor = 0;
+
             harcButton.addEventListener('click', () => {
             let myAttack = dobbas() + dobbas() + myData.Game.Character.Stats.Skill;
-            let kor = 0;
-            tamadoero.innerText = myAttack + "\nKör:" + kor;
+            tamadoero.innerText = myAttack + "\nKör: " + kor;
 
             const korEredmeny = document.createElement('p');
             const korEredmenyHely = document.getElementById('harcgomb');
@@ -299,15 +300,18 @@ function kartya(id){
                     if(enemies[0].stamina > 0){
                         console.log(myData.Game.Character.Stats.Stamina, enemies[0].stamina);
                         let enemyAttack = dobbas() + dobbas() + enemies[0].skill;
+                        enemyDiv.innerHTML = `<h2>${enemies[0].name}</h2><p>Ügyessége: ${enemies[0].skill}</p><p>Élet: <span id="enemyStamina">${enemies[0].stamina}</span></p><p id="tamadoero">Támadóerő: ${enemyAttack}</p>`;
+
+
                         if (enemyAttack > myAttack) {
                             myData.Game.Character.Stats.Stamina += enemies[0].sebzes;
                             document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                             document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-                            korEredmeny.innerText = "Kor: vesztett";
+                            korEredmeny.innerText = "Kör: Vesztett";
                             korEredmenyHely.appendChild(korEredmeny);
                         } else if (myAttack > enemyAttack) {
                             enemies[0].stamina -= 2;
-                            korEredmeny.innerText = "Kor: nyert";
+                            korEredmeny.innerText = "Kör: Nyert";
                             korEredmenyHely.appendChild(korEredmeny);
                         }
                         else if(myAttack == enemyAttack){
@@ -316,15 +320,17 @@ function kartya(id){
                     }else if(enemies[1].stamina > 0 && enemies[0].stamina <= 0){
                         console.log(myData.Game.Character.Stats.Stamina, enemies[1].stamina);
                         let enemyAttack2 = dobbas() + dobbas() + enemies[1].skill;
+                        enemyDiv.innerHTML = `<h2>${enemies[1].name}</h2><p>Ügyessége: ${enemies[1].skill}</p><p>Élet: <span id="enemyStamina">${enemies[1].stamina}</span></p><p id="tamadoero">Támadóerő: ${enemyAttack2}</p>`;
+
                         if (enemyAttack2 > myAttack) {
                             myData.Game.Character.Stats.Stamina += enemies[1].sebzes;
                             document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                             document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-                            korEredmeny.innerText = "Kor: vesztett";
+                            korEredmeny.innerText = "Kör: Vesztett";
                             korEredmenyHely.appendChild(korEredmeny);
                         } else if (myAttack > enemyAttack2) {
                             enemies[1].stamina -= 2;
-                            korEredmeny.innerText = "Kor: nyert";
+                            korEredmeny.innerText = "Kör: Nyert";
                             korEredmenyHely.appendChild(korEredmeny);
                         }
                         else if(myAttack == enemyAttack2){
@@ -333,7 +339,7 @@ function kartya(id){
                     }
                     if(enemies[0].stamina <= 0 && enemies[1].stamina <= 0){
                         const nyertButton = document.createElement("button");
-                        nyertButton.innerText = "nyertél";
+                        nyertButton.innerText = "Nyertél";
                         nyertButton.className = "choiceButton";
                         nyertButton.addEventListener('click', () => {
                             const rbutton = document.createElement("button");
@@ -350,11 +356,17 @@ function kartya(id){
                         });
                         harc.appendChild(nyertButton);
                         harcButton.remove();
+                        tamadoero.innerText = '';
+                        korEredmenyHely.innerText = '';
                     }
                 }
                 else{
                     let enemyAttack = dobbas() + dobbas() + enemies[0].skill;
+                    enemyDiv.innerHTML = `<h2>${enemies[0].name}</h2><p>Ügyessége: ${enemies[0].skill}</p><p>Élet: <span id="enemyStamina">${enemies[0].stamina}</span></p><p id="tamadoero">Támadóerő: ${enemyAttack}</p>`;
+
                     let enemyAttack2 = dobbas() + dobbas() + enemies[1].skill;
+                    enemyDiv.innerHTML = `<h2>${enemies[1].name}</h2><p>Ügyessége: ${enemies[1].skill}</p><p>Élet: <span id="enemyStamina">${enemies[1].stamina}</span></p><p id="tamadoero">Támadóerő: ${enemyAttack2}</p>`;
+
                     if (enemyAttack > myAttack && enemies[0].stamina > 0) {
                         myData.Game.Character.Stats.Stamina += enemies[0].sebzes;
                         document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
@@ -414,19 +426,20 @@ function kartya(id){
             }          
             else if(!tobbEnemy){
                 let enemyAttack = dobbas() + dobbas() + enemies.skill;
+                enemyDiv.innerHTML = `<h2>${node.enemies.enemy.name}</h2><p>Ügyessége: ${node.enemies.enemy.skill}</p><p>Élet: <span id="enemyStamina">${node.enemies.enemy.stamina}</span></p><p id="tamadoero">Támadóerő: ${enemyAttack}</p>`;
 
                 if (enemyAttack > myAttack && enemies.stamina > 0) {
                     myData.Game.Character.Stats.Stamina += enemies.sebzes;
                     document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                     document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-                    korEredmeny.innerText = "Kor: vesztett";
+                    korEredmeny.innerText = "Kör: Vesztett";
                     korEredmenyHely.appendChild(korEredmeny);
                 }
                 if (myAttack > enemyAttack && enemies.stamina > 0) {
                     enemies.stamina -= 2;
                     document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
                     document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
-                    korEredmeny.innerText = "Kor: nyert";
+                    korEredmeny.innerText = "Kör: Nyert";
                     korEredmenyHely.appendChild(korEredmeny);
                     
                 }
@@ -435,7 +448,7 @@ function kartya(id){
                 }
                 if(enemies.stamina <= 0){
                     const nyertButton = document.createElement("button");
-                    nyertButton.innerText = "nyertél";
+                    nyertButton.innerText = "Nyertél";
                     nyertButton.className = "choiceButton";
                     nyertButton.addEventListener('click', () => {
                         const rbutton = document.createElement("button");
@@ -452,6 +465,8 @@ function kartya(id){
                     });
                     harc.appendChild(nyertButton);
                     harcButton.remove();
+                    tamadoero.innerText = '';
+                    korEredmenyHely.innerText = '';
                 }
                 if(enemies.menkeules){
                     myData.Game.Character.Stats.Stamina -= 2;
@@ -626,7 +641,7 @@ function kartya(id){
                 erredmenyButton.className = "choiceButton";
                 erredmenyButton.addEventListener('click', () => {
                     const rbutton = document.createElement("button");
-                    rbutton.innerText = "próbálkozzás";
+                    rbutton.innerText = "Próbálkozás";
                     rbutton.className = "choiceButton";
                     rbutton.addEventListener('click', () => {
                     while (eredmenyEredmeny < 5 || myData.Game.Character.Stats.Stamina != 0) {
