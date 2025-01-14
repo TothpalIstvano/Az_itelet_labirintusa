@@ -160,6 +160,17 @@ img{
     transform: translateY(0.25em);
 }
 
+#enemy h2, #enemy p {
+  text-align: center;
+  padding-top: 5pxpx;
+}
+
+#enemy h2 {
+  padding-top: 20px;
+}
+
+
+/*footer*/
 body {
   display: grid;
   grid-template-rows: 1fr 10rem auto;
