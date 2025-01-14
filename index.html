@@ -81,9 +81,11 @@
                 <div>
                     <div>
                     <button type="button" id="generalas">Generálás</button>
-                    </div>       
+                    </div>     
                     <div class="kartyak">ÜGYESSÉG <p>Kezdeti ügyesség: <span id="skill"></span></p></div>
-                    <div class="kartyak">ÉLETERŐ <p>Kezdeti életerő: <span id="stamina"></span></p></div>
+                    <div class="kartyak">ÉLETERŐ <p>Kezdeti életerő: <span id="stamina"></span></p>
+                        <progress id="health" value="" max=""></progress>
+                    </div>
                     <div class="kartyak">SZERENCSE <p>Kezdeti szerencse: <span id="luck"></span> </p></div>
                     
                 </div>
@@ -100,7 +102,11 @@
                 <div class="kartyak" >TÁMADÓERŐ<p id="támadóerő"> </p></div>
                 <div class="kartyak" id="harcgomb"></div>
             </div>
-            <div class="column" id="harc">
+            <div id="column">
+                <img src="jofuto.gif" alt="">
+                <!--<img src="joharcos.gif" alt="">-->
+            </div>
+            <div class="column" id="harc" style="width: 33%;">
                 <h2 style="text-align: center;">HARC SZÖRNYEKKEL</h2>
                 <!--<div>
                     <div class="kartyak">ÜGYESSÉG <p>Életerő:</p></div>
@@ -123,6 +129,7 @@
                     <div class="kartyak">ÜGYESSÉG <p>Életerő:</p></div>
                 </div>-->
             </div>
+
             
         </div>
         <div class="row">
