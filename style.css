@@ -202,6 +202,10 @@ img{
 #luckszerencse::-webkit-progress-value { background: rgb(45, 168, 52); }
 #health::-webkit-progress-value { background: rgb(254, 30, 30); }
 
+#gif {
+  width: 425px;
+}
+
 
 /*footer*/
 body {
