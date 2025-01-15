@@ -807,14 +807,31 @@ function kartya(id){
                 console.log(eredmenyEredmeny)
                 erredmenyButton.innerText = "Ted próbára a ügyeségedet";
                 erredmenyButton.className = "choiceButton";
-                erredmenyButton.addEventListener('click', () => {
+
+                let szam = Math.floor(Math.random());
+                if (szam == 0) {
+                    const rbutton = document.createElement("button");
+                        rbutton.innerText = node.Choices.Choice.__text;
+                        rbutton.className = "choiceButton";
+                        rbutton.addEventListener('click', () => {
+                            const choiceButtons = document.querySelectorAll(".choiceButton");
+                            choiceButtons.forEach(button => button.remove());
+                            document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                            document.querySelectorAll("#harc #enemy").forEach(element => element.remove());
+                            kartya(node.Choices.Choice._targetNode);
+                    });
+                    gombok.appendChild(rbutton);  
+                }
+                
+
+                /*erredmenyButton.addEventListener('click', () => {
                     const rbutton = document.createElement("button");
                     rbutton.innerText = "Próbálkozás";
                     rbutton.className = "choiceButton";
                     erredmenyButton.remove();
                     rbutton.addEventListener('click', () => {
                         console.log(eredmenyEredmeny);
-                    if (eredmenyEredmeny < 5 && myData.Game.Character.Stats.Stamina != 0) {
+                    if (eredmenyEredmeny <= 4  && myData.Game.Character.Stats.Stamina != 0) {
                            myData.Game.Character.Stats.Stamina += node.Dice.vesztesEletero;
                             document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
                             document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
@@ -824,7 +841,7 @@ function kartya(id){
                     });
                     gombok.appendChild(rbutton);
                     
-                    if(eredmenyEredmeny > 4 && myData.Game.Character.Stats.Stamina > 0){
+                    if(eredmenyEredmeny >= 5 && myData.Game.Character.Stats.Stamina > 0){
                         const rbutton = document.createElement("button");
                         rbutton.innerText = node.Choices.Choice.__text;
                         rbutton.className = "choiceButton";
@@ -838,7 +855,7 @@ function kartya(id){
                     gombok.appendChild(rbutton);  
                     }
                    
-                });
+                });*/
             
                 gombok.appendChild(erredmenyButton);
             }
