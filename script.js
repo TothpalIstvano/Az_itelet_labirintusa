@@ -203,11 +203,11 @@ function kartyaKereses(id){
 }
 
 function targyakGomb() {
-    const hely = document.getElementById("targyak");
-folyadekButton = document.createElement("button");
-folyadekButton.className = "targyakgomb";
-folyadekButton.disabled = true;
-hely.appendChild(folyadekButton);
+                const hely = document.getElementById("targyak");
+                folyadekButton = document.createElement("button");
+                folyadekButton.className = "targyakgomb";
+                folyadekButton.disabled = true;
+                hely.appendChild(folyadekButton);
 
                 kopenyButton = document.createElement("button");
                 kopenyButton.className = "targyakgomb";
@@ -268,6 +268,9 @@ function kartya(id){
     const korEredmeny = document.createElement('p');
     const korEredmenyHely = document.getElementById('harcgomb');
     korEredmenyHely.appendChild(korEredmeny);
+    const tamadoeroEredmeny = document.createElement('p');
+    const tamadoero = document.getElementById("támadóerő");
+    tamadoero.appendChild(tamadoeroEredmeny);
     let kor = 0;
 
     const szerencseButton = document.createElement("button");
@@ -379,7 +382,6 @@ function kartya(id){
             const harcButton = document.createElement("button");
             harcButton.innerText = "Harc megkezdés";
             harcButton.classList.add("choiceButton");
-            const tamadoero = document.getElementById("támadóerő");
             if (Array.isArray(enemies)) {
                 let i = 0;
                 enemies.forEach(enemy => {
@@ -403,7 +405,8 @@ function kartya(id){
             let szerencse2 = false;
 
 
-            tamadoero.innerText = myAttack + "\nKör: " + kor;
+            tamadoeroEredmeny.innerText = myAttack + "\nKör: " + kor;
+            tamadoero.appendChild(tamadoeroEredmeny);
 
             const gif = document.getElementById("gif");
             gif.src = "joharcos.gif";
@@ -478,7 +481,7 @@ function kartya(id){
                         });
                         harc.appendChild(nyertButton);
                         harcButton.remove();
-                        tamadoero.innerText = '';
+                        tamadoeroEredmeny.innerText = '';
                         korEredmenyHely.innerText = '';
                     }
                 }
@@ -618,7 +621,7 @@ function kartya(id){
                     });
                     harc.appendChild(nyertButton);
                     harcButton.remove();
-                    tamadoero.innerText = '';
+                    tamadoeroEredmeny.innerText = '';
                     korEredmenyHely.innerText = '';
                 }
                 if(enemies.menkeules){
@@ -670,7 +673,7 @@ function kartya(id){
             }
             
             kor++;
-            tamadoero.innerText = myAttack + "\nKör:" + kor;
+            //tamadoero.innerText = myAttack + "\nKör:" + kor;
             },
             document.getElementById("harc").appendChild(harcButton)
             
@@ -1043,7 +1046,7 @@ fetchData().then(data => {
         
     });
     generalas();
-    kartya(196);
+    kartya(1);
     
 });
 
