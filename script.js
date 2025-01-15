@@ -1027,11 +1027,8 @@ fetchData().then(data => {
         
     });
     generalas();
+    kartya(196);
 
-  
-    kartya(1);
-
-    
 });
 
 
