@@ -272,7 +272,8 @@ function kartya(id){
     const tamadoero = document.getElementById("támadóerő");
     tamadoero.appendChild(tamadoeroEredmeny);
     let kor = 0;
-
+    let szerencse1 = false;
+    let szerencse2 = false;
     const szerencseButton = document.createElement("button");
     szerencseButton.innerText = "Szerencse probálás";
     szerencseButton.classList.add("choiceButton");
@@ -352,17 +353,15 @@ function kartya(id){
             }
             else{
                 if(szerencse()){
-                    enemies.stamina -= 2;
-                document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-                document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                node.enemies.enemy.stamina -= 2;
                 }
                 else{
-                enemies.stamina += 1;
-                document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-                document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
+                node.enemies.enemy.stamina += 1;
+
                 }
             }
         }
+        szerencseButton.remove();
 
     });
 
@@ -400,9 +399,6 @@ function kartya(id){
 
             harcButton.addEventListener('click', () => {
             let myAttack = dobbas() + dobbas() + myData.Game.Character.Stats.Skill;
-   
-            let szerencse1 = false;
-            let szerencse2 = false;
 
 
             tamadoeroEredmeny.innerText = myAttack + "\nKör: " + kor;
@@ -647,11 +643,7 @@ function kartya(id){
                     harcButton.remove();
                 }
             }
-            
-                
-            
-            
-            harcButton.appendChild(szerencseButton);
+            harc.appendChild(szerencseButton);
 
             if(myData.Game.Character.Stats.Stamina <= 0){
                 button.innerText = "Újrakezdés";
@@ -660,13 +652,22 @@ function kartya(id){
                     fetchData().then(data => {
                         myData = data;
                         marValtozoDologPoweredByKovacsEdit();
-                        const generalasButton = document.getElementById('generalas');
-                        generalasButton.addEventListener('click', () => {
-                            generalas();
-                            button.remove();
-                        });
+                        document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                        generalva = false;
+                        generalvaP = false;
+                        if(!generalva){
+                            etkezes();
+                        }
+                    
+                        if(!generalvaP){
+                            potion();
+                        }
+                    
+                        if (!generalvaG) {
+                            targyakGomb();
+                        }
                         kartya(1);
-                        
+                        button.remove();
                     })
                 });
                 gombok.appendChild(button);
@@ -904,35 +905,6 @@ function kartya(id){
             kopenyButton.innerText = node.itemAdd2;
             targyak.push(node.itemAdd2);
         }
-
-        /*if (node.Choices.Choice[0]._requiresItem || node.Choices.Choice[1]._requiresItem) {
-            if (targyak.includes(node.Choices.Choice[0]._requiresItem) && node.Choices.Choice[0]._requiresItem == "Gyűrű") {
-                gyuruoButton.disabled = false;
-            } else if (targyak.includes(node.Choices.Choice[0]._requiresItem) && node.Choices.Choice[0]._requiresItem == "Köpeny") {
-                kopenyButton.disabled = false;
-            } else if (targyak.includes(node.Choices.Choice[0]._requiresItem) && node.Choices.Choice[0]._requiresItem == "Bronzkulcs") {
-                bronzkulcsButton.disabled = false;
-            } else if (targyak.includes(node.Choices.Choice[0]._requiresItem) && node.Choices.Choice[0]._requiresItem == "Aranykulcs") {
-                aranykulcsButton.disabled = false;
-            } else if (targyak.includes(node.Choices.Choice[0]._requiresItem) && node.Choices.Choice[0]._requiresItem == "Szobor") {
-                szoborButton.disabled = false;
-            }
-        
-            if (targyak.includes(node.Choices.Choice[1]._requiresItem) && node.Choices.Choice[1]._requiresItem == "Folyadék") {
-                folyadekButton.disabled = false;
-            }  if (targyak.includes(node.Choices.Choice[1]._requiresItem) && node.Choices.Choice[1]._requiresItem == "Köpeny") {
-                kopenyButton.disabled = false;
-            }  if (targyak.includes(node.Choices.Choice[1]._requiresItem) && node.Choices.Choice[1]._requiresItem == "Szobor") {
-                szoborButton.disabled = false;
-            }
-    
-        }*/
-
-        /*if (node.Choices.Choice[2]._requiresItem1) {
-            if (targyak.includes(node.Choices.Choice[2]._requiresItem1) && node.Choices.Choice[2]._requiresItem1 == "Folyadék") {
-                folyadekButton.disabled = false;
-            }
-        }*/
         
         if(node.eletero){
             myData.Game.Character.Stats.Stamina = myData.Game.Character.Stats.Stamina + node.eletero;
@@ -1019,13 +991,22 @@ function kartya(id){
             fetchData().then(data => {
                 myData = data;
                 marValtozoDologPoweredByKovacsEdit();
-                const generalasButton = document.getElementById('generalas');
-                generalasButton.addEventListener('click', () => {
-                    generalas();
-                    button.remove();
-                });
+                document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                generalva = false;
+                generalvaP = false;
+                if(!generalva){
+                    etkezes();
+                }
+            
+                if(!generalvaP){
+                    potion();
+                }
+            
+                if (!generalvaG) {
+                    targyakGomb();
+                }
                 kartya(1);
-                
+                button.remove();
             })
         });
         gombok.appendChild(button);
@@ -1046,7 +1027,10 @@ fetchData().then(data => {
         
     });
     generalas();
+
+  
     kartya(1);
+
     
 });
 
