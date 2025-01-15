@@ -21,7 +21,7 @@ let elelmiszerek
 let generalva = false;
 let generalvaP = false;
 let generalvaG = false;
-let tamadoero = 0;
+let tamadoero1 = 0;
 
 let tobbEnemy = false;
 let elsoHalott = false;
@@ -339,6 +339,7 @@ function kartya(id){
             }
         }
         else{
+            
             if(szerencse1 == false){
                 if(szerencse()){
                 myData.Game.Character.Stats.Stamina += 1;
@@ -365,7 +366,34 @@ function kartya(id){
 
     });
 
-
+    if(myData.Game.Character.Stats.Stamina <= 0){
+        node.End = true;
+        button.innerText = "Újrakezdés";
+        button.classList.add("choiceButton");
+        button.addEventListener('click', () => {
+            fetchData().then(data => {
+                myData = data;
+                marValtozoDologPoweredByKovacsEdit();
+                document.querySelectorAll("#kartya h2, #kartya p").forEach(element => element.remove());
+                
+                generalva = false;
+                generalvaP = false;
+                if(!generalva){
+                    etkezes();
+                }
+            
+                if(!generalvaP){
+                    potion();
+                }
+            
+                if (!generalvaG) {
+                    targyakGomb();
+                }
+                kartya(1);
+            })
+        });
+        gombok.appendChild(button);
+    }
 
 
 
@@ -953,7 +981,7 @@ function kartya(id){
         }
 
         if(node.tovabbiTamadoero){
-            tamadoero += node.tovabbiTamadoero;
+            tamadoero1 += node.tovabbiTamadoero;
         }
 
         if (node.Choices && node.Choices.Choice && !node.Dice && !node.enemies) {
