@@ -807,16 +807,18 @@ function kartya(id){
                     const rbutton = document.createElement("button");
                     rbutton.innerText = "Próbálkozás";
                     rbutton.className = "choiceButton";
+                    erredmenyButton.remove();
                     rbutton.addEventListener('click', () => {
-                    while (eredmenyEredmeny < 5 || myData.Game.Character.Stats.Stamina != 0) {
-                           myData.Game.Character.Stats.Stamina += intParse(node.Dice.vesztesEletero);
+                        console.log(eredmenyEredmeny);
+                    if (eredmenyEredmeny < 5 && myData.Game.Character.Stats.Stamina != 0) {
+                           myData.Game.Character.Stats.Stamina += node.Dice.vesztesEletero;
                             document.getElementById("stamina").innerText = myData.Game.Character.Stats.Stamina;
                             document.getElementById("health").value = myData.Game.Character.Stats.Stamina;
-                           eredmenyEredmeny += dobbas();
-                           console.log(eredmenyEredmeny)
+                           eredmenyEredmeny = dobbas();
                     };
-                        gombok.appendChild(rbutton);
+                        
                     });
+                    gombok.appendChild(rbutton);
                     
                     if(eredmenyEredmeny > 4 && myData.Game.Character.Stats.Stamina > 0){
                         const rbutton = document.createElement("button");
@@ -1041,7 +1043,7 @@ fetchData().then(data => {
         
     });
     generalas();
-    kartya(153);
+    kartya(196);
     
 });
 
