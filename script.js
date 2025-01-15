@@ -11,6 +11,7 @@ async function fetchData() {
         console.error('There was a problem with the fetch operation:', error);
     }
 }
+
 let limitSkill 
 let limitStamina
 let limitLuck
@@ -1072,7 +1073,7 @@ fetchData().then(data => {
         
     });
     generalas();
-    kartya(196);
+    kartya(1);
 
 });
 
